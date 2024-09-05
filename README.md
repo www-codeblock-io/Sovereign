@@ -298,139 +298,131 @@ Install instructions
 ## Run Bitcoin Core (start initial blockchain download)
 Plug in your external 2T SSD drive.
 
-Then start Bitcoin Core. Run:
-```bash copy
-bitcoin-qt
-``` 
+1. Then start Bitcoin Core. Run:
+   ```bash copy
+   bitcoin-qt
+   ``` 
 You will be greated with the Bitcoin Core Welcome screen, it is here that we will let Bitcoin Core know where our external SSD drive is located.
 
-1. Select 'Use a custom data directory'.
-2. Click the three dots to the right and navigate to your external SSD drive location. Mine was located at ```/media/rez/T7 Shield```.
+2. Select 'Use a custom data directory'.
+3. Click the three dots to the right and navigate to your external SSD drive location. Mine was located at ```/media/rez/T7 Shield```.
 4. Uncheck ```Limit block chain storage```. We want to download the complete Bitcoin blockchain from the genisis block.
 5. Click ```OK```.
 
 Bitcoin Core will now create the main 'data-directory' inside your external SSD drive. It is here that all Bitcoin Core configuaration files will be stored along with the complete blockchain data. Get familiar with this 'data-directory' (SSD Drive) location as we will be accessing it later.
 
 If you have trouble locating your external SSD Drive, try the following, open a new Terminal. Run:
-```bash copy
-cd /media && dir
-```
+   ```bash copy
+   cd /media && dir
+   ```
 You should see your user directory listed, ```cd``` into this dir which should contain your external drive.
 
 Leave the laptop power plugged in and wait for the Bitcoin blockchain to download, Bitcoin Core will show a % complete and a rough estimate of how much time remains until completion. Once the download has completed you will be greated with a Welcome screen and a prompt to create a new wallet.
-
 
 ### Allow incoming connections
 Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. If you do not do this then EPS and electrum will not be able to connect to your node.
 
 You will need your Laptops MAC address and IP address. You can retrieve these from the Terminal. 
 
-To print your MAC address. Run:
-```bash copy
-ip link
-```
+1. To print your MAC address to Terminal. Run:
+   ```bash copy
+   ip link
+   ```
 You can find the MAC address of your device at the last line after ```link/ether=##:##:##:##:##:##```.
 
-To print your IP address. Run:
-```bash copy
-hostname -I
-```
+2. Print your IP address to Terminal
+   ```bash copy
+   hostname -I
+   ```
 
-Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
+3. Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
 
 ### Edit Bitcoin core config file. Run:
 Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  We won't actually use the bitcoin-core wallet so we will ignore this prompt and proceed to edit the bitcoin.config file.
 
-From the Bitcoin Core GUI click on ```Settings```, ```Options```, then ```Open Configuration File```.
+1. From the Bitcoin Core GUI click on ```Settings```, ```Options```, then ```Open Configuration File```.
 
-Enter the below text, save and exit:
-```bash copy
-# server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from EPS). txindex=1 allows any transaction to be looked up by Bitcoin Core, not just your own wallet.
-server=1
-txindex=1
-listen=1
+2. Enter the below text, save and exit
+   ```bash copy
+   # server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from EPS). txindex=1 allows any    transaction to be looked up by Bitcoin Core, not just your own wallet.
+   server=1
+   txindex=1
+   listen=1
 
-proxy=127.0.0.1:9050
-bind=127.0.0.1
+   proxy=127.0.0.1:9050
+   bind=127.0.0.1
 
-# only connect to Tor hidden services, not even IPv4/IPv6 nodes
-onlynet=onion
+   # only connect to Tor hidden services, not even IPv4/IPv6 nodes
+   onlynet=onion
 
-# we won't actually use the bitcoin-core wallet
-# However, if you use JoinMarket, you do need it
-disablewallet=1
+   # we won't actually use the bitcoin-core wallet
+   # However, if you use JoinMarket, you do need to set disablewallet=0
+   disablewallet=1
 
-# If running tor, walletbroadcast=0 prevents the node from rebroadcasting transactions without tor.
-walletbroadcast=0
-```
+   # If running tor, walletbroadcast=0 prevents the node from rebroadcasting transactions without tor.
+   walletbroadcast=0
+   ```
 
-You can now close Bitcoin Core by either clickig on the ```X``` or by closing the terminal window where you run the original ```bitcoin-qt``` commmand.
+3. You can now close Bitcoin Core by either clickig on the ```X``` or by closing the terminal window where you run the original ```bitcoin-qt``` commmand.
 
 ___
 ## Install Tor
 
 [Official website](https://support.torproject.org/apt/tor-deb-repo/)
 
-Verify your CPU architecture. Run:
-```bash copy
-dpkg --print-architecture
-```
+1. Verify your CPU architecture. Run:
+   ```bash copy
+   dpkg --print-architecture
+   ```
+2. Install apt-transport-https
+   ```bash copy
+   sudo apt install apt-transport-https
+   ```
+3. Check what Linux Distribution you have installed
+   ```bash copy
+   lsb_release -c
+   ```
+4. Create a new file in /etc/apt/sources.list.d/ named tor.list
+   ```bash copy
+   cd /etc/apt/sources.list.d/
+   ```
+5. Open the file
+   ```bash copy
+   sudo nano tor.list
+   ```
+6. Add the following entries inside the file, save and close
+   ```bash copy
+      deb     [arch=amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg]    https://deb.torproject.org/torproject.org jammy main
+      deb-src [arch=<amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg]    https://deb.torproject.org/torproject.org jammy main
+   ```
+7. Update apt
+   ```bash copy
+   sudo apt update
+   ```
+8. Install Tor
+   ```bash copy
+   sudo apt install tor deb.torproject.org-keyring
+   ```
+9. Check Tor is installed
+   ```bash copy
+   tor --version
+   ```
 
-Install apt-transport-https. Run:
-```bash copy
-sudo apt install apt-transport-https
-```
-
-Check what Linux Distribution you have installed. Run:
-```bash copy
-lsb_release -c
-```
-
-Create a new file in /etc/apt/sources.list.d/ named tor.list. Run:
-```bash copy
-cd /etc/apt/sources.list.d/
-```
-
-Open the file. Run:
-```bash copy
-sudo nano tor.list
-```
-
-Add the following entries inside the file, save and close:
-```bash copy
-   deb     [arch=amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org jammy main
-   deb-src [arch=<amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org jammy main
-```
-
-Update apt. Run:
-```bash copy
-sudo apt update
-```
-
-Install Tor. Run:
-```bash copy
-sudo apt install tor deb.torproject.org-keyring
-```
-
-Check Tor is installed. Run:
-```bash copy
-tor --version
-```
 ### Configure Tor to start at system Boot (optional but recommended)
-Enable Tor to start automatically on boot, this is your sovereign bitcoin node, don't use it to surf the web aimlessly. Run:
-```bash copy
-sudo systemctl enable tor
-```
+1. Enable Tor to start automatically on boot, this is your sovereign bitcoin node, don't use it to surf the web aimlessly. Run:
+   ```bash copy
+   sudo systemctl enable tor
+   ```
 
 ### Controlling Tor
-Manage Tor using systemd:
-```bash copy
-sudo systemctl restart tor
-```
-To check the status:
-```bash copy
-sudo systemctl status tor
-```
+1. Manage Tor using systemd
+   ```bash copy
+   sudo systemctl restart tor
+   ```
+2. To check the status
+   ```bash copy
+   sudo systemctl status tor
+   ```
 
 ---
 ## Set up Tor hidden service
@@ -440,80 +432,77 @@ https://en.bitcoin.it/wiki/Setting_up_a_Tor_hidden_service)
 Additional video tutorial, for further reference: [Canadian Bitcoiners](
 https://www.youtube.com/watch?v=goTkOt8Rr1Q&list=PLZqQw4mLW-r3UEyL12FG4koZq6lOLsURF&index=3)
 
-Make changes to Tor configuration file. Run:
-```bash copy
-cd /etc/tor
-```
-```bash copy
-sudo nano torrc
-```
-
-Enter the below text at the bottom of the file, save and exit:
-```bash copy
-ControlPort 9051
-CookieAuthentication 1
-CookieAuthFileGroupReadable 1
-```
-
-Check what your Bitcoin Core user name is. Run:
-```bash copy
-ps -eo user,group,comm |egrep 'bitcoind|bitcoin-qt' |awk '{print "Bitcoin user: " $1}'
-```
-
-Now add your Bitcoin Core user name to your Tor group. For example my command would be ```sudo usermod -a -G debian-tor rez``` as my Bitcoin user name is rez. Run:
-```bash copy
-sudo usermod -a -G debian-tor <user name found from above command>
-```
-If the above command did not work, double check your Tor user group name, run this command for a list of user groups, look for a user group with Tor in it's name. Run:
-```bash copy
-getent group
-```
-
+1. Make changes to Tor configuration file. Run:
+   ```bash copy
+   cd /etc/tor
+   ```
+2. Open torrc file   
+   ```bash copy
+   sudo nano torrc
+   ```
+3. Enter the below text at the bottom of the file, save and exit
+   ```bash copy
+   ControlPort 9051
+   CookieAuthentication 1
+   CookieAuthFileGroupReadable 1
+   ```
+4. Check what your Bitcoin Core user name is
+   ```bash copy
+   ps -eo user,group,comm |egrep 'bitcoind|bitcoin-qt' |awk '{print "Bitcoin user: " $1}'
+   ```
+5. Now add your Bitcoin Core user name to your Tor group. For example my command would be ```sudo usermod -a -G debian-tor rez``` as my Bitcoin user name is rez.
+   ```bash copy
+   sudo usermod -a -G debian-tor <user name found from above command>
+   ```
+6. If the above command did not work, double check your Tor user group name, run this command for a list of user groups, look for a user group with Tor in it's name.
+   ```bash copy
+   getent group
+   ```
+   
 The above configuration sets up an automatic hidden service that is initiated by Bitcoin Core. On the next startup of bitcoin, Bitcoin Core will generate a file called ```onion_private_key``` in the data directory. KEEP THIS SAFE. If someone copies this file they can run a server with your .onion address. While a malicious party cannot necessarily associate the server with you as a person, as long as your server has the same xxxx.onion address they will know it is run by the same person.
 
 If you delete this file, the next time bitcoind loads it will generate a new key file and xxxxxxxx.onion address.  For absolute security delete your ```onion_private_key``` file at each reboot or some frequent interval.
 
-Close the Bitcon Core GUI by clicking on the ```X``` in the top right hand corner.
+7. Close the Bitcon Core GUI by clicking on the ```X``` in the top right hand corner.
 
 ### Verify Bitcoin Core is running behind Tor, option: 1
 1. Start Bitcoin Core GUI.
 2. Once loaded enter the ```Network``` screen by pressing CTL+N.
 3. Click on the ```Peers``` tab.
-You should now see a list of all the Bitcoin peers that your node is connected too. Under the ```Network``` column all the row values should say ```Onion```, meaning you are only connected to peers over the onion ntwork.  
-
+You should now see a list of all the Bitcoin peers that your node is connected too. Under the ```Network``` column all the row values should say ```Onion```, meaning you are only connected to peers over the onion ntwork. 
 
 ### Verify Bitcoin Core is running behind Tor, option: 2
-Check Bitcoin Core is now running behind Tor, from the Bitcoin Core GUI click on 'Window', 'Consol', then type the below command into the consol shell after the > and press enter. Run:
-```bash copy
-getnetworkinfo
-```
+1. Check Bitcoin Core is now running behind Tor, from the Bitcoin Core GUI click on 'Window', 'Consol', then type the below command into the consol shell after the > and press enter. Run:
+   ```bash copy
+   getnetworkinfo
+   ```
 
-Scroll up until you see the networks section. Your node is running behind Tor if the 'ipv4' and 'onion' networks have the below settings (there will also be other settings in each network group but they can be ignored):
-```
-"name": "ipv4",
-      "limited": true,
-      "reachable": false
+2. Scroll up until you see the networks section. Your node is running behind Tor if the 'ipv4' and 'onion' networks have the below settings (there will also be other settings in each network group but they can be ignored):
+   ```
+   "name": "ipv4",
+         "limited": true,
+         "reachable": false
 
-And
+   And
 
-"name": "onion",
-      "limited": false,
-      "reachable": true
-```
+   "name": "onion",
+         "limited": false,
+         "reachable": true
+   ```
 
 ### Verify Bitcoin Core is running behind Tor, option: 3
-For the extra security concious, you can also check the debug.log file in the Bitcoin data-directory.
+1. For the extra security concious, you can also check the debug.log file in the Bitcoin data-directory.
 
-At some point during startup in the bitcoin/debug.log file you will see:
-```tor: Got service ID XXXXXXXXXXX, advertising service XXXXXXXXXXX.onion:8333```
+   At some point during startup in the bitcoin/debug.log file you will see:
+   ```tor: Got service ID XXXXXXXXXXX, advertising service XXXXXXXXXXX.onion:8333```
 
 ### Verify Bitcoin Core is running behind Tor, option: 4
 You will learn a lot if you ```cd``` into your bitcoin data-directory delete the 'debug.log' file (don't worry bitcoin core just creates a new one at startup), restart Tor, and then Bitcoin Core. Then shut down Bitcoin core again once the application has completly loaded. Bitcoin Core will have created a new debug.log file and printed some debug statements during shut down.
 
-Take a look at the new debug.log file. Run:
-```bash copy
-nano debug.log
-```
+1. Take a look at the new debug.log file. Run:
+   ```bash copy
+   nano debug.log
+   ```
 You will see a lot of the actions listed that the bitcoin core software completed during start-up and shut-down, including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor netork using your Tor encryption key.
 
 ---
