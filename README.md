@@ -561,17 +561,17 @@ https://armantheparman.com/electrum-server/
    sudo pip3 install --upgrade pip
    ```
 ### Complete EPS installation
-1. Navigate into the EPS directory. Run:
+7. Navigate into the EPS directory. Run:
    ```bash copy
    cd ~/Desktop/eps
    ```
-2. Complete installation by running the below command. Note: do not use ```sudo``` and make sure to leave in the final ```.```  
+8. Complete installation by running the below command. Note: do not use ```sudo``` and make sure to leave in the final ```.```  
    ```bash copy
    pip3 install --user . 
    ```
    Ignore the Terminal warning about PATH, a PATH veriable will be added the next time you log out and back into the laptop again.
 
-3. Clean up Downloads folder, remove downloaded files
+9. Clean up Downloads folder, remove downloaded files
    ```bash copy
    cd ~/Downloads && rm belcher.asc eps-v0.2.4.tar.gz eps-v0.2.4.tar.gz.asc
    ```
@@ -599,7 +599,10 @@ Wait for Bitcoin Core to fully synchronise. Then follow the below instructions t
 3. Verify signitures. Run:
    ```bash copy
    wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz.asc
-gpg --verify Electrum-4.5.5.tar.gz.asc
+   ```
+4. Verify package
+   ```bash copy
+   gpg --verify Electrum-4.5.5.tar.gz.asc
    ```
 4. Install with pip
    ```bash copy
