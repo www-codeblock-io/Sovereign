@@ -394,15 +394,19 @@ ___
       deb     [arch=amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org jammy main
       deb-src [arch=<amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org jammy main
    ```
-7. Update apt
+7. Add Tor gpg key used to sign the packages
+   ```bash copy
+   wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | tee /usr/share/keyrings/deb.torproject.org-keyring.gpg >/dev/null
+   ```
+9. Update apt
    ```bash copy
    sudo apt update
    ```
-8. Install Tor
+10. Install Tor
    ```bash copy
    sudo apt install tor deb.torproject.org-keyring
    ```
-9. Check Tor is installed
+11. Check Tor is installed
    ```bash copy
    tor --version
    ```
