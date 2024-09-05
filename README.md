@@ -581,12 +581,11 @@ Wait for Bitcoin Core to fully synchronise. Then follow the below instructions t
 
 ---
 ## Install Electrum
+[Resource link](https://electrum.org/#download)
 1. Download ThomasV public key and import into keychain. Run:
    ```bash copy
    cd ~/Downloads && wget https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc && gpg --import ThomasV.asc
    ```
-   [Resource link](https://electrum.org/#download)
-
 2. Install dependencies. Run:
    ```bash copy
    sudo apt-get install python3-pyqt5 libsecp256k1-dev python3-cryptography
