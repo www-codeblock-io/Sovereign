@@ -65,27 +65,26 @@ Note, the slightly different commands, depending if you are on Windows or Linux.
 [Reference Link](https://ubuntu.com/tutorials/how-to-verify-ubuntu#2-necessary-software "Ubuntu tutorial")
 
 #### Windows10
-Verify signitures. Open a Terminal window (CTRL+ALT+T). Run:
-```bash copy
-gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
-```
-Verify ISO file, Run:
-```bash copy
-certutil -hashFile <ISO_file_path> SHA256
-```
+1. Verify signitures. Open a Terminal window (CTRL+ALT+T). Run:
+   ```bash copy
+   gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
+   ```
+2. Verify ISO file
+   ```bash copy
+   certutil -hashFile <ISO_file_path> SHA256
+   ```
 Now open the SHA256SUMS.txt file in your Downloads folder and compare the SHA256 checksum inside the file with the checksum that was printed to the Terminal. It will be a long hash, verify both hashes/numbers match, if so, your ISO download is authentic.
 
 #### Linux/MacOS
-Verify signitures. Open a Terminal window (CTRL+ALT+T). Run:
-```bash copy
-gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
-```
-Verify ISO file, Run:
-```bash copy
-sha256sum -c SHA256SUMS 2>&1 | grep OK
-```
+1. Verify signitures. Open a Terminal window (CTRL+ALT+T). Run:
+   ```bash copy
+   gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
+   ```
+2. Verify ISO file
+   ```bash copy
+   sha256sum -c SHA256SUMS 2>&1 | grep OK
+   ```
 The output you want will look similar to the following:
-
 ```ubuntu-22.04.4-desktop-amd64.iso: OK```
 
 
@@ -102,10 +101,10 @@ Flashing a USB drive with an ISO image will place a write protection on the USB 
 
 
 ### Once Installation has finished
-Update package manager. Run:
-```bash copy
-sudo apt update && sudo apt upgrade
-```
+1. Update package manager. Run:
+   ```bash copy
+   sudo apt update && sudo apt upgrade
+   ```
 
 ### Adjust the power settings
 Because you will want to run your node for 6+ hours a day (24hrs is better) you will need to adjust the power & lid closure settings to prevent the laptop entering into a low power mode, slowing or halting network traffic.
@@ -121,57 +120,55 @@ Make the following adjustments:
 Then close the settings menu.
 
 ### Laptop lid, do nothing when closed
-Navigate to systemd directory. Run:
-```bash copy
-cd /etc/systemd
-```
-Open logind configuration file. Run: 
-```bash copy
-sudo nano logind.conf
-```
-Uncomment HandleLidSwitch and make it equal to inore, save and exit:
+1. Navigate to systemd directory. Run:
+   ```bash copy
+   cd /etc/systemd
+   ```
+2. Open logind configuration file 
+   ```bash copy
+   sudo nano logind.conf
+   ```
+3. Uncomment HandleLidSwitch and make it equal to inore, save and exit
+   ```HandleLidSwitch=ignore```
 
-```HandleLidSwitch=ignore```
-
-Restart the systemd daemon (be aware that this will log you out of Ubuntu) with this command. Run:
-```bash copy
-sudo systemctl restart systemd-logind
-```
+4. Restart the systemd daemon (be aware that this will log you out of Ubuntu) with this command
+   ```bash copy
+   sudo systemctl restart systemd-logind
+   ```
 
 ___
 ## Install Proton VPN
-Download repo. Run:
-```bash copy
-wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb
-```
+1. Download repo. Run:
+   ```bash copy
+   wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb
+   ```
 
-Install repo. Run:
-```bash copy
-sudo dpkg -i ./protonvpn-stable-release_1.0.4_all.deb && sudo apt update
-```
+2. Install repo
+   ```bash copy
+   sudo dpkg -i ./protonvpn-stable-release_1.0.4_all.deb && sudo apt update
+   ```
 
-Check the repo package integrity by checking its checksum. Run:
-```bash copy
-echo "62a9d849835de8a5664cf95329458bf1966780b15cec420bf707b5f7278b9027  protonvpn-stable-release_1.0.4_all.deb" | sha256sum --check -
-```
+3. Check the repo package integrity by checking its checksum
+   ```bash copy
+   echo "62a9d849835de8a5664cf95329458bf1966780b15cec420bf707b5f7278b9027  protonvpn-stable-   release_1.0.4_all.deb" | sha256sum --check -
+   ```
 
-Install ProtonVPN desktop app. Run:
-```bash copy
-sudo apt install proton-vpn-gnome-desktop
-```
+4. Install ProtonVPN desktop app
+   ```bash copy
+   sudo apt install proton-vpn-gnome-desktop
+   ```
 
-Check for updates to ensure you’re running the latest version:
-```bash copy
-sudo apt update && sudo apt upgrade
-```
+6. Check for updates to ensure you’re running the latest version
+   ```bash copy
+   sudo apt update && sudo apt upgrade
+   ```
 
-Linux system tray icon (optional).
-   
-   By default, GNOME doesn’t support tray icons. Enable this functionality. Run:
-```bash copy
-sudo apt install libayatana-appindicator3-1 gir1.2-ayatanaappindicator3-0.1 gnome-shell-extension-appindicator
-```
-Headover to [ProtonVPN](https://account.protonvpn.com/signup "ProtonVPN.com") and Sign-up to a free account.
+7. Linux system tray icon (optional)
+   By default, GNOME doesn’t support tray icons. Enable this functionality
+   ```bash copy
+   sudo apt install libayatana-appindicator3-1 gir1.2-ayatanaappindicator3-0.1 gnome-shell-extension-appindicator
+   ```
+9. Headover to [ProtonVPN](https://account.protonvpn.com/signup "ProtonVPN.com") and Sign-up to a free account.
 
 
 **_Connect to ProtonVPN whenever accessing a web browser on your node._**
@@ -182,26 +179,30 @@ Headover to [ProtonVPN](https://account.protonvpn.com/signup "ProtonVPN.com") an
 
 ___
 ## Install Brave Browser (optional)
-Enter the following commands one at a time. Run:
-```bash copy
-sudo apt install curl
-```
-```bash copy
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-```
-```bash copy
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-```
-```bash copy
-sudo apt update && sudo apt install brave-browser
-```
+1. Enter the following commands one at a time. Run:
+   ```bash copy
+   sudo apt install curl
+   ```
+2. Download keys to keychain
+   ```bash copy
+   sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-      release.s3.brave.com/brave-browser-archive-keyring.gpg
+   ```
+3. Verify  
+   ```bash copy
+   echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+   ```
+4. Update and install 
+   ```bash copy
+   sudo apt update && sudo apt install brave-browser
+   ```
 
 ___
 ## Install Telegram Desktop (optional)
 A quick solution for encrypted files/messages.
-```bash copy
-sudo apt install telegram-desktop
-```
+1. Install Telegram from apt repo. Run:
+   ```bash copy
+   sudo apt install telegram-desktop
+   ```
 ___
 ## Install Bitcoin Core
 
@@ -210,68 +211,79 @@ Run the below commands to install from Source code. [Resource link](https://gith
 Additional video tutorial, for further reference.
 [Canadian Bitcoiners](https://youtu.be/C8i0uJHmUoQ?si=gjiJaak2_b6ZT_CN)
 
-Enter the below commands, one at a time. Run:
+1. Enter the below commands, one at a time. Run:
+   ```bash copy
+   sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
+   ```
+2. Install dependencies
+   ```bash copy
+   sudo apt-get install libevent-dev libboost-dev
+   ```
+3. Install dependencies
+   ```bash copy
+   sudo apt install libsqlite3-dev
+   ```
+4. Install dependencies
+   ```bash copy
+   sudo apt-get install libzmq3-dev
+   ```
+5. Install dependencies
+   ```bash copy
+   sudo apt install systemtap-sdt-dev
+   ```
+6. Install dependencies
+   ```bash copy
+   sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
+   ```
+7. Install dependencies
+   ```bash copy
+   sudo apt install qtwayland5
+   ```
+8. Install dependencies
+   ```bash copy
+   sudo apt-get install libqrencode-dev
+   ```
+9. Intall Git
+   ```bash copy
+   sudo apt-get install git
+   ```
+10. Make src directory and move into it
+   ```bash copy
+   mkdir -p src && cd src
+   ```
+11. Clone the bitcoin github repo
+   ```bash copy
+   git clone https://github.com/bitcoin/bitcoin.git
+   ```
+12. Move into the repo folder
 ```bash copy
-sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
-```
-```bash copy
-sudo apt-get install libevent-dev libboost-dev
-```
-```bash copy
-sudo apt install libsqlite3-dev
-```
-```bash copy
-sudo apt-get install libzmq3-dev
-```
-```bash copy
-sudo apt install systemtap-sdt-dev
-```
-```bash copy
-sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
-```
-```bash copy
-sudo apt install qtwayland5
-```
-```bash copy
-sudo apt-get install libqrencode-dev
-```
-```bash copy
-sudo apt-get install git
-```
-```bash copy
-mkdir -p src && cd src
-```
-```bash copy
-git clone https://github.com/bitcoin/bitcoin.git
-```
-```bash copy
-cd bitcoin
-```
-Check out the most recent release (or whatever version you want to use). You can check what the latest release is by heading over to [Github/bitcoin](https://github.com/bitcoin/bitcoin) scroll down the page and on the right, under the 'Releases' heading, you will see the latest release number stated.
-```bash copy
-git checkout v26.2   
-```
-```bash copy
-./autogen.sh
-```
-```bash copy
-./configure
-```
+   cd bitcoin
+   ```
+13. Check out the most recent release (or whatever version you want to use). You can check what the latest release is by heading over to [Github/bitcoin](https://github.com/bitcoin/bitcoin) scroll down the page and on the right, under the 'Releases' heading, you will see the latest release number stated.
+   ```bash copy
+   git checkout v26.2   
+   ```
+14. Autogen.sh
+   ```bash copy
+   ./autogen.sh
+   ```
+15. Confilgure
+   ```bash copy
+   ./configure
+   ```
+16. This next command will take a very long time, maybe around 1 hour as all of the code gets compiled. Be patient and don't run anything else on the machine while this job is running.
+   ```bash copy
+   make
+   ```
+17. This also takes some time, it will run some tests to check everything has been made correctly, be patient... come back in 15-30 minutes.
+   ```bash copy
+   Make check
+   ```
 
-This next command will take a very long time, maybe around 1 hour as all of the code gets compiled. Be patient and don't run anything else on the machine while this job is running.
-```bash copy
-make
-```
-
-This also takes some time, it will run some tests to check everything has been made correctly, be patient... come back in 15-30 minutes.
-```bash copy
-Make check
-```
-
-This will be quick.
-```bash copy
-sudo make install
-```
+18. This will be quick.
+   ```bash copy
+   sudo make install
+   ```
 
 ### If the above fails
 The other option you have is to install using a binary package. Follow the links below (make sure to verify your download before installing).
