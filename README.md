@@ -391,8 +391,8 @@ ___
    ```
 6. Add the following entries inside the file, save and close
    ```bash copy
-      deb     [arch=amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg]    https://deb.torproject.org/torproject.org jammy main
-      deb-src [arch=<amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg]    https://deb.torproject.org/torproject.org jammy main
+      deb     [arch=amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org jammy main
+      deb-src [arch=<amd64 signed-by=/usr/share/keyrings/deb.torproject.org-keyring.gpg] https://deb.torproject.org/torproject.org jammy main
    ```
 7. Update apt
    ```bash copy
