@@ -354,10 +354,6 @@ Once Bitcoin core is fully synced you will be greeted with a welcome screen aski
    # only connect to Tor hidden services, not even IPv4/IPv6 nodes
    onlynet=onion
 
-   # we won't actually use the bitcoin-core wallet
-   # However, if you use JoinMarket, you do need to set disablewallet=0
-   disablewallet=1
-
    # If running tor, walletbroadcast=0 prevents the node from rebroadcasting transactions without tor.
    walletbroadcast=0
    ```
