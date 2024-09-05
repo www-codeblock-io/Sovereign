@@ -277,7 +277,7 @@ Additional video tutorial, for further reference.
    ```
 17. This also takes some time, it will run some tests to check everything has been made correctly, be patient... come back in 15-30 minutes.
    ```bash copy
-   Make check
+   make check
    ```
 
 18. This will be quick.
@@ -476,7 +476,6 @@ You should now see a list of all the Bitcoin peers that your node is connected t
    ```bash copy
    getnetworkinfo
    ```
-
 2. Scroll up until you see the networks section. Your node is running behind Tor if the 'ipv4' and 'onion' networks have the below settings (there will also be other settings in each network group but they can be ignored):
    ```
    "name": "ipv4",
@@ -512,78 +511,71 @@ https://armantheparman.com/bitcoin-core-and-electrum-personal-server-electrum-wa
 https://armantheparman.com/electrum-server/
 
 ### Download EPS source code and signiture
-Head over to [electrum-personal-server](https://github.com/chris-belcher/electrum-personal-server/releases) and make a note of the latest release version number. At time of writing it is ```0.2.4```, update the below command to the latest version number if this is now out of date. Run:
-```bash copy
-cd ~/Downloads && wget https://github.com/chris-belcher/electrum-personal-server/archive/refs/tags/eps-v0.2.4.tar.gz
-```
-
-Download the file signiture. Run:
-```bash copy
-wget https://github.com/chris-belcher/electrum-personal-server/releases/download/eps-v0.2.4/eps-v0.2.4.tar.gz.asc
-```
-
-Download Chris Belchers public key, there are multiple links on this [page](https://github.com/chris-belcher/electrum-personal-server/releases) for you to manually verify Chris Belchers public key. Run:
-```bash copy
-wget https://github.com/chris-belcher/electrum-personal-server/raw/master/docs/pubkeys/belcher.asc
-```
-
-Import the key to your system keychain. Run:
-```bash copy
-gpg --import belcher.asc
-```
-Verify the source file was signed by Chris Belcher. Run:
-```bash copy
-gpg --verify eps-v0.2.4.tar.gz.asc
-```
-In the Terminal output, you want to see ```Good Signiture from Chris Belcher```, ignore the warning.
+1. Head over to [electrum-personal-server](https://github.com/chris-belcher/electrum-personal-server/releases) and make a note of the latest release version number. At time of writing it is ```0.2.4```, update the below command to the latest version number if this is now out of date. Run:
+   ```bash copy
+   cd ~/Downloads && wget https://github.com/chris-belcher/electrum-personal-server/archive/refs/tags/eps-v0.2.4.tar.gz
+   ```
+2. Download the file signiture
+   ```bash copy
+   wget https://github.com/chris-belcher/electrum-personal-server/releases/download/eps-v0.2.4/eps-v0.2.4.tar.gz.asc
+   ```
+3. Download Chris Belchers public key, there are multiple links on this [page](https://github.com/chris-belcher/electrum-personal-server/releases) for you to manually verify Chris Belchers public key. Run:
+   ```bash copy
+   wget https://github.com/chris-belcher/electrum-personal-server/raw/master/docs/pubkeys/belcher.asc
+   ```
+4. Import the key to your system keychain
+   ```bash copy
+   gpg --import belcher.asc
+   ```
+5. Verify the source file was signed by Chris Belcher
+   ```bash copy
+   gpg --verify eps-v0.2.4.tar.gz.asc
+   ```
+   In the Terminal output, you want to see ```Good Signiture from Chris Belcher```, ignore the warning.
 
 ### Prepare for the build
-Extract the source file, rename and save onto your Desktop, change ```rez``` in the command to your system user name. Run:
-```bash copy
-tar -xvf eps-v0.2.4.tar.gz -C /home/rez/Desktop
-```
-Navigate to Desktop and rename the extracted file to ```eps```. Remember to change the file version number if you downloaded a newer version of EPS. Run:
-```bash copy
-cd ~/Desktop && mv electrum-personal-server-eps-v0.2.4 eps
-```
-Update the package list. Run:
-```bash copy
-sudo apt update
-```
-Install pip3. Run:
-```bash copy
-sudo apt install python3-pip
-```
-Check pip3 was installed.
-```bash copy
-pip3 --version
-```
-Upgrade pip3 to the latest version. Run:
-```bash copy
-sudo pip3 install --upgrade pip
-```
+1. Extract the source file, rename and save onto your Desktop, change ```rez``` in the command to your system user name. Run:
+   ```bash copy
+   tar -xvf eps-v0.2.4.tar.gz -C /home/rez/Desktop
+   ```
+2. Navigate to Desktop and rename the extracted file to ```eps```. Remember to change the file version number if you downloaded a newer version of EPS.
+   ```bash copy
+   cd ~/Desktop && mv electrum-personal-server-eps-v0.2.4 eps
+   ```
+3. Update the package list
+   ```bash copy
+   sudo apt update
+   ```
+4. Install pip3
+   ```bash copy
+   sudo apt install python3-pip
+   ```
+5. Check pip3 was installed
+   ```bash copy
+   pip3 --version
+   ```
+6. Upgrade pip3 to the latest version
+   ```bash copy
+   sudo pip3 install --upgrade pip
+   ```
 ### Complete EPS installation
-Navigate into the EPS directory. Run:
-```bash copy
-cd ~/Desktop/eps
-```
+1. Navigate into the EPS directory. Run:
+   ```bash copy
+   cd ~/Desktop/eps
+   ```
+2. Complete installation by running the below command. Note: do not use ```sudo``` and make sure to leave in the final ```.```  
+   ```bash copy
+   pip3 install --user . 
+   ```
+   Ignore the Terminal warning about PATH, a PATH veriable will be added the next time you log out and back into the laptop again.
 
-Complete installation by running the below command. Note: do not use ```sudo``` and make sure to leave in the final ```.```  
-```bash copy
-pip3 install --user . 
-```
-
-Ignore the Terminal warning about PATH, a PATH veriable will be added the next time you log out and back into the laptop again.
-
-Clean up Downloads folder, remove downloaded files. Run:
-```bash copy
-cd ~/Downloads && rm belcher.asc eps-v0.2.4.tar.gz eps-v0.2.4.tar.gz.asc
-```
+3. Clean up Downloads folder, remove downloaded files
+   ```bash copy
+   cd ~/Downloads && rm belcher.asc eps-v0.2.4.tar.gz eps-v0.2.4.tar.gz.asc
+   ```
 
 ## Don’t run EPS yet!
-## First complete these two tasks:
-- Wait for Bitcoin Core to fully synchronise.
-- Install Electrum and create a test wallet.
+Wait for Bitcoin Core to fully synchronise. Then follow the below instructions to Install Electrum and create a test wallet. After that we can edit EPS config.ini file and then run EPS for the first time.
 
 ---
 ## Install Electrum
