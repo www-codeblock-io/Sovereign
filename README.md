@@ -642,7 +642,7 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
       ```
 4. Open config.ini file
    ```bash copy
-   nano config.ini
+   nano config
    ```
 5. Edit four fields in Electrums config.ini file, to match the below (leave the other fields untouched). 
    - auto_connect: false
