@@ -84,8 +84,8 @@ Now open the SHA256SUMS.txt file in your Downloads folder and compare the SHA256
    ```bash copy
    sha256sum -c SHA256SUMS 2>&1 | grep OK
    ```
-The output you want will look similar to the following:
-```ubuntu-22.04.4-desktop-amd64.iso: OK```
+   The output you want will look similar to the following:
+      ```ubuntu-22.04.4-desktop-amd64.iso: OK```
 
 
 ### Install OS:
@@ -302,7 +302,7 @@ Plug in your external 2T SSD drive.
    ```bash copy
    bitcoin-qt
    ``` 
-You will be greated with the Bitcoin Core Welcome screen, it is here that we will let Bitcoin Core know where our external SSD drive is located.
+   You will be greated with the Bitcoin Core Welcome screen, it is here that we will let Bitcoin Core know where our external SSD drive is located.
 
 2. Select 'Use a custom data directory'.
 3. Click the three dots to the right and navigate to your external SSD drive location. Mine was located at ```/media/rez/T7 Shield```.
@@ -315,9 +315,9 @@ If you have trouble locating your external SSD Drive, try the following, open a 
    ```bash copy
    cd /media && dir
    ```
-You should see your user directory listed, ```cd``` into this dir which should contain your external drive.
+   You should see your user directory listed, ```cd``` into this dir which should contain your external drive.
 
-Leave the laptop power plugged in and wait for the Bitcoin blockchain to download, Bitcoin Core will show a % complete and a rough estimate of how much time remains until completion. Once the download has completed you will be greated with a Welcome screen and a prompt to create a new wallet.
+6. Leave the laptop power plugged in and wait for the Bitcoin blockchain to download, Bitcoin Core will show a % complete and a rough estimate of how much time remains until completion. Once the download has completed you will be greated with a Welcome screen and a prompt to create a new wallet.
 
 ### Allow incoming connections
 Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. If you do not do this then EPS and electrum will not be able to connect to your node.
@@ -328,13 +328,12 @@ You will need your Laptops MAC address and IP address. You can retrieve these fr
    ```bash copy
    ip link
    ```
-You can find the MAC address of your device at the last line after ```link/ether=##:##:##:##:##:##```.
+   You can find the MAC address of your device at the last line after ```link/ether=##:##:##:##:##:##```.
 
 2. Print your IP address to Terminal
    ```bash copy
    hostname -I
    ```
-
 3. Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
 
 ### Edit Bitcoin core config file. Run:
@@ -469,7 +468,7 @@ If you delete this file, the next time bitcoind loads it will generate a new key
 1. Start Bitcoin Core GUI.
 2. Once loaded enter the ```Network``` screen by pressing CTL+N.
 3. Click on the ```Peers``` tab.
-You should now see a list of all the Bitcoin peers that your node is connected too. Under the ```Network``` column all the row values should say ```Onion```, meaning you are only connected to peers over the onion ntwork. 
+   You should now see a list of all the Bitcoin peers that your node is connected too. Under the ```Network``` column all the row values should say ```Onion```, meaning you are only connected to    peers over the onion ntwork. 
 
 ### Verify Bitcoin Core is running behind Tor, option: 2
 1. Check Bitcoin Core is now running behind Tor, from the Bitcoin Core GUI click on 'Window', 'Consol', then type the below command into the consol shell after the > and press enter. Run:
@@ -491,7 +490,6 @@ You should now see a list of all the Bitcoin peers that your node is connected t
 
 ### Verify Bitcoin Core is running behind Tor, option: 3
 1. For the extra security concious, you can also check the debug.log file in the Bitcoin data-directory.
-
    At some point during startup in the bitcoin/debug.log file you will see:
    ```tor: Got service ID XXXXXXXXXXX, advertising service XXXXXXXXXXX.onion:8333```
 
@@ -502,7 +500,7 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
    ```bash copy
    nano debug.log
    ```
-You will see a lot of the actions listed that the bitcoin core software completed during start-up and shut-down, including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor netork using your Tor encryption key.
+   You will see a lot of the actions listed that the bitcoin core software completed during start-up and shut-down, including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor netork using your Tor encryption key.
 
 ---
 ## Install EPS (Electrum Private Server)
@@ -579,49 +577,46 @@ Wait for Bitcoin Core to fully synchronise. Then follow the below instructions t
 
 ---
 ## Install Electrum
-Download ThomasV public key and import into keychain. Run:
-```bash copy
-cd ~/Downloads && wget https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc && gpg --import ThomasV.asc
-```
-
-[Resource link](https://electrum.org/#download)
+1. Download ThomasV public key and import into keychain. Run:
+   ```bash copy
+   cd ~/Downloads && wget https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc && gpg --import ThomasV.asc
+   ```
+   [Resource link](https://electrum.org/#download)
 
 ### Installation from Python sources
-Install dependencies. Run:
-```bash copy
-sudo apt-get install python3-pyqt5 libsecp256k1-dev python3-cryptography
-```
-Download package. Run:
-```bash copy
-wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz
-```
-Verify signitures. Run:
-```bash copy
-wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz.asc
+1. Install dependencies. Run:
+   ```bash copy
+   sudo apt-get install python3-pyqt5 libsecp256k1-dev python3-cryptography
+   ```
+2. Download package
+   ```bash copy
+   wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz
+   ```
+3. Verify signitures. Run:
+   ```bash copy
+   wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz.asc
 gpg --verify Electrum-4.5.5.tar.gz.asc
-```
-Install with PIP. Run:
-```bash copy
-sudo apt-get install python3-setuptools python3-pip
+   ```
+4. Install with pip
+   ```bash copy
+   sudo apt-get install python3-setuptools python3-pip
 python3 -m pip install --user Electrum-4.5.5.tar.gz
-```
-Clean up Downloads folder, remove downloaded files. Run:
-```bash copy
-cd ~/Downloads && rm Electrum-4.5.5.tar.gz Electrum-4.5.5.tar.gz.asc ThomasV.asc
-```
+   ```
+5. Clean up Downloads folder, remove downloaded files
+   ```bash copy
+   cd ~/Downloads && rm Electrum-4.5.5.tar.gz Electrum-4.5.5.tar.gz.asc ThomasV.asc
+   ```
 ### Create a Test wallet
 We will set up a test (hot) wallet in Electrum so we can make sure all of our config settings are correct before actually loading up one of our wallets that contains funds.
-Run electrum. Run:
-```bash copy
-electrum
-```
-1. At the welcome screen. Click ```Next```.
-2. Rename ```default_wallet``` to ```test_wallet``` (I think this name is less confusing). Click ```Next```.                                                                        
-3. Select ```I already have a seed```. Click ```Next```.
-4. Head over to [CoinPlate](https://getcoinplate.com/bip39-seed-phrase-mnemonics-generator-offline-online-tool/?v=2a6039655313 "CoinPlate's Homepage") and generate a Bip39 24 word seed phrase .
-
-Copy and save the seed phrase to a note on your desktop. Don't worry about security as this is just a simple test wallet for testing configuration settings.
-
+1. Run electrum. Run:
+   ```bash copy
+   electrum
+   ```
+2. At the welcome screen. Click ```Next```.
+3. Rename ```default_wallet``` to ```test_wallet``` (I think this name is less confusing). Click ```Next```.                                                                        
+4. Select ```I already have a seed```. Click ```Next```.
+5. Head over to [CoinPlate](https://getcoinplate.com/bip39-seed-phrase-mnemonics-generator-offline-online-tool/?v=2a6039655313 "CoinPlate's Homepage") and generate a Bip39 24 word seed phrase .
+   Copy and save the seed phrase to a note on your desktop. Don't worry about security as this is just a simple test wallet for testing configuration settings.
 6. Copy and paste the seed phase into the Electrum box that is displayed.
 7. Click ```Options```, and select ```Bip39 seed```. Click ```OK```. Ignore the warning and click ```Next```.
 8. Keep ```native segwit (p2wpkh)``` selected and click ```Next```.
@@ -629,29 +624,25 @@ Copy and save the seed phrase to a note on your desktop. Don't worry about secur
 10. Electrum - enable update check. Click ```No```. We will always verify and update our software ourselves.
 
 ### Export your ```test_wallet``` public key
-In Electrum, click on the ```Wallet``` tab, then ```Information```. Copy and save the long zpub key displayed. We will need to enter this public key into the EPS config.ini file later.
+1. In Electrum, click on the ```Wallet``` tab, then ```Information```. Copy and save the long zpub key displayed. We will need to enter this public key into the EPS config.ini file later.
 
 ---
 ## Configure Electrum 
 1. Configure Electrum to only connect to your personal Bitcoin node:
-   
       Click ```Tools``` tab then ```Network```. Unselect ```Select server automatically```. And edit ```Server``` to read: ```127.0.0.1:50002```
 
 2. Change Electrum base unit:
-
       Click ```Tools``` tab then ```Preferences```. Change Base unit from mBTC to BTC, then shut down Electrum.
 
-3. Edit Electrum config file:
-
-   Navigate to the hidden Electrum directory (this directory is only created once Electrum is run for the first time). Run:
-   ```bash copy
-   cd ~/.electrum
-   ```
-   Open config.ini file. Run:
+3. Edit Electrum config file. Navigate to the hidden Electrum directory (this directory is only created once Electrum is run for the first time).
+      ```bash copy
+      cd ~/.electrum
+      ```
+4. Open config.ini file
    ```bash copy
    nano config.ini
    ```
-   Edit four fields in Electrums config.ini file, to match the below (leave the other fields untouched). 
+5. Edit four fields in Electrums config.ini file, to match the below (leave the other fields untouched). 
    - auto_connect: false
    - check_updates: false
    - oneserver: true
@@ -680,39 +671,39 @@ The EPS config.ini file will open and you will see that the file is divided into
    - ```[watch-only-addresses]```
    - ```[logging]```
 
-1. Under ```[master-public-keys]``` add any wallet public key (xpub, ypub, zpub) that you would like to have access too. EPS is Electrums link to your Bitcoin node, If you do not add the wallet public key (xpub, ypub, zpub) to this EPS config.ini file then Electrum will not use your node to pull transaction information from your node. Any wallet that you want to use with Electrum needs the public key added to this EPS config.ini file.
+4. Under ```[master-public-keys]``` add any wallet public key (xpub, ypub, zpub) that you would like to have access too. EPS is Electrums link to your Bitcoin node, If you do not add the wallet public key (xpub, ypub, zpub) to this EPS config.ini file then Electrum will not use your node to pull transaction information from your node. Any wallet that you want to use with Electrum needs the public key added to this EPS config.ini file.
 
-2. Under the ```[bitcoin-rpc]``` heading, add the path to your external SSD drive in the ```datadir``` section :
+5. Under the ```[bitcoin-rpc]``` heading, add the path to your external SSD drive in the ```datadir``` section :
 
    ```datadir = /media/rez/T7 Shield```
 
-The above path is to my SSD drive, you will need to change the user name ```rez``` to whatever your user name is and also the name of your SSD drive.
+   The above path is to my SSD drive, you will need to change the user name ```rez``` to whatever your user name is and also the name of your SSD drive.
 
-3. Under the ```[watch-only-addresses]``` heading, add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun. 
-
+6. Under the ```[watch-only-addresses]``` heading, add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun.
+   
    ```satoshi_address = 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa```
 
    ```huobi_address = 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP```
 
    ```mr100_address = 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP```
 
-4. Save and exit out of the config.ini file.
-5. Logout, and log in again.
-6. Navigate to the EPS directory. Run:
+7. Save and exit out of the config.ini file.
+8. Logout, and log in again.
+9. Navigate to the EPS directory. Run:
    ```bash copy
    cd ~/Desktop/eps
    ```
-7. Run the EPS server. The first time the server is run it will import all configured addresses as watch-only into the Bitcoin node, and then exit. Run:
+10. Run the EPS server. The first time the server is run it will import all configured addresses as watch-only into the Bitcoin node, and then exit.
    ```bash copy
    electrum-personal-server config.ini
    ```
-8. If the wallets contain historical transactions you need to run a rescan to pull all of the transaction data. Run:
+11. If the wallets contain historical transactions you need to run a rescan to pull all of the transaction data.
    ```bash copy
    electrum-personal-server --rescan config.ini
    ```
-   It will ask for the earliest wallet creation date. Enter 1 to start from block height 1, and y to confirm. The first          initial scan can take a while, but a pop up box will be displayed with a % completion displayed.
+   It will ask for the earliest wallet creation date. Enter 1 to start from block height 1, and y to confirm. The first initial scan can take a while, but a pop up box will be displayed with a % completion displayed.
 
-   Once the server has finished scanning it will gracefully shut down on it's own, so you can leave the server to do it's job    and come back in an hour or so.
+   Once the server has finished scanning it will gracefully shut down on it's own, so you can leave the server to do it's job and come back in an hour or so.
    
 ---
 # Running Bitcoin-Core, EPS and Electrum.
@@ -723,11 +714,11 @@ When using Electrum connected to your own personal Bitcoin node via EPS (electru
    ```bash copy
    bitcoin-qt
    ```
-3. Start EPS. Run:
+3. Start EPS
    ```bash copy
    cd ~/Desktop/eps && electrum-personal-server config.ini
    ```
-4. Start Electrum. Run:
+4. Start Electrum
    ```bash copy
    electrum
    ```
