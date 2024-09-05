@@ -310,7 +310,21 @@ Leave the laptop power plugged in and wait for the Bitcoin blockchain to downloa
 
 ### Allow incoming connections
 Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. If you do not do this then EPS and electrum will not be able to connect to your node.
-[Instructions](https://bitcoin.org/en/full-node#network-configuration)
+
+You will need your Laptops MAC address and IP address. You can retrieve these from the Terminal. 
+
+To print your MAC address. Run:
+```bash copy
+ip link
+```
+You can find the MAC address of your device at the last line after ```link/ether=##:##:##:##:##:##```.
+
+To print your IP address. Run:
+```bash copy
+hostname -I
+```
+
+Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
 
 ### Edit Bitcoin core config file. Run:
 Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  We won't actually use the bitcoin-core wallet so we will ignore this prompt and proceed to edit the bitcoin.config file.
