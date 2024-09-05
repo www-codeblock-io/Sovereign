@@ -598,7 +598,7 @@ Wait for Bitcoin Core to fully synchronise. Then follow the below instructions t
    ```
 3. Verify signitures
    ```bash copy
-   wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz.asc gpg --verify Electrum-4.5.5.tar.gz.asc
+   wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz.asc && gpg --verify Electrum-4.5.5.tar.gz.asc
    ```
 4. Install with pip
    ```bash copy
