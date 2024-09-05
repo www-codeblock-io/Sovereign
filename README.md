@@ -587,28 +587,27 @@ Wait for Bitcoin Core to fully synchronise. Then follow the below instructions t
    ```
    [Resource link](https://electrum.org/#download)
 
-### Installation from Python sources
-1. Install dependencies. Run:
+2. Install dependencies. Run:
    ```bash copy
    sudo apt-get install python3-pyqt5 libsecp256k1-dev python3-cryptography
    ```
-2. Download package
+3. Download package
    ```bash copy
    wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz
    ```
-3. Verify signitures
+4. Verify signitures
    ```bash copy
    wget https://download.electrum.org/4.5.5/Electrum-4.5.5.tar.gz.asc && gpg --verify Electrum-4.5.5.tar.gz.asc
    ```
-4. Install with pip
+5. Install with pip
    ```bash copy
    sudo apt-get install python3-setuptools python3-pip && python3 -m pip install --user Electrum-4.5.5.tar.gz
    ```
-5. Clean up Downloads folder, remove downloaded files
+6. Clean up Downloads folder, remove downloaded files
    ```bash copy
    cd ~/Downloads && rm Electrum-4.5.5.tar.gz Electrum-4.5.5.tar.gz.asc ThomasV.asc
    ```
-6. Do a system Restart (shut down and restart your Laptop).
+7. Do a system Restart (shut down and restart your Laptop).
    
 ### Create a Test wallet
 We will set up a test (hot) wallet in Electrum so we can make sure all of our config settings are correct before actually loading up one of our wallets that contains funds.
