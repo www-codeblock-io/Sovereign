@@ -606,8 +606,10 @@ Wait for Bitcoin Core to fully synchronise. Then follow the below instructions t
    ```bash copy
    cd ~/Downloads && rm Electrum-4.5.5.tar.gz Electrum-4.5.5.tar.gz.asc ThomasV.asc
    ```
-7. Do a system Restart (shut down and restart your Laptop).
-   
+7. Do a system Restart
+   ```bash copy
+   sudo shutdown -r now
+   ```   
 ### Create a Test wallet
 We will set up a test (hot) wallet in Electrum so we can make sure all of our config settings are correct before actually loading up one of our wallets that contains funds.
 1. Run electrum. Run:
