@@ -343,7 +343,7 @@ Once Bitcoin core is fully synced you will be greeted with a welcome screen aski
 
 2. Enter the below text, save and exit
    ```bash copy
-   # server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from EPS). txindex=1 allows any    transaction to be looked up by Bitcoin Core, not just your own wallet.
+   # server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from EPS). txindex=1 allows any transaction to be looked up by Bitcoin Core, not just your own wallet.
    server=1
    txindex=1
    listen=1
