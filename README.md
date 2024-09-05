@@ -463,7 +463,10 @@ The above configuration sets up an automatic hidden service that is initiated by
 
 If you delete this file, the next time bitcoind loads it will generate a new key file and xxxxxxxx.onion address.  For absolute security delete your ```onion_private_key``` file at each reboot or some frequent interval.
 
-7. Close the Bitcon Core GUI by clicking on the ```X``` in the top right hand corner.
+7. Do a system Restart
+   ```bash copy
+   sudo shutdown -r now
+   ```
 
 ### Verify Bitcoin Core is running behind Tor, option: 1
 1. Start Bitcoin Core GUI.
@@ -533,48 +536,48 @@ https://armantheparman.com/electrum-server/
    In the Terminal output, you want to see ```Good Signiture from Chris Belcher```, ignore the warning.
 
 ### Prepare for the build
-1. Extract the source file, rename and save onto your Desktop, change ```rez``` in the command to your system user name. Run:
+6. Extract the source file, rename and save onto your Desktop, change ```rez``` in the command to your system user name. Run:
    ```bash copy
    tar -xvf eps-v0.2.4.tar.gz -C /home/rez/Desktop
    ```
-2. Navigate to Desktop and rename the extracted file to ```eps```. Remember to change the file version number if you downloaded a newer version of EPS.
+7. Navigate to Desktop and rename the extracted file to ```eps```. Remember to change the file version number if you downloaded a newer version of EPS.
    ```bash copy
    cd ~/Desktop && mv electrum-personal-server-eps-v0.2.4 eps
    ```
-3. Update the package list
+8. Update the package list
    ```bash copy
    sudo apt update
    ```
-4. Install pip3
+9. Install pip3
    ```bash copy
    sudo apt install python3-pip
    ```
-5. Check pip3 was installed
+10. Check pip3 was installed
    ```bash copy
    pip3 --version
    ```
-6. Upgrade pip3 to the latest version
+11. Upgrade pip3 to the latest version
    ```bash copy
    sudo pip3 install --upgrade pip
    ```
 ### Complete EPS installation
-7. Navigate into the EPS directory. Run:
+12. Navigate into the EPS directory. Run:
    ```bash copy
    cd ~/Desktop/eps
    ```
-8. Complete installation by running the below command. Note: do not use ```sudo``` and make sure to leave in the final ```.```  
+13. Complete installation by running the below command. Note: do not use ```sudo``` and make sure to leave in the final ```.```  
    ```bash copy
    pip3 install --user . 
    ```
    Ignore the Terminal warning about PATH, a PATH veriable will be added the next time you log out and back into the laptop again.
 
-9. Clean up Downloads folder, remove downloaded files
+14. Clean up Downloads folder, remove downloaded files
    ```bash copy
    cd ~/Downloads && rm belcher.asc eps-v0.2.4.tar.gz eps-v0.2.4.tar.gz.asc
    ```
 
 ## Don’t run EPS yet!
-Wait for Bitcoin Core to fully synchronise. Then follow the below instructions to Install Electrum and create a test wallet. After that we can edit EPS config.ini file and then run EPS for the first time.
+Follow the below instructions to Install Electrum and create a test wallet. After that we can edit EPS config.ini file and then run EPS for the first time.
 
 ---
 ## Install Electrum
@@ -625,7 +628,7 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
 10. Electrum - enable update check. Click ```No```. We will always verify and update our software ourselves.
 
 ### Export your ```test_wallet``` public key
-1. In Electrum, click on the ```Wallet``` tab, then ```Information```. Copy and save the long zpub key displayed. We will need to enter this public key into the EPS config.ini file later.
+11. In Electrum, click on the ```Wallet``` tab, then ```Information```. Copy and save the long zpub key displayed. We will need to enter this public key into the EPS config.ini file later.
 
 ---
 ## Configure Electrum 
@@ -694,11 +697,16 @@ The EPS config.ini file will open and you will see that the file is divided into
    ```bash copy
    cd ~/Desktop/eps
    ```
-10. Run the EPS server. The first time the server is run it will import all configured addresses as watch-only into the Bitcoin node, and then exit.
+## Run EPS for the first time
+Before running EPS for the first time make sure you can answer yes to the following questions:
+- You have created a new Bitcoin Core Wallet.
+- Bitcoin Core is fully synced & running.
+
+1. If you answered yes to the above two questions then you can now Run the EPS server. The first time the server is run it will import all configured addresses as watch-only into the Bitcoin node, and then exit.
    ```bash copy
    electrum-personal-server config.ini
    ```
-11. If the wallets contain historical transactions you need to run a rescan to pull all of the transaction data.
+2. If the wallets contain historical transactions you need to run a rescan to pull all of the transaction data.
    ```bash copy
    electrum-personal-server --rescan config.ini
    ```
