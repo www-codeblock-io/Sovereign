@@ -319,7 +319,7 @@ From the Bitcoin Core GUI click on ```Settings```, ```Options```, then ```Open C
 
 Enter the below text, save and exit:
 ```bash copy
-# server=1 (RBS) needs to be on for EPS to share data/commnuicate with Bitcoin Core. txindex=1 allows any transaction to be looked up by Bitcoin Core, not just your own wallet.
+# server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from EPS). txindex=1 allows any transaction to be looked up by Bitcoin Core, not just your own wallet.
 server=1
 txindex=1
 listen=1
