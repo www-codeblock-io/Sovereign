@@ -1,4 +1,5 @@
-# server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from E>
+# server=1, this tells Bitcoin to accept JSON-RPC commands 
+# (such as ones from Electrum Personal Server
 server=1
 txindex=1
 listen=1
