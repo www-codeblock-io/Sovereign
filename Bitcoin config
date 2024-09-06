@@ -1,6 +1,8 @@
 # Bitcoin Core configuration file: bitcoin.config
 
-# server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from E>
+# server=1, this tells Bitcoin to accept JSON-RPC commands 
+# (such as ones from EPS). txindex=1 allows any transaction 
+# to be looked up by Bitcoin Core, not just your own wallet.
 server=1
 txindex=1
 listen=1
@@ -8,8 +10,10 @@ listen=1
 proxy=127.0.0.1:9050
 bind=127.0.0.1
 
-# only connect to Tor hidden services, not even IPv4/IPv6 nodes
+# only connect to Tor hidden services, 
+# not even IPv4/IPv6 nodes
 onlynet=onion
 
-# If running tor, walletbroadcast=0 prevents the node from rebroadcasting trans>
+# If running tor, walletbroadcast=0 prevents the node from 
+#rebroadcasting transactions without tor.
 walletbroadcast=0
