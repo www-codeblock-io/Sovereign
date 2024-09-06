@@ -1,4 +1,4 @@
-# Bitcoin Core config: bitcoin.config
+# Bitcoin Core configuration file: bitcoin.config
 
 # server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from E>
 server=1
