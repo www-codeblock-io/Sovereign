@@ -208,6 +208,9 @@ ___
 
 Run the below commands to install from Source code. [Resource link](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md "Github.com/bitcoin").
 
+Building DBD for legacy wallet use
+https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md#berkeley-db
+
 Additional video tutorial, for further reference.
 [Canadian Bitcoiners](https://youtu.be/C8i0uJHmUoQ?si=gjiJaak2_b6ZT_CN)
 
