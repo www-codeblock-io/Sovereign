@@ -732,3 +732,24 @@ When using Electrum connected to your own personal Bitcoin node via EPS (electru
    electrum
    ```
 Now interact with your wallet as usual but with the peace of mind that you are connected to your own node rnning behind Tor.
+
+
+# Configurations issues
+install net-tools to check incoming/outgoing port traffic
+```bash copy
+sudo apt install net-tools
+```
+
+Check what IP and port Bitcoin is listening to
+```bash copy
+sudo netstat --ip -lpa|grep bitcoin
+```
+Start Bitcoind
+```bash copy
+bitcoind -datadir=/media/rez/T7\ Shield
+```
+Stop Bitcoind
+```bash copy
+bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+```
+
