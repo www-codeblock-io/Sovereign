@@ -33,3 +33,8 @@ Create a wallet dedicated to EPS
 ```bash copy
 bitcoin-cli -datadir=/media/rez/T7\ Shield createwallet electrumpersonalserver true true "" false false true
 ```
+
+To add deprecated wallet functionality
+```bash copy
+deprecatedrpc=create_bdb
+```
