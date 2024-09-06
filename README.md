@@ -293,9 +293,24 @@ The other option you have is to install using a binary package. Follow the links
 
 Download Bitcoin Core
 [Link](https://bitcoincore.org/en/download/ "Bitcoincore.org")
+Head over to bitcoincore.org and:
+- Download Linux(tgz) 64 bit
+- Click on ```Linux verification instructions``` follow theses instructions to verify your download.
+
+Unzip the bitcoin folder
+```bash copy
+tar xzf bitcoin-27.1-x86_64-linux-gnu.tar.gz
+```
+Install bitcoin core
+```bash copy
+sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
+```
 
 Install instructions
 [Link](https://bitcoin.org/en/full-node#linux-instructions "Bitcoin.org")
+
+
+
 
 ---
 ## Run Bitcoin Core (start initial blockchain download)
