@@ -336,11 +336,16 @@ If you have trouble locating your external SSD Drive, try the following, open a 
    You should see your user directory listed, ```cd``` into this dir which should contain your external drive.
 
 6. Leave the laptop power plugged in and wait for the Bitcoin blockchain to download, Bitcoin Core will show a % complete and a rough estimate of how much time remains until completion.
-7. Once the download has completed you will be greated with a Welcome screen and a prompt to create a new wallet. We will create a wallet using bitcoind with bitcoin-cli commands so shut down for now. Run:
-   ```bash copy
-   
 
-### Allow incoming connections
+
+---
+## Configure Bitcoin Core
+1. Once the download has completed you will be greated with a Welcome screen and a prompt to create a new wallet. We will create a wallet using bitcoind with bitcoin-cli commands so shut down for now. Run:
+   ```bash copy
+   bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+   ```
+
+### Allow incoming connections (optional but recommended)
 Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. If you do not do this then EPS and electrum will not be able to connect to your node.
 
 You will need your Laptops MAC address and IP address. You can retrieve these from the Terminal. 
@@ -358,7 +363,7 @@ You will need your Laptops MAC address and IP address. You can retrieve these fr
 3. Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
 
 ### Edit Bitcoin core config file. Run:
-Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  We won't actually use the bitcoin-core wallet so we will ignore this prompt and proceed to edit the bitcoin.config file.
+Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  We need to edit the config file first so ignore this prompt and open Bitcoin Core config file.
 
 1. From the Bitcoin Core GUI click on ```Settings```, ```Options```, then ```Open Configuration File```.
 
@@ -385,8 +390,25 @@ Once Bitcoin core is fully synced you will be greeted with a welcome screen aski
    # using bitcoin-cli createwallet electrumpersonalserver
    deprecatedrpc=create_bdb
    ```
-
-3. You can now close Bitcoin Core by either clickig on the ```X``` or by closing the terminal window where you run the original ```bitcoin-qt``` commmand.
+   
+3. Now shut down Bitcoin Core so that the config changes we made can be applied. Click on the ```X``` in the top right hand corner. Or enter the below command in any Terminal window:
+   ```bash copy
+   bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+   ```
+     
+### Create a Bitcoin Core wallet for EPS to use.
+1. Start bitcoind
+   ```bash copy
+   bitcoind -datadir=/media/rez/T7\ Shield
+   ```
+2. Create a legacy bitcoin wallet called 'electrumpersonalserver'
+   ```bash copy
+   bitcoin-cli -datadir=/media/rez/T7\ Shield createwallet electrumpersonalserver true true "" false false true
+   ```
+3. You can now close Bitcoin Core by running the below command in any teminal window.
+   ```bash copy
+   bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+   ```
 
 ___
 ## Install Tor
