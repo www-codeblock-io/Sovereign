@@ -336,7 +336,9 @@ If you have trouble locating your external SSD Drive, try the following, open a 
    You should see your user directory listed, ```cd``` into this dir which should contain your external drive.
 
 6. Leave the laptop power plugged in and wait for the Bitcoin blockchain to download, Bitcoin Core will show a % complete and a rough estimate of how much time remains until completion.
-7. Once the download has completed you will be greated with a Welcome screen and a prompt to create a new wallet. Create a new wallet but do not select ```encryption```, leave the wallet unencrypted.
+7. Once the download has completed you will be greated with a Welcome screen and a prompt to create a new wallet. We will create a wallet using bitcoind with bitcoin-cli commands so shut down for now. Run:
+   ```bash copy
+   
 
 ### Allow incoming connections
 Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. If you do not do this then EPS and electrum will not be able to connect to your node.
