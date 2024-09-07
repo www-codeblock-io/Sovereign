@@ -18,13 +18,17 @@ Install net-tools to check incoming/outgoing port traffic
 ```bash copy
 sudo apt install net-tools
 ```
+Open Bitcoin config
+```bash copy
+cd /media/rez/T7\ Shield && nano bitcoin.conf
+```
 Open EPS config
 ```bash copy
 cd ~/Desktop/eps && nano config.ini
 ```
-Open Bitcoin config
+Open Electrum config
 ```bash copy
-cd /media/rez/T7\ Shield && nano bitcoin.conf
+cd ~/.elctrum && nano config
 ```
 
 ---
