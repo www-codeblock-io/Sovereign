@@ -1,11 +1,22 @@
 # Configurations issues
-install net-tools to check incoming/outgoing port traffic
+Start Bitcoind
 ```bash copy
-sudo apt install net-tools
+bitcoind -datadir=/media/rez/T7\ Shield
 ```
 Start EPS
 ```bash copy
 cd ~/Desktop/eps && electrum-personal-server config.ini
+```
+Stop Bitcoind
+```bash copy
+bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+```
+```bash copy
+sudo shutdown -r now
+```
+Install net-tools to check incoming/outgoing port traffic
+```bash copy
+sudo apt install net-tools
 ```
 Open EPS config
 ```bash copy
@@ -21,23 +32,11 @@ Check what IP and port Bitcoin is listening to
 ```bash copy
 sudo netstat --ip -lpa|grep bitcoin
 ```
-Start Bitcoind
-```bash copy
-bitcoind -datadir=/media/rez/T7\ Shield
-```
-Stop Bitcoind
-```bash copy
-bitcoin-cli -datadir=/media/rez/T7\ Shield stop
-```
 Create a wallet dedicated to EPS
 ```bash copy
 bitcoin-cli -datadir=/media/rez/T7\ Shield createwallet electrumpersonalserver true true "" false false true
 ```
-
 To add deprecated wallet functionality
 ```bash copy
 deprecatedrpc=create_bdb
-```
-```bash copy
-sudo shutdown -r now
 ```
