@@ -38,3 +38,6 @@ To add deprecated wallet functionality
 ```bash copy
 deprecatedrpc=create_bdb
 ```
+```bash copy
+sudo shutdown -r now
+```
