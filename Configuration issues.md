@@ -1,4 +1,5 @@
 # Configurations issues
+## Start/Stop
 Start Bitcoind
 ```bash copy
 bitcoind -datadir=/media/rez/T7\ Shield
@@ -14,10 +15,8 @@ bitcoin-cli -datadir=/media/rez/T7\ Shield stop
 ```bash copy
 sudo shutdown -r now
 ```
-Install net-tools to check incoming/outgoing port traffic
-```bash copy
-sudo apt install net-tools
-```
+---
+## Configs
 Open Bitcoin config
 ```bash copy
 cd /media/rez/T7\ Shield && nano bitcoin.conf
@@ -32,6 +31,11 @@ cd ~/.elctrum && nano config
 ```
 
 ---
+## Other settings
+Install net-tools to check incoming/outgoing port traffic
+```bash copy
+sudo apt install net-tools
+```
 Check what IP and port Bitcoin is listening to
 ```bash copy
 sudo netstat --ip -lpa|grep bitcoin
