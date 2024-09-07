@@ -287,8 +287,11 @@ Additional video tutorial, for further reference.
    ```bash copy
    sudo make install
    ```
+### Build Berkeley DB 4.8
+EPS requires you to create a legacy Bitcoin Core wallet. This can only be done by downgrading the Berkely DB installation to version 4.8.
+https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md#berkeley-db
 
-### If the above fails
+### If the above Bitcoin Core install fails
 The other option you have is to install using a binary package. Follow the links below (make sure to verify your download before installing).
 
 Download Bitcoin Core
