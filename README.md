@@ -730,9 +730,11 @@ The EPS config.ini file will open and you will see that the file is divided into
 
    ```datadir = /media/rez/T7 Shield```
 
-   The above path is to my SSD drive, you will need to change the user name ```rez``` to whatever your user name is and also the name of your SSD drive.
+6. Also under the ```[bitcoin-rpc]``` heading, add the name of the Bitcoin Core wallet we created specifically for EPS:
 
-6. Under the ```[watch-only-addresses]``` heading, add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun.
+   ```wallet_filename = electrumpersonalserver```
+
+7. Under the ```[watch-only-addresses]``` heading, add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun.
    
    ```satoshi_address = 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa```
 
@@ -740,9 +742,9 @@ The EPS config.ini file will open and you will see that the file is divided into
 
    ```mr100_address = 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP```
 
-7. Save and exit out of the config.ini file.
-8. Logout, and log in again.
-9. Navigate to the EPS directory. Run:
+8. Save and exit out of the config.ini file.
+9. Logout, and log in again.
+10. Navigate to the EPS directory. Run:
    ```bash copy
    cd ~/Desktop/eps
    ```
