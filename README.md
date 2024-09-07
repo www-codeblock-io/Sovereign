@@ -362,7 +362,9 @@ Once Bitcoin core is fully synced you will be greeted with a welcome screen aski
 
 2. Enter the below text, save and exit
    ```bash copy
-   # server=1, this tells Bitcoin to accept JSON-RPC commands (such as ones from EPS). txindex=1 allows any transaction to be looked up by Bitcoin Core, not just your own wallet.
+   # server=1, this tells Bitcoin to accept JSON-RPC commands 
+   # (such as ones from EPS). txindex=1 allows any transaction 
+   # to be looked up by Bitcoin Core, not just your own wallet.
    server=1
    txindex=1
    listen=1
@@ -373,8 +375,13 @@ Once Bitcoin core is fully synced you will be greeted with a welcome screen aski
    # only connect to Tor hidden services, not even IPv4/IPv6 nodes
    onlynet=onion
 
-   # If running tor, walletbroadcast=0 prevents the node from rebroadcasting transactions without tor.
+   # If running tor, walletbroadcast=0 prevents the node from 
+   # rebroadcasting transactions without tor.
    walletbroadcast=0
+
+   # this allows old style bitcoin wallet to be created for eps 
+   # using bitcoin-cli createwallet electrumpersonalserver
+   deprecatedrpc=create_bdb
    ```
 
 3. You can now close Bitcoin Core by either clickig on the ```X``` or by closing the terminal window where you run the original ```bitcoin-qt``` commmand.
