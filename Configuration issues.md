@@ -8,6 +8,10 @@ Start EPS
 ```bash copy
 cd ~/Desktop/eps && electrum-personal-server config.ini
 ```
+Start Electrum
+```bash copy
+electrum --oneserver --server 127.0.0.1:50002:s
+```
 Stop Bitcoind
 ```bash copy
 bitcoin-cli -datadir=/media/rez/T7\ Shield stop
