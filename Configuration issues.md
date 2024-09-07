@@ -31,7 +31,7 @@ cd ~/Desktop/eps && nano config.ini
 ```
 Open Electrum config
 ```bash copy
-cd ~/.elctrum && nano config
+cd ~/.electrum && nano config
 ```
 
 ---
