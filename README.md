@@ -310,8 +310,6 @@ Install instructions
 [Link](https://bitcoin.org/en/full-node#linux-instructions "Bitcoin.org")
 
 
-
-
 ---
 ## Run Bitcoin Core (start initial blockchain download)
 Plug in your external 2T SSD drive.
@@ -743,21 +741,19 @@ The EPS config.ini file will open and you will see that the file is divided into
    ```mr100_address = 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP```
 
 8. Save and exit out of the config.ini file.
-9. Logout, and log in again.
-10. Navigate to the EPS directory. Run:
-   ```bash copy
-   cd ~/Desktop/eps
-   ```
-## Run EPS for the first time
-Before running EPS for the first time make sure you can answer yes to the following questions:
-- You have created a new Bitcoin Core Wallet.
-- Bitcoin Core is fully synced & running.
 
-1. If you answered yes to the above two questions then you can now Run the EPS server. The first time the server is run it will import all configured addresses as watch-only into the Bitcoin node, and then exit.
+## Run EPS for the first time
+Before running EPS for the first time make sure Bitcoin Core is fully synced & running.
+
+1. Start Bitcoin-Core, wait for it to fully sync
+   ```bash copy
+   bitcoin-qt
+   ```
+2. The first time EPS is run it will import all configured addresses as watch-only into the Bitcoin node, and then exit by itself.
    ```bash copy
    electrum-personal-server config.ini
    ```
-2. If the wallets contain historical transactions you need to run a rescan to pull all of the transaction data.
+3. If the wallets contain historical transactions you need to run a rescan to pull all of the transaction data.
    ```bash copy
    electrum-personal-server --rescan config.ini
    ```
