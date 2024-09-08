@@ -51,7 +51,7 @@ ___
 For all Bitcoin software, it’s a particularly important security step to verify the release. This is done to ensure the installation file you download has not been compromised. Follow download instructions and use gpg in the terminal as instructed.
 
 ___
-## Install Linux Ubuntu 22.04 LTS
+## Install Ubuntu 22.04 LTS
 I installed Ubuntu 22.04 LTS because at the time of writing the Tor project have not released a package for Ubuntu 24.04.4 LTS.
 
 ### Deactivate Secure-Boot
@@ -97,17 +97,17 @@ Now open the SHA256SUMS.txt file in your Downloads folder and compare the SHA256
       ```ubuntu-22.04.4-desktop-amd64.iso: OK```
 
 
-### Install Ubuntu 22.04.4 LTS:
+### Install Ubuntu
 Follow the [official](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick "https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick") installation instructions to install Ubuntu.
 
 [Create partition table](https://ubuntuhandbook.org/index.php/2022/04/install-ubuntu-2204-step-by-step/amp/ "Ubuntuhandbook.org") (not always required).
 
 
-##### Reusing bootable USB:
+##### Reusing bootable USB
 Flashing a USB drive with an ISO image will place a write protection on the USB drive, to prevent accidental deletion of your bootable USB drive data. If you make a mistake and need to reformat the USB drive then use something like [Aomei](https://www.aomeitech.com/download.html#pa "Aomitech.com") to remove the write protection so you can reformat the drive and start again (or to reclaim the USB drive to be used for something else).
 
 
-### Configure Ubuntu 22.04.4 LTS
+### Configure Ubuntu
 Once Installation has finished.
 1. Update package manager. Run:
    ```bash copy
