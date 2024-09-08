@@ -62,9 +62,9 @@ Press the laptops power-on button then immediatly press the Function key that en
 2. Once the system Bios has loaded, proceed to turn-off ```Secure Boot``` (usually located under the ```security``` tab), save and exit. Then turn-off the laptop.
 
 3. On a seperate PC head over to [Ubuntu Releases](https://releases.ubuntu.com/22.04/ "Ubuntu releases") and download the following three files: 
-- ```Ubuntu-22.04.4-desktop-amd64.iso```
-- ```SHA256SUMS```
-- ```SHA256SUMS.gpg``` 
+ - ```Ubuntu-22.04.4-desktop-amd64.iso```
+ - ```SHA256SUMS```
+ - ```SHA256SUMS.gpg``` 
 
 Save all three files to your Downloads folder.
 
