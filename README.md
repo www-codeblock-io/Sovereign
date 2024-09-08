@@ -205,94 +205,7 @@ A quick solution for encrypted files/messages.
    ```
 ___
 ## Install Bitcoin Core
-
-Run the below commands to install from Source code. [Resource link](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md "Github.com/bitcoin").
-
-Building DBD for legacy wallet use
-https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md#berkeley-db
-
-Additional video tutorial, for further reference.
-[Canadian Bitcoiners](https://youtu.be/C8i0uJHmUoQ?si=gjiJaak2_b6ZT_CN)
-
-1. Enter the below commands, one at a time. Run:
-   ```bash copy
-   sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
-   ```
-2. Install dependencies
-   ```bash copy
-   sudo apt-get install libevent-dev libboost-dev
-   ```
-3. Install dependencies
-   ```bash copy
-   sudo apt install libsqlite3-dev
-   ```
-4. Install dependencies
-   ```bash copy
-   sudo apt-get install libzmq3-dev
-   ```
-5. Install dependencies
-   ```bash copy
-   sudo apt install systemtap-sdt-dev
-   ```
-6. Install dependencies
-   ```bash copy
-   sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
-   ```
-7. Install dependencies
-   ```bash copy
-   sudo apt install qtwayland5
-   ```
-8. Install dependencies
-   ```bash copy
-   sudo apt-get install libqrencode-dev
-   ```
-9. Intall Git
-   ```bash copy
-   sudo apt-get install git
-   ```
-10. Make src directory and move into it
-   ```bash copy
-   mkdir -p src && cd src
-   ```
-11. Clone the bitcoin github repo
-   ```bash copy
-   git clone https://github.com/bitcoin/bitcoin.git
-   ```
-12. Move into the repo folder
-```bash copy
-   cd bitcoin
-   ```
-13. Check out the most recent release (or whatever version you want to use). You can check what the latest release is by heading over to [Github/bitcoin](https://github.com/bitcoin/bitcoin) scroll down the page and on the right, under the 'Releases' heading, you will see the latest release number stated.
-   ```bash copy
-   git checkout v26.2   
-   ```
-14. Autogen.sh
-   ```bash copy
-   ./autogen.sh
-   ```
-15. Confilgure
-   ```bash copy
-   ./configure
-   ```
-16. This next command will take a very long time, maybe around 1 hour as all of the code gets compiled. Be patient and don't run anything else on the machine while this job is running.
-   ```bash copy
-   make
-   ```
-17. This also takes some time, it will run some tests to check everything has been made correctly, be patient... come back in 15-30 minutes.
-   ```bash copy
-   make check
-   ```
-
-18. This will be quick.
-   ```bash copy
-   sudo make install
-   ```
-### Build Berkeley DB 4.8
-EPS requires you to create a legacy Bitcoin Core wallet. This can only be done by downgrading the Berkely DB installation to version 4.8.
-https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md#berkeley-db
-
-### If the above Bitcoin Core install fails
-The other option you have is to install using a binary package. Follow the links below (make sure to verify your download before installing).
+Install using a binary package. Follow the links below to official websites, check your URL to make sure you are on the correct site and be sure to verify your download before installing.
 
 Download Bitcoin Core
 [Link](https://bitcoincore.org/en/download/ "Bitcoincore.org")
@@ -396,22 +309,8 @@ Once Bitcoin core is fully synced you will be greeted with a welcome screen aski
    ```bash copy
    bitcoin-cli -datadir=/media/rez/T7\ Shield stop
    ```
-     
-### Create a Bitcoin Core wallet for EPS to use.
-1. Start bitcoind
-   ```bash copy
-   bitcoind -datadir=/media/rez/T7\ Shield
-   ```
-2. Create a legacy bitcoin wallet called 'electrumpersonalserver'
-   ```bash copy
-   bitcoin-cli -datadir=/media/rez/T7\ Shield createwallet electrumpersonalserver true true "" false false true
-   ```
-3. You can now close Bitcoin Core by running the below command in any teminal window.
-   ```bash copy
-   bitcoin-cli -datadir=/media/rez/T7\ Shield stop
-   ```
 
-___
+===
 ## Install Tor
 
 [Official website](https://support.torproject.org/apt/tor-deb-repo/)
@@ -556,9 +455,12 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
    ```
    You will see a lot of the actions listed that the bitcoin core software completed during start-up and shut-down, including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor netork using your Tor encryption key.
 
----
 
----
+===
+## Install Electrs
+https://github.com/romanz/electrs/tree/master?tab=readme-ov-file
+
+===
 ## Install Electrum
 [Resource link](https://electrum.org/#download)
 1. Download ThomasV public key and import into keychain. Run:
@@ -606,10 +508,21 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
 9. Leave the password fields blank, we wont encrypt the wallet data as this is just a test wallet, click ```Next```.
 10. Electrum - enable update check. Click ```No```. We will always verify and update our software ourselves.
 
-### Export your ```test_wallet``` public key
-11. In Electrum, click on the ```Wallet``` tab, then ```Information```. Copy and save the long zpub key displayed. We will need to enter this public key into the EPS config.ini file later.
+### Add some watch-only addresses to check Electrs & Bitcoin Core are connected
+1. From the Electrum window press CTRL+N, this will bring up the ```New/Restore``` menu.
+2. Choose a name for your wallet, you can just name the wallet something like ```satoshi_address``` or ```mr100```. Click ```Next```.
+3. Select ```Import Bitcoin addresses or private keys```, click ```Next```.
+4. add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun. Just add the actual address (long string of 34 characters). i.e if you want to watch mr100 bitcoin address just add ```1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP``` and click ```Next```,
 
----
+   satoshi_address = 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
+   huobi_address = 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP
+   mr100_address = 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP
+   
+6. No need to set a wallet password as your just watching someone elses address. Click ```Finish```.
+
+   If it's an old address with lots of transactions it will take a while to sync.
+
+===
 ## Configure Electrum 
 1. Configure Electrum to only connect to your personal Bitcoin node via Electrs:
       Click ```Tools``` tab then ```Network```. Unselect ```Select server automatically```. And edit ```Server``` to read: ```localhost:50001:t```
@@ -650,69 +563,7 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
       - proxy_user: "" = No user deets for tor proxy
       - server: localhost:50001:t = Connect to electrs without ssl
    
-
-## Configure EPS 
-Edit EPS config file:
-
-1. Navigate to the EPS folder that we saved to Desktop earlier. Run:
-   ```bash copy
-   cd ~/Desktop/eps
-   ```
-2. Rename config.ini_sample to config.ini. Run:
-   ```bash copy
-   mv config.ini_sample config.ini
-   ```
-3. Open the config file with nano to edit. Run:
-   ```bash copy
-   nano config.ini
-   ```
-The EPS config.ini file will open and you will see that the file is divided into four sections with the following headings:
-   - ```[master-public-keys]```
-   - ```[bitcoin-rpc]```
-   - ```[electrum-server]```
-   - ```[watch-only-addresses]```
-   - ```[logging]```
-
-4. Under ```[master-public-keys]``` add any wallet public key (xpub, ypub, zpub) that you would like to have access too. EPS is Electrums link to your Bitcoin node, If you do not add the wallet public key (xpub, ypub, zpub) to this EPS config.ini file then Electrum will not use your node to pull transaction information from your node. Any wallet that you want to use with Electrum needs the public key added to this EPS config.ini file.
-
-5. Under the ```[bitcoin-rpc]``` heading, add the path to your external SSD drive in the ```datadir``` section :
-
-   ```datadir = /media/rez/T7 Shield```
-
-6. Also under the ```[bitcoin-rpc]``` heading, add the name of the Bitcoin Core wallet we created specifically for EPS:
-
-   ```wallet_filename = electrumpersonalserver```
-
-7. Under the ```[watch-only-addresses]``` heading, add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun.
-   
-   ```satoshi_address = 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa```
-
-   ```huobi_address = 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP```
-
-   ```mr100_address = 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP```
-
-8. Save and exit out of the config.ini file.
-
-## Run EPS for the first time
-Before running EPS for the first time make sure Bitcoin Core is fully synced & running.
-
-1. Start Bitcoin-Core, wait for it to fully sync
-   ```bash copy
-   bitcoin-qt
-   ```
-2. The first time EPS is run it will import all configured addresses as watch-only into the Bitcoin node, and then exit by itself.
-   ```bash copy
-   electrum-personal-server config.ini
-   ```
-3. If the wallets contain historical transactions you need to run a rescan to pull all of the transaction data.
-   ```bash copy
-   electrum-personal-server --rescan config.ini
-   ```
-   It will ask for the earliest wallet creation date. Enter 1 to start from block height 1, and y to confirm. The first initial scan can take a while, but a pop up box will be displayed with a % completion displayed.
-
-   Once the server has finished scanning it will gracefully shut down on it's own, so you can leave the server to do it's job and come back in an hour or so.
-   
----
+===
 # Running Bitcoin-Core, EPS and Electrum.
 When using Electrum connected to your own personal Bitcoin node via EPS (electrum personal server), you can only use one electrum wallet at a time. In our case Electrum Desktop Wallet. Here are the steps you need to follow:
 
