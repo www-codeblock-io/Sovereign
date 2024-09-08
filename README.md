@@ -624,7 +624,7 @@ The next time we start Electrum we can simply run the command ```electrum``` and
 
 ### Create a Test wallet
 We will set up a test (hot) wallet in Electrum so we can make sure all of our config settings are correct before actually loading up one of our own wallets that contains funds.
-1. Run electrum. Run:
+1. Start electrum. Run:
    ```bash copy
    electrum
    ```
