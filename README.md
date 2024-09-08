@@ -196,14 +196,15 @@ ___
    sudo apt update && sudo apt install brave-browser
    ```
 
-___
+---
 ## Install Telegram Desktop (optional)
 A quick solution for encrypted files/messages.
 1. Install Telegram from apt repo. Run:
    ```bash copy
    sudo apt install telegram-desktop
    ```
-___
+
+---
 ## Install Bitcoin Core
 Install using a binary package. Follow the links below to official websites, check your URL to make sure you are on the correct site and be sure to verify your download before installing.
 
@@ -259,23 +260,6 @@ If you have trouble locating your external SSD Drive, try the following, open a 
    bitcoin-cli -datadir=/media/rez/T7\ Shield stop
    ```
 
-### Allow incoming connections (optional but recommended)
-Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. If you do not do this then EPS and electrum will not be able to connect to your node.
-
-You will need your Laptops MAC address and IP address. You can retrieve these from the Terminal. 
-
-1. To print your MAC address to Terminal. Run:
-   ```bash copy
-   ip link
-   ```
-   You can find the MAC address of your device at the last line after ```link/ether=##:##:##:##:##:##```.
-
-2. Print your IP address to Terminal
-   ```bash copy
-   hostname -I
-   ```
-3. Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
-
 ### Edit Bitcoin core config file. Run:
 Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  We need to edit the config file first so ignore this prompt and open Bitcoin Core config file.
 
@@ -303,6 +287,21 @@ Once Bitcoin core is fully synced you will be greeted with a welcome screen aski
 3. Now shut down Bitcoin Core so that the config changes we made can be applied. Click on the ```X``` in the top right hand corner. Or enter the below command in any Terminal window:
    ```bash copy
    bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+   ```
+### Allow incoming connections (optional but recommended)
+Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
+
+Retrieve your Laptops MAC address and IP address from the Terminal. 
+
+1. To print your MAC address to Terminal. Run:
+   ```bash copy
+   ip link
+   ```
+   You can find the MAC address of your device at the last line after ```link/ether=##:##:##:##:##:##```.
+
+2. Print your IP address to Terminal
+   ```bash copy
+   hostname -I
    ```
 
 ===
