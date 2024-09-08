@@ -531,8 +531,20 @@ Note: you need to have enough free RAM to build electrs. The build will fail oth
    ```bash copy
    cargo fix --lib -p electrs
    ```
+
 ### Generating man pages
 Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 man``` to save it into a file (```electrs.1```).
+
+
+---
+## Configure Electrs
+???
+
+
+---
+## Running Electrs
+Activate Systemctl and start at system Boot.
+
 
 ---
 ## Install Electrum
