@@ -52,3 +52,7 @@ To add deprecated wallet functionality
 ```bash copy
 deprecatedrpc=create_bdb
 ```
+To search whole system directory
+```bash copy
+find ~/. -name bitcoin*
+```
