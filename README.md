@@ -688,9 +688,3 @@ Go to the above link to collect the correct https address for the HWW rules. mak
 like this for adding Ledger support:
 wget -q -O - https://raw.github.com/LedgerHQ/udev-rules/blob/master/20-hw1.rules.sh | sudo bash
 
-## Make Bitcoin Core run at startup
-$cd /etc
-$sudo mkdir bitcoin
-$cd bitcoin
-$sudo nano bitcoin.conf
-copy existing conf settings.
