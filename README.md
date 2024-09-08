@@ -1,12 +1,12 @@
 # Sovereign - Bitcoin Personal Node
 last updated: 8th September 2024.
 
-# Project description
-This project is for anyone looking to setup there own Bitcoin node using software self verified enabling the use of hardware wallets and preserving the privacy of the user's addresses and balances while interacting with the Bitcoin network in a secure and sovereign manner.
+# Project goal
+A secure and sovereign Bitcoin node using software self verified (non branded/containerised), enabling the use of hardware wallets and preserving the privacy of personal Bitcoin addresses/balances while interacting with the Bitcoin network.
 
-I recommend in the first instance to always consult a software projects official installation instructions. This will generally have the most queries and bugs already logged by users and answered by the project maintainers. External guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page under every new heading.
+I recommend in the first instance to always consult a software projects official installation instructions. This will have the most queries and bugs already logged by users and answered by the project maintainers. External guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page under every new heading.
 
-Think of this as a general guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve a working system.
+Think of this as a general guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve the above goal.
 
 
 ---
