@@ -4,10 +4,14 @@ Start Bitcoind
 ```bash copy
 bitcoind -datadir=/media/rez/T7\ Shield
 ```
+Start Bitcoind as daemon
+```bash copy
+bitcoind -datadir=/media/rez/T7\ Shield -server -daemon
+```
 Start Electra
-   ```bash copy
-   ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
-   ```
+```bash copy
+./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
+```
 Start Electrum
 ```bash copy
 electrum --oneserver --server 127.0.0.1:50002:s
@@ -15,10 +19,6 @@ electrum --oneserver --server 127.0.0.1:50002:s
 Stop Bitcoind
 ```bash copy
 bitcoin-cli -datadir=/media/rez/T7\ Shield stop
-```
-Start Bitcoind as daemon
-```bash copy
-bitcoind -datadir=/media/rez/T7\ Shield -server -daemon
 ```
 Check Bitcoind daemon
 ```bash copy
