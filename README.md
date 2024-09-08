@@ -465,7 +465,7 @@ $ cargo fix --lib -p electrs
 
 ---
 ## Install Electrum
-[Resource link](https://electrum.org/#download)
+[Official website](https://electrum.org/#download)
 1. Download ThomasV public key and import into keychain. Run:
    ```bash copy
    cd ~/Downloads && wget https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc && gpg --import ThomasV.asc
