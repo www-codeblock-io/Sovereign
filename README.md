@@ -350,14 +350,12 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
    ```bash copy
    tor --version
    ```
-
-### Configure Tor to start at system Boot (optional but recommended)
-1. Enable Tor to start automatically on boot, this is your sovereign bitcoin node, don't use it to surf the web aimlessly. Run:
+12. Configure Tor to start at system Boot (optional but recommended)
    ```bash copy
    sudo systemctl enable tor
    ```
 
-### Controlling Tor
+### Tor Systemctl commands
 1. Manage Tor using systemd
    ```bash copy
    sudo systemctl restart tor
