@@ -465,7 +465,7 @@ warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to ap
 I ran this command:
 $ cargo fix --lib -p electrs
 
-===
+---
 ## Install Electrum
 [Resource link](https://electrum.org/#download)
 1. Download ThomasV public key and import into keychain. Run:
@@ -567,7 +567,7 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
       - proxy_user: "" = No user deets for tor proxy
       - server: localhost:50001:t = Connect to electrs without ssl
    
-===
+---
 # Running Bitcoin-Core, Electra and Electrum.
 1. Start Bitcoin-Core. Run:
    ```bash copy
