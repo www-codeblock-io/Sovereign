@@ -510,9 +510,9 @@ I chose to compile electrs by statically linking to librocksdb, which has less d
    ```bash copy
    cargo install cfg_me
    ```
-7. Lets keep the main Electrs folder in our Home directory, navigate to Home and download Electrs
+7. Download electrs repo
    ```bash copy
-   cd ~ && git clone https://github.com/romanz/electrs
+   cd ~/Downloads && git clone https://github.com/romanz/electrs
    ``` 
 8. Move into electrs directory
    ```bash copy
@@ -541,7 +541,10 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
 
 ---
 ## Configure Electrs
-???
+1. First lets move the Electrs folder to /usr/local/bin and keep it next to our Bitcoin Core executables
+   ```bash copy
+   mv ~/Downloads/electrs /usr/local/bin
+   ```
 
 ---
 ## Running Electrs
