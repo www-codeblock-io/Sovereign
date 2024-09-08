@@ -232,7 +232,7 @@ sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
 ```
 Clean up
 ```bash copy
-cd ~/Downloads && rm -r bitcoin-27.1-x86_64-linux-gnu.tar.gz SHA256SUMS.asc SHA256SUMS
+cd ~/Downloads && sudo rm -r bitcoin-27.1-x86_64-linux-gnu.tar.gz guix.sigs SHA256SUMS.asc SHA256SUMS
 ```
 
 ---
@@ -573,7 +573,7 @@ Activate Systemctl and start at system Boot.
    ```
 6. Clean up Downloads folder, remove downloaded files
    ```bash copy
-   cd ~/Downloads && rm Electrum-4.5.5.tar.gz Electrum-4.5.5.tar.gz.asc ThomasV.asc
+   cd ~/Downloads && sudo rm -r Electrum-4.5.5.tar.gz Electrum-4.5.5.tar.gz.asc ThomasV.asc
    ```
 7. Do a system Restart
    ```bash copy
