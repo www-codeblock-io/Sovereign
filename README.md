@@ -217,7 +217,7 @@ A quick solution for encrypted files/messages.
 ## Install Bitcoin Core
 Head over to [Bitcoin Core](https://bitcoincore.org/en/download/ "Bitcoincore.org") and:
 - Download ```Linux(tgz) 64 bit``` and save to Downloads folder.
-- Scroll down the page, under the heading ```Verify your download```, click on ```Linux verification instructions``` then follow the instructions to verify your download.
+- Scroll down the page, under the heading ```Verify your download```, click on ```Linux verification instructions```, then follow the instructions to verify your download.
 
 ### Complete install
 [Reference Link](https://bitcoin.org/en/full-node#linux-instructions "Bitcoin.org")
