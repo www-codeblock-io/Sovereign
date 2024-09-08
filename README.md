@@ -445,11 +445,20 @@ bitcoin-qt
 ### Verify Bitcoin Core is running behind Tor, option: 4
 You will learn a lot if you ```cd``` into your bitcoin data-directory delete the 'debug.log' file (don't worry bitcoin core just creates a new one at startup), restart Tor, and then Bitcoin Core. Then shut down Bitcoin core again once the application has completly loaded. Bitcoin Core will have created a new debug.log file and printed some debug statements during shut down.
 
-1. Take a look at the new debug.log file. Run:
+1. Navigate to you main Bitcoin data-directory. Then activate tail with a grep on Tor.
    ```bash copy
-   nano debug.log
+   tail -f debug.log | grep tor
    ```
-   You will see a lot of the actions listed that the bitcoin core software completed during start-up and shut-down, including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor netork using your Tor encryption key.
+2. Now in a seperate Terminal start bitcoin-qt.
+    ```bash copy
+    bitcoin-qt
+    ```
+3. Once you see the pop up notification that Bitcoin Core is available (loaded). Then stop Bitcoin Core again.
+    ```bash copy
+    bitcoin-cli -datadir=/media/<User Name>/<External SSD Name> stop
+    ```
+
+   You will see a lot of the Tor actions printed to the Terminal that Bitcoin Core completed during start-up and shut-down, including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor network using your Tor encryption key.
 
 
 ---
