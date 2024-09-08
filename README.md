@@ -1,11 +1,22 @@
 # Sovereign - Bitcoin Personal Node
+last updated: 8th September 2024.
 
-# Software
+# Project description
+This project is for anyone looking to setup there own Bitcoin node using a Laptop running Linux with the required software to use hardware wallets and interact with the Bitcoin network in a secure and sovereign manner.
+
+When installing new software it is my recommendation to always consult the official software installation instructions first. This is usually but not allwaystl the official projects Github repo. This will generally have the most robust queries and bugs already logged and answered by the project maintainer. With this in mind I have included a link to each official project page under each new software heading.
+
+Think of this as more of a guide with some trouble shooting tips. I have included all the Terminal commands that I run to achieve a working system and will include the date of when the project was last updated as a title subheading.
+
+
+
+---
+## SOFTWARE
 - Ubuntu 22.04 LTS
 - Bitcoin-Core
 - Tor
 - ProtonVPN
-- EPS (Electrum Personal Server)
+- Electra
 - Electrum wallet
 - Specter wallet
 - Sparrow wallet
