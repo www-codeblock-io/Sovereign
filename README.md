@@ -232,8 +232,9 @@ sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
 ```
 Clean up
 ```bash copy
-cd ~/Downloads && rm -r bitcoin-27.1-x86_64-linux-gnu.tar.gz
+cd ~/Downloads && rm -r bitcoin-27.1-x86_64-linux-gnu.tar.gz SHA256SUMS.asc SHA256SUMS
 ```
+
 ---
 ## Run Bitcoin Core (start initial blockchain download)
 Plug in your external 2T SSD drive.
