@@ -452,7 +452,7 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
 
 ===
 ## Install Electrs
-Why Electra: https://blog.casa.io/electrum-server-performance-report/
+Why Electrs: https://blog.casa.io/electrum-server-performance-report/
 
 https://github.com/romanz/electrs/tree/master?tab=readme-ov-file
 I installed the ```static``` vaersion.
