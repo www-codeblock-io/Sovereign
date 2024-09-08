@@ -218,7 +218,7 @@ A quick solution for encrypted files/messages.
 
 Head over to [Bitcoin Core](https://bitcoincore.org/en/download/ "Bitcoincore.org") and:
 - Download Linux(tgz) 64 bit
-- Click on ```Linux verification instructions``` follow theses instructions to verify your download.
+- Click on ```Linux verification instructions``` and follow the instructions to verify your download.
 
 Unzip the bitcoin folder
 ```bash copy
