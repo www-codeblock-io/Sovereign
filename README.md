@@ -97,7 +97,7 @@ Now open the SHA256SUMS.txt file in your Downloads folder and compare the SHA256
       ```ubuntu-22.04.4-desktop-amd64.iso: OK```
 
 
-### Final install
+### Complete install
 Follow the [official](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick "https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick") installation instructions to install Ubuntu.
 
 [Create partition table](https://ubuntuhandbook.org/index.php/2022/04/install-ubuntu-2204-step-by-step/amp/ "Ubuntuhandbook.org") (not always required).
