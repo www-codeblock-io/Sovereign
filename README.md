@@ -214,11 +214,9 @@ A quick solution for encrypted files/messages.
 
 ---
 ## Install Bitcoin Core
-Install using a binary package. Follow the links below to official websites, check your URL to make sure you are on the correct site and be sure to verify your download before installing.
+[Reference Link](https://bitcoin.org/en/full-node#linux-instructions "Bitcoin.org")
 
-Download Bitcoin Core
-[Link](https://bitcoincore.org/en/download/ "Bitcoincore.org")
-Head over to bitcoincore.org and:
+Head over to [Bitcoin Core](https://bitcoincore.org/en/download/ "Bitcoincore.org") and:
 - Download Linux(tgz) 64 bit
 - Click on ```Linux verification instructions``` follow theses instructions to verify your download.
 
@@ -230,9 +228,6 @@ Install bitcoin core
 ```bash copy
 sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
 ```
-
-Install instructions
-[Link](https://bitcoin.org/en/full-node#linux-instructions "Bitcoin.org")
 
 
 ---
