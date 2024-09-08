@@ -521,13 +521,12 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
 
    - 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa (satoshi_address, shows first Bitcoin transaction to Hal Finney) 
    - 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP (Huobi_address = Huobi exchange hot wallet)
-   - 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP (mr100_address = Unknown, transacts daily in block of 100 BTC)
+   - 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP (mr100_address = Unknown, transacts daily in blocks of 100 BTC)
    
 6. No need to set a wallet password as your just watching someone elses address. Click ```Finish```.
 
-   If it's an old address with lots of transactions it will take a while to sync.
 
-===
+---
 ## Configure Electrum 
 1. Configure Electrum to only connect to your personal Bitcoin node via Electrs:
       Click ```Tools``` tab then ```Network```. Unselect ```Select server automatically```. And edit ```Server``` to read: ```localhost:50001:t```
