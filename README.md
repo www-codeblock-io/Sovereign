@@ -35,39 +35,38 @@ Bitcoin Core [minimum requirements](https://bitcoin.org/en/bitcoin-core/features
 - Download: 500 MB/day (15 GB/month)
 - Upload: 5 GB/day (150 GB/month)
 
-Any old laptop you have laying around should meet the above specifications. Just add an external 2T SSD drive with an unlimited broadband connection.
+Most entry level laptops should meet the above specifications. Just add an external 2T SSD drive with an unlimited broadband connection.
 
-I purchased a second hand entry level [HP portable laptop](https://www.amazon.com/gp/aw/d/B0C9N3H8F2/ref=ox_sc_act_image_1?smid=AYY6S2IYYQJGA "Amazon HP Laptop") from Amazon.com for $140.
+I purchased this second hand [HP portable laptop](https://www.amazon.com/gp/aw/d/B0C9N3H8F2/ref=ox_sc_act_image_1?smid=AYY6S2IYYQJGA "Amazon HP Laptop") from Amazon.com for $140.
 
 - Ram: 16GB
 - CPU: Intel celeron 1.1 GHz
 - HDD: 64GB
 
-I then added this external 2T SSD drive for $140.
+I then added an external 2T SSD drive for $140.
 [Link](https://a.co/d/itXEh1A "Amazon.com")
 
 ___
 ## VERIFY & INSTALL SOFTWARE
 
-For all Bitcoin software, it’s a particularly important security step to verify the release. This is done to ensure the installation file you download has not been compromised. Follow download instructions and use gpg in the terminal as instructed.
+For all Botcoin related software, it’s a particularly important security step to verify the release. This is done to ensure the installation file you download has not been compromised. Follow download instructions and use gpg in the terminal as instructed.
 
 ___
 ## Install Linux Ubuntu 22.04 LTS
-We're installing Ubuntu 22.04 LTS because at the time of writing the Tor project have not released a package for Ubuntu 24.04.4 LTS.
+I installes Ubuntu 22.04 LTS because at the time of writing the Tor project have not released a package for Ubuntu 24.04.4 LTS.
 
 ### Deactivate Secure-Boot
-Secure boot signing authorities have made mistakes in the past ([section 3, page 2 under 'Disadvantages'](https://www.nsa.gov/portals/75/documents/what-we-do/cybersecurity/professional-resources/BootSecurityModesAndRec_20190522.pdf)). We will verify all the software ourselves and not trust a third-party to do this for us.
+Secure boot signing authorities have made mistakes in the past ([section 3, page 2 under 'Disadvantages'](https://www.nsa.gov/portals/75/documents/what-we-do/cybersecurity/professional-resources/BootSecurityModesAndRec_20190522.pdf)). I will verify all the software myself and not trust a third-party to do this for me.
 
-Enter into the laptops Bios menu:
+1. Enter into the laptops Bios menu:
+Press the laptops power-on button then immediatly press the Function key that enters the Bios menu. For the HP Laptop I'm using it was the F2 key, but it could also be F9, F10, F11 or F12 depending on the laptop brand. A quick google search will provide an accurate answer.
 
-Press the laptops power-on button then immediatly press the Function key that enters the Bios menu. For the HP Laptop i'm using it was the F2 key, but it could also be F9, F10, F11 or F12 depending on the laptop brand. A quick google search should provide an accurate answer.
+2. Once the system Bios has loaded, proceed to turn-off ```Secure Boot``` (usually located under the ```security``` tab), save and exit. Then turn-off the laptop.
 
-Once the system Bios has loaded, proceed to turn-off ```Secure Boot``` (usually located under the ```security``` tab), save and exit. Then turn-off the laptop.
-
-On a seperate PC head over to [Ubuntu Releases](https://releases.ubuntu.com/22.04/ "Ubuntu releases") and download the Ubuntu ISO image ```Ubuntu-22.04.4-desktop-amd64.iso```, save the ISO file to your Downloads folder:
+3. On a seperate PC head over to [Ubuntu Releases](https://releases.ubuntu.com/22.04/ "Ubuntu releases") and download the Ubuntu ISO image ```Ubuntu-22.04.4-desktop-amd64.iso```, save the ISO file to your Downloads folder:
 
 
-Also save the ```SHA256SUMS``` and ```SHA256SUMS.gpg``` files to the same folder.
+4. Also save the ```SHA256SUMS``` and ```SHA256SUMS.gpg``` files to the same folder.
 
 
 ### Verify download signitures
@@ -101,13 +100,11 @@ Now open the SHA256SUMS.txt file in your Downloads folder and compare the SHA256
 ### Install OS:
 Read all of the below instructions (including links) before proceeding.
 
-General installation instructions:
-[Link](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick "https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick")
+[General installation instructions](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick "https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick")
 
-Create correct partition table (not always required):
-[Link](https://ubuntuhandbook.org/index.php/2022/04/install-ubuntu-2204-step-by-step/amp/ "Ubuntuhandbook.org")
+[Create partition table](https://ubuntuhandbook.org/index.php/2022/04/install-ubuntu-2204-step-by-step/amp/ "Ubuntuhandbook.org") not always required.
 
-Flashing a USB drive with an ISO image will place a write protection on the USB drive, this is to prevent accidental deletion of your bootable USB drive data. If you make a mistake and need to reformat the USB drive then use something like [Aomei Partition Assistant](https://www.aomeitech.com/download.html#pa "Aomitech.com") to remove the write protection so you can reformat the drive and start again (or to reclaim the USB drive to be used for something else).
+Note: Flashing a USB drive with an ISO image will place a write protection on the USB drive, to prevent accidental deletion of your bootable USB drive data. If you make a mistake and need to reformat the USB drive then use something like [Aomei Partition Assistant](https://www.aomeitech.com/download.html#pa "Aomitech.com") to remove the write protection so you can reformat the drive and start again (or to reclaim the USB drive to be used for something else).
 
 
 ### Once Installation has finished
