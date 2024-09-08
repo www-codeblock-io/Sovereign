@@ -61,9 +61,10 @@ Secure boot signing authorities have made mistakes in the past ([section 3, page
 Press the laptops power-on button then immediatly press the Function key that enters the Bios menu. For the HP Laptop I'm using it was the F2 key. [Bios key by manufacturer. ](https://gadgetmates.com/bios-key-by-manufacturer)
 2. Once the system Bios has loaded, proceed to turn-off ```Secure Boot``` (usually located under the ```security``` tab), save and exit. Then turn-off the laptop.
 
-3. On a seperate PC head over to [Ubuntu Releases](https://releases.ubuntu.com/22.04/ "Ubuntu releases") and download three files: - ```Ubuntu-22.04.4-desktop-amd64.iso```
-- ```SHA256SUMS```
- - ```SHA256SUMS.gpg``` 
+3. On a seperate PC head over to [Ubuntu Releases](https://releases.ubuntu.com/22.04/ "Ubuntu releases") and download three files: 
+    - ```Ubuntu-22.04.4-desktop-amd64.iso```
+    - ```SHA256SUMS```
+    - ```SHA256SUMS.gpg``` 
 
 Save all three files to your Downloads folder.
 
