@@ -97,7 +97,7 @@ Now open the SHA256SUMS.txt file in your Downloads folder and compare the SHA256
       ```ubuntu-22.04.4-desktop-amd64.iso: OK```
 
 
-### Install Ubuntu
+### Final install
 Follow the [official](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick "https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick") installation instructions to install Ubuntu.
 
 [Create partition table](https://ubuntuhandbook.org/index.php/2022/04/install-ubuntu-2204-step-by-step/amp/ "Ubuntuhandbook.org") (not always required).
@@ -106,8 +106,8 @@ Follow the [official](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-crea
 ##### Reusing bootable USB
 Flashing a USB drive with an ISO image will place a write protection on the USB drive, to prevent accidental deletion of your bootable USB drive data. If you make a mistake and need to reformat the USB drive then use something like [Aomei](https://www.aomeitech.com/download.html#pa "Aomitech.com") to remove the write protection so you can reformat the drive and start again (or to reclaim the USB drive to be used for something else).
 
-
-### Configure Ubuntu
+---
+## Configure Ubuntu
 Once Installation has finished.
 1. Update package manager. Run:
    ```bash copy
