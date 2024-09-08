@@ -453,6 +453,15 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
 ===
 ## Install Electrs
 https://github.com/romanz/electrs/tree/master?tab=readme-ov-file
+I installed the ```static``` vaersion.
+
+During installation build the below warning was thrown, I installed as the warning suggested:
+
+warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to apply 1 suggestion)
+    Finished release [optimized] target(s) in 5m 53s
+
+I ran this command:
+$ cargo fix --lib -p electrs
 
 ===
 ## Install Electrum
@@ -558,20 +567,48 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
       - server: localhost:50001:t = Connect to electrs without ssl
    
 ===
-# Running Bitcoin-Core, EPS and Electrum.
-When using Electrum connected to your own personal Bitcoin node via EPS (electrum personal server), you can only use one electrum wallet at a time. In our case Electrum Desktop Wallet. Here are the steps you need to follow:
-
-1. Add the Wallet public key to EPS config file (as described above).
-2. Start Bitcoin-Core, wait for it to fully sync. Run:
+# Running Bitcoin-Core, Electra and Electrum.
+1. Start Bitcoin-Core. Run:
    ```bash copy
-   bitcoin-qt
+   bitcoind -datadir=/media/rez/T7\ Shield
    ```
-3. Start EPS
+2. Check Bitcoin Core has synced
    ```bash copy
-   cd ~/Desktop/eps && electrum-personal-server config.ini
+   bitcoin-cli -datadir=/media/rez/T7\ Shield getblockchaininfo | head
    ```
-4. Start Electrum
+4. Start Electra
+   ```bash copy
+   ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
+   ```
+5. Start Electrum
    ```bash copy
    electrum
    ```
-Now interact with your wallet as usual but with the peace of mind that you are connected to your own node rnning behind Tor.
+If ```Network``` light in the bottom righthand corner is blue then you are connected to your own node running behind Tor. It is now safe to interact with your real wallets.
+
+---
+## Connecting Ledger Live
+https://jamesachambers.com/fix-linux-ledger-live-usb-connection/
+
+Follow the link for instructions to allow Ledger Live to access Ledger HWW.
+
+---
+## Connecting Hardware Wallets to Electrum
+Downgrade pip to be able to install all the dependencies required to add HWW support to Electrum:
+
+python3 -m pip uninstall pip
+python3 -m pip install pip==22
+
+
+### Install the required Electrum dependencies for HWW support:
+python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
+https://electrum.readthedocs.io/en/latest/hardware-linux.html
+
+### Update Linux UDEV
+https://github.com/spesmilo/electrum/tree/master/contrib/udev
+
+Go to the above link to collect the correct https address for the HWW rules. make the address read https://raw.<github etc.*.rule.sh
+
+like this for adding Ledger support:
+wget -q -O - https://raw.github.com/LedgerHQ/udev-rules/blob/master/20-hw1.rules.sh | sudo bash
+
