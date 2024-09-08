@@ -304,7 +304,7 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
    hostname -I
    ```
 
-===
+---
 ## Install Tor
 
 [Official website](https://support.torproject.org/apt/tor-deb-repo/)
@@ -450,7 +450,7 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
    You will see a lot of the actions listed that the bitcoin core software completed during start-up and shut-down, including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor netork using your Tor encryption key.
 
 
-===
+---
 ## Install Electrs
 Why Electrs: https://blog.casa.io/electrum-server-performance-report/
 
