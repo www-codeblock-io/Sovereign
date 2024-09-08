@@ -231,7 +231,6 @@ Install bitcoin core
 sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
 ```
 
-
 ---
 ## Run Bitcoin Core (start initial blockchain download)
 Plug in your external 2T SSD drive.
@@ -367,7 +366,7 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
    ```
 
 ---
-## Bitcoin Core: Tor hidden service
+## Set up Tor hidden service
 Configure Bitcoin Core to only connect using Tor. [Reference link](
 https://en.bitcoin.it/wiki/Setting_up_a_Tor_hidden_service)
 
@@ -538,11 +537,6 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
 
 ---
 ## Configure Electrs
-???
-
-
----
-## Electrs: Tor hidden service
 ???
 
 ---
