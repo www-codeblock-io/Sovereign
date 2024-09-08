@@ -107,7 +107,8 @@ Follow the [official](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-crea
 Flashing a USB drive with an ISO image will place a write protection on the USB drive, to prevent accidental deletion of your bootable USB drive data. If you make a mistake and need to reformat the USB drive then use something like [Aomei](https://www.aomeitech.com/download.html#pa "Aomitech.com") to remove the write protection so you can reformat the drive and start again (or to reclaim the USB drive to be used for something else).
 
 
-### Once Installation has finished
+### Configure Ubuntu 22.04.4 LTS
+Once Installation has finished.
 1. Update package manager. Run:
    ```bash copy
    sudo apt update && sudo apt upgrade
