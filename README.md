@@ -48,7 +48,7 @@ I then added this external [2T SSD drive](https://a.co/d/itXEh1A) from Amazon.co
 ___
 ## VERIFY & INSTALL SOFTWARE
 
-For all Bitcoin related software, it’s a particularly important security step to verify the release. This is done to ensure the installation file you download has not been compromised. Follow download instructions and use gpg in the terminal as instructed.
+For all Bitcoin software, it’s a particularly important security step to verify the release. This is done to ensure the installation file you download has not been compromised. Follow download instructions and use gpg in the terminal as instructed.
 
 ___
 ## Install Linux Ubuntu 22.04 LTS
