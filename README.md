@@ -506,11 +506,11 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
 1. From the Electrum window press CTRL+N, this will bring up the ```New/Restore``` menu.
 2. Choose a name for your wallet, you can just name the wallet something like ```satoshi_address``` or ```mr100```. Click ```Next```.
 3. Select ```Import Bitcoin addresses or private keys```, click ```Next```.
-4. add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun. Just add the actual address (long string of 34 characters). i.e if you want to watch mr100 bitcoin address just add ```1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP``` and click ```Next```,
+4. Add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun. Just add the actual address (long string of 34 characters). i.e if you want to watch mr100 bitcoin address just add ```1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP``` and click ```Next```,
 
-   satoshi_address = 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
-   huobi_address = 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP
-   mr100_address = 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP
+   - 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa (satoshi_address, shows first Bitcoin transaction to Hal Finney) 
+   - 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP (Huobi_address = Huobi exchange hot wallet)
+   - 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP (mr100_address = Unknown entity who transacts daily in block of 100 BTC)
    
 6. No need to set a wallet password as your just watching someone elses address. Click ```Finish```.
 
