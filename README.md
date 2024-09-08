@@ -647,7 +647,10 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
       - proxy_password: "" = No password for tor proxy
       - proxy_user: "" = No user deets for tor proxy
       - server: localhost:50001:t = Connect to electrs without ssl
-   
+
+The next time we start Electrum we can simply run the command ```electrum``` and let the config file handle the rest.
+
+ 
 ---
 # Running Bitcoin-Core, Electra and Electrum.
 1. Start Bitcoin-Core. Run:
