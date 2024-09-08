@@ -43,7 +43,7 @@ I purchased this second hand [HP portable laptop](https://www.amazon.com/gp/aw/d
 - CPU: Intel celeron 1.1 GHz
 - HDD: 64GB
 
-I then added this [external 2T SSD drive](https://a.co/d/itXEh1A) from Amazon.com for $140.
+I then added this external [2T SSD drive](https://a.co/d/itXEh1A) from Amazon.com for $140.
 
 ___
 ## VERIFY & INSTALL SOFTWARE
