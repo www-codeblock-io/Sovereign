@@ -581,34 +581,6 @@ Activate Systemctl and start at system Boot.
    ```bash copy
    sudo shutdown -r now
    ```   
-### Create a Test wallet
-We will set up a test (hot) wallet in Electrum so we can make sure all of our config settings are correct before actually loading up one of our own wallets that contains funds.
-1. Run electrum. Run:
-   ```bash copy
-   electrum
-   ```
-2. At the welcome screen. Click ```Next```.
-3. Rename ```default_wallet``` to ```test_hot_wallet``` (I think this name is less confusing). Click ```Next```.                                                                        
-4. Select ```I already have a seed```. Click ```Next```.
-5. Head over to [CoinPlate](https://getcoinplate.com/bip39-seed-phrase-mnemonics-generator-offline-online-tool/?v=2a6039655313 "CoinPlate's Homepage") and generate a Bip39 24 word seed phrase .
-   Copy and save the seed phrase to a note on your desktop. Don't worry about security as this is just a simple test wallet for testing configuration settings.
-6. Copy and paste the seed phase into the Electrum box that is displayed.
-7. Click ```Options```, and select ```Bip39 seed```. Click ```OK```. Ignore the warning and click ```Next```.
-8. Keep ```native segwit (p2wpkh)``` selected and click ```Next```.
-9. Leave the password fields blank, we wont encrypt the wallet data as this is just a test wallet, click ```Next```.
-10. Electrum - enable update check. Click ```No```. We will always verify and update our software ourselves.
-
-### Add some watch-only addresses to check Electrs & Bitcoin Core are connected
-1. From the Electrum window press CTRL+N, this will bring up the ```New/Restore``` menu.
-2. Choose a name for your wallet, you can just name the wallet something like ```satoshi_address``` or ```mr100```. Click ```Next```.
-3. Select ```Import Bitcoin addresses or private keys```, click ```Next```.
-4. Add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun. Just add the actual address (long string of 34 characters). i.e if you want to watch mr100 bitcoin address just add ```1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP``` and click ```Next```.
-
-   - 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa (satoshi_address, shows first Bitcoin transaction to Hal Finney) 
-   - 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP (Huobi_address = Huobi exchange hot wallet)
-   - 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP (mr100_address = Unknown, transacts daily in blocks of 100 BTC)
-   
-6. No need to set a wallet password as your just watching someone elses address. Click ```Finish```.
 
 
 ---
@@ -650,6 +622,35 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
 
 The next time we start Electrum we can simply run the command ```electrum``` and let the config file handle the rest.
 
+### Create a Test wallet
+We will set up a test (hot) wallet in Electrum so we can make sure all of our config settings are correct before actually loading up one of our own wallets that contains funds.
+1. Run electrum. Run:
+   ```bash copy
+   electrum
+   ```
+2. At the welcome screen. Click ```Next```.
+3. Rename ```default_wallet``` to ```test_hot_wallet``` (I think this name is less confusing). Click ```Next```.                                                                        
+4. Select ```I already have a seed```. Click ```Next```.
+5. Head over to [CoinPlate](https://getcoinplate.com/bip39-seed-phrase-mnemonics-generator-offline-online-tool/?v=2a6039655313 "CoinPlate's Homepage") and generate a Bip39 24 word seed phrase .
+   Copy and save the seed phrase to a note on your desktop. Don't worry about security as this is just a simple test wallet for testing configuration settings.
+6. Copy and paste the seed phase into the Electrum box that is displayed.
+7. Click ```Options```, and select ```Bip39 seed```. Click ```OK```. Ignore the warning and click ```Next```.
+8. Keep ```native segwit (p2wpkh)``` selected and click ```Next```.
+9. Leave the password fields blank, we wont encrypt the wallet data as this is just a test wallet, click ```Next```.
+10. Electrum - enable update check. Click ```No```. We will always verify and update our software ourselves.
+
+### Add some watch-only addresses
+We will use these to confirm Electrs & Bitcoin Core are connected correctly.
+1. From the Electrum window press CTRL+N, this will bring up the ```New/Restore``` menu.
+2. Choose a name for your wallet, you can just name the wallet something like ```satoshi_address``` or ```mr100```. Click ```Next```.
+3. Select ```Import Bitcoin addresses or private keys```, click ```Next```.
+4. Add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun. Just add the actual address (long string of 34 characters). i.e if you want to watch mr100 bitcoin address just add ```1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP``` and click ```Next```.
+
+   - 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa (satoshi_address, shows first Bitcoin transaction to Hal Finney) 
+   - 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP (Huobi_address = Huobi exchange hot wallet)
+   - 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP (mr100_address = Unknown, transacts daily in blocks of 100 BTC)
+   
+6. No need to set a wallet password as your just watching someone elses address. Click ```Finish```.
  
 ---
 # Running Bitcoin-Core, Electra and Electrum.
@@ -657,11 +658,7 @@ The next time we start Electrum we can simply run the command ```electrum``` and
    ```bash copy
    bitcoind -datadir=/media/rez/T7\ Shield -server -daemon
    ```
-2. Check Bitcoin Core has synced
-   ```bash copy
-   bitcoin-cli -datadir=/media/rez/T7\ Shield getblockchaininfo | head
-   ```
-4. Start Electra
+2. Start Electra
    ```bash copy
    ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
    ```
