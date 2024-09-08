@@ -133,8 +133,8 @@ Then close the settings menu.
    ```bash copy
    sudo nano logind.conf
    ```
-3. Uncomment HandleLidSwitch and make it equal to inore, save and exit
-   ```HandleLidSwitch=ignore```
+3. Uncomment ```HandleLidSwitch``` and make it equal to ```HandleLidSwitch=ignore```, save and exit.
+   
 
 4. Restart the systemd daemon (be aware that this will log you out of Ubuntu) with this command
    ```bash copy
