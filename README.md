@@ -572,7 +572,7 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
 # Running Bitcoin-Core, Electra and Electrum.
 1. Start Bitcoin-Core. Run:
    ```bash copy
-   bitcoind -datadir=/media/rez/T7\ Shield
+   bitcoind -datadir=/media/rez/T7\ Shield -server -daemon
    ```
 2. Check Bitcoin Core has synced
    ```bash copy
