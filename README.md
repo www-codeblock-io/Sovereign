@@ -52,7 +52,7 @@ For all Bitcoin software, it’s a particularly important security step to verif
 
 ___
 ## Install Linux Ubuntu 22.04 LTS
-I installes Ubuntu 22.04 LTS because at the time of writing the Tor project have not released a package for Ubuntu 24.04.4 LTS.
+I installed Ubuntu 22.04 LTS because at the time of writing the Tor project have not released a package for Ubuntu 24.04.4 LTS.
 
 ### Deactivate Secure-Boot
 Secure boot signing authorities have made mistakes in the past ([section 3, page 2 under 'Disadvantages'](https://www.nsa.gov/portals/75/documents/what-we-do/cybersecurity/professional-resources/BootSecurityModesAndRec_20190522.pdf)). I will verify all the software myself and not trust a third-party to do this for me.
