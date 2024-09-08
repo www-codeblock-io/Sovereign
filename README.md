@@ -367,7 +367,7 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
    ```
 
 ---
-## Set up Tor hidden service
+## Bitcoin Core: Tor hidden service
 Configure Bitcoin Core to only connect using Tor. [Reference link](
 https://en.bitcoin.it/wiki/Setting_up_a_Tor_hidden_service)
 
@@ -540,6 +540,10 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
 ## Configure Electrs
 ???
 
+
+---
+## Electra: Tor hidden service
+???
 
 ---
 ## Running Electrs
