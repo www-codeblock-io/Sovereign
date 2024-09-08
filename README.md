@@ -463,10 +463,33 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
 
 ---
 ## Install Electrs
-Why Electrs: https://blog.casa.io/electrum-server-performance-report/
+[Official website](https://github.com/romanz/electrs/tree/master?tab=readme-ov-file)
 
-https://github.com/romanz/electrs/tree/master?tab=readme-ov-file
-I installed the ```static``` vaersion.
+[Why Electrs?](https://blog.casa.io/electrum-server-performance-report/)
+
+I installed the ```static``` version.
+1. Install recent Rust
+   ```bash copy
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   ```
+2. Install Cargo
+   ```bash copy
+   apt install cargo
+   ```
+3. Update package manager
+   ```bash copy
+   sudo apt update
+   ```
+4. Install dependencies for Rust-RocksDB
+   ```bash copy
+   sudo apt install clang cmake build-essential
+   ```
+5.
+6.
+7.
+8.
+9.
+10.
 
 During installation build the below warning was thrown, I installed as the warning suggested:
 
