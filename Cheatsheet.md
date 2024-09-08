@@ -1,4 +1,4 @@
-# Configurations issues
+# Cheatsheet
 ## Start/Stop
 Start Bitcoind
 ```bash copy
