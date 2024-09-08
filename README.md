@@ -219,6 +219,7 @@ Head over to [Bitcoin Core](https://bitcoincore.org/en/download/ "Bitcoincore.or
 - Scroll down the page, under the heading ```Verify your download```, click on ```Linux verification instructions``` and follow the instructions to verify your download.
 
 ### Complete install
+[Reference Link](https://bitcoin.org/en/full-node#linux-instructions "Bitcoin.org")
 Unzip the bitcoin folder
 ```bash copy
 tar xzf bitcoin-27.1-x86_64-linux-gnu.tar.gz
