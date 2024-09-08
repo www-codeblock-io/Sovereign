@@ -71,6 +71,21 @@ https://armantheparman.com/electrum-server/
 Follow the below instructions to Install Electrum and create a test wallet. After that we can edit EPS config.ini file and then run EPS for the first time.
 
 ===
+### Create a Bitcoin Core wallet for EPS to use.
+1. Start bitcoind
+   ```bash copy
+   bitcoind -datadir=/media/rez/T7\ Shield
+   ```
+2. Create a legacy bitcoin wallet called 'electrumpersonalserver'
+   ```bash copy
+   bitcoin-cli -datadir=/media/rez/T7\ Shield createwallet electrumpersonalserver true true "" false false true
+   ```
+3. You can now close Bitcoin Core by running the below command in any teminal window.
+   ```bash copy
+   bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+   ```
+
+===
 ### Create a Test wallet
 We will set up a test (hot) wallet in Electrum so we can make sure all of our config settings are correct before actually loading up one of our wallets that contains funds.
 1. Run electrum. Run:
