@@ -4,10 +4,10 @@ Start Bitcoind
 ```bash copy
 bitcoind -datadir=/media/rez/T7\ Shield
 ```
-Start EPS
-```bash copy
-cd ~/Desktop/eps && electrum-personal-server config.ini
-```
+Start Electra
+   ```bash copy
+   ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
+   ```
 Start Electrum
 ```bash copy
 electrum --oneserver --server 127.0.0.1:50002:s
@@ -63,4 +63,8 @@ deprecatedrpc=create_bdb
 To search whole system directory
 ```bash copy
 find ~/. -name bitcoin*
+```
+Start EPS
+```bash copy
+cd ~/Desktop/eps && electrum-personal-server config.ini
 ```
