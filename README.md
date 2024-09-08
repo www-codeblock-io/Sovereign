@@ -542,7 +542,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
 
 
 ---
-## Electra: Tor hidden service
+## Electrs: Tor hidden service
 ???
 
 ---
@@ -613,19 +613,15 @@ We will set up a test (hot) wallet in Electrum so we can make sure all of our co
 
 ---
 ## Configure Electrum 
-1. Configure Electrum to only connect to your personal Bitcoin node via Electrs:
-      Click ```Tools``` tab then ```Network```. Unselect ```Select server automatically```. And edit ```Server``` to read: ```localhost:50001:t```
-
-2. Change Electrum base unit:
-      Click ```Tools``` tab then ```Preferences```. Change Base unit from mBTC to BTC, then shut down Electrum.
-
-3. Edit Electrum config file. Navigate to the hidden Electrum directory (this directory is only created once Electrum is run for the first time).
-      ```bash copy
-      cd ~/.electrum
-      ```
-4. Open config.ini file
+1. The Electrum config file is located in a hidden Electrum directory, however this directory is only created once Electrum is run for the first time. To prevent any privacy leaks we can run Electrum with some flags to make sure it only connects to our Bitcoin Core node.
    ```bash copy
-   nano config
+   electrum --oneserver --server <Tor_address>.onion:50001:t --proxy socks5:127.0.0.1:9150
+   ```
+   Once Electrum loads, immediatly close it down again so we can edit the config file that was just created.
+ 
+2. Open Electrum config file
+   ```bash copy
+   cd ~/.electrum && nano config
    ```
 6. Replace the contents of the file with the below. save and exit:
    ```bash copy
