@@ -102,7 +102,7 @@ Follow the [official](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-crea
 
 [Create partition table](https://ubuntuhandbook.org/index.php/2022/04/install-ubuntu-2204-step-by-step/amp/ "Ubuntuhandbook.org") (not always required).
 
-### Reusing bootable USB drive
+##### Reusing bootable USB drive
 Flashing a USB drive with an ISO image will place a write protection on the USB drive, to prevent accidental deletion of your bootable USB drive data. If you make a mistake and need to reformat the USB drive then use something like [Aomei](https://www.aomeitech.com/download.html#pa "Aomitech.com") to remove the write protection so you can reformat the drive and start again (or to reclaim the USB drive to be used for something else).
 
 
