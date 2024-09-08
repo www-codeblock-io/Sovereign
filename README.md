@@ -259,13 +259,9 @@ If you have trouble locating your external SSD Drive, try the following, open a 
 
 ---
 ## Configure Bitcoin Core
-1. Once the download has completed you will be greated with a Welcome screen and a prompt to create a new wallet. We will create a wallet using bitcoind with bitcoin-cli commands so shut down for now. Run:
-   ```bash copy
-   bitcoin-cli -datadir=/media/rez/T7\ Shield stop
-   ```
+Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  
 
-### Edit Bitcoin core config file. Run:
-Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  We need to edit the config file first so ignore this prompt and open Bitcoin Core config file.
+We won't be using Bitcoin Cores hot wallet (will be using Electrum instead) so ignore this prompt and and instead open Bitcoin Core config file.
 
 1. From the Bitcoin Core GUI click on ```Settings```, ```Options```, then ```Open Configuration File```.
 
@@ -290,7 +286,7 @@ Once Bitcoin core is fully synced you will be greeted with a welcome screen aski
    
 3. Now shut down Bitcoin Core so that the config changes we made can be applied. Click on the ```X``` in the top right hand corner. Or enter the below command in any Terminal window:
    ```bash copy
-   bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+   bitcoin-cli -datadir=/media/<User Name>/<External SSD Name> stop
    ```
 ### Allow incoming connections (optional but recommended)
 Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
