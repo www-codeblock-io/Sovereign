@@ -506,9 +506,9 @@ I chose to compile electrs by statically linking to librocksdb, which has less d
    ```bash copy
    cargo install cfg_me
    ```
-7. Navigate to Downloads directory and download Electrs
+7. Lets keep the main Electrs folder in our Home directory, navigate to Home and download Electrs
    ```bash copy
-   cd ~/Downloads && git clone https://github.com/romanz/electrs
+   cd ~ && git clone https://github.com/romanz/electrs
    ``` 
 8. Move into electrs directory
    ```bash copy
