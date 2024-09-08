@@ -467,7 +467,7 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
 
 [Why Electrs?](https://blog.casa.io/electrum-server-performance-report/)
 
-I installed the ```static``` version.
+### Build dependencies
 1. Install recent Rust
    ```bash copy
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -484,20 +484,55 @@ I installed the ```static``` version.
    ```bash copy
    sudo apt install clang cmake build-essential
    ```
-5.
-6.
-7.
-8.
-9.
-10.
 
-During installation build the below warning was thrown, I installed as the warning suggested:
+I chose to compile electrs by statically linking to librocksdb, which has less dependencies.
 
-warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to apply 1 suggestion)
-    Finished release [optimized] target(s) in 5m 53s
+5. Install dependencies 
+   ```bash copy
+   sudo apt install -y libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev
+   ```
+6. Clone the repo
+   ```bash copy
+   git clone -b v7.8.3 --depth 1 https://github.com/facebook/rocksdb && cd rocksdb
+   ```
+7. Install using make
+   ```bash copy
+   make shared_lib -j $(nproc) && sudo make install-shared
+   ```
+8. Clean up directory
+   ```bash copy
+   cd .. && rm -r rocksdb
+   ```
+6. Prepare man page generation (optional)
+   ```bash copy
+   cargo install cfg_me
+   ```
+7. Navigate to Downloads directory and download Electrs
+   ```bash copy
+   cd ~/Downloads && git clone https://github.com/romanz/electrs
+   ``` 
+8. Move into electrs directory
+   ```bash copy
+   cd electrs
+   ```
+### Build
+Note: you need to have enough free RAM to build electrs. The build will fail otherwise. Close those 100 old tabs in the browser. 
 
-I ran this command:
-$ cargo fix --lib -p electrs
+9. First build should take ~20 minutes
+   ```bash copy 
+   cargo build --locked --release
+   ```
+   During installation build the below warning was thrown, I installed as the warning suggested:
+
+   ```warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to apply 1 suggestion)
+    Finished release [optimized] target(s) in 5m 53s```
+
+   I ran the command suggested above
+   ```bash copy
+   cargo fix --lib -p electrs
+   ```
+### Generating man pages
+Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 man``` to save it into a file (```electrs.1```).
 
 ---
 ## Install Electrum
