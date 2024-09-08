@@ -414,7 +414,7 @@ If you delete this file, the next time bitcoind loads it will generate a new key
 1. Start Bitcoin Core GUI 
 ```bash copy
 bitcoin-qt
-```.
+```
 2. Once loaded enter the ```Network``` screen by pressing ```CTL+N```.
 3. Click on the ```Peers``` tab.
    You should now see a list of all the Bitcoin peers that your node is connected too. Under the ```Network``` column all the row values should say ```Onion```, meaning you are only connected to    peers over the onion ntwork. 
