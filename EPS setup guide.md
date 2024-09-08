@@ -168,3 +168,38 @@ Before running EPS for the first time make sure Bitcoin Core is fully synced & r
    It will ask for the earliest wallet creation date. Enter 1 to start from block height 1, and y to confirm. The first initial scan can take a while, but a pop up box will be displayed with a % completion displayed.
 
    Once the server has finished scanning it will gracefully shut down on it's own, so you can leave the server to do it's job and come back in an hour or so.
+
+===
+### Edit Bitcoin core config file. Run:
+Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  We need to edit the config file first so ignore this prompt and open Bitcoin Core config file.
+
+1. From the Bitcoin Core GUI click on ```Settings```, ```Options```, then ```Open Configuration File```.
+
+2. Enter the below text, save and exit
+   ```bash copy
+   # server=1, this tells Bitcoin to accept JSON-RPC commands 
+   # (such as ones from EPS). txindex=1 allows any transaction 
+   # to be looked up by Bitcoin Core, not just your own wallet.
+   server=1
+   txindex=1
+   listen=1
+
+   proxy=127.0.0.1:9050
+   bind=127.0.0.1
+
+   # only connect to Tor hidden services, not even IPv4/IPv6 nodes
+   onlynet=onion
+
+   # If running tor, walletbroadcast=0 prevents the node from 
+   # rebroadcasting transactions without tor.
+   walletbroadcast=0
+
+   # this allows old style bitcoin wallet to be created for eps 
+   # using bitcoin-cli createwallet electrumpersonalserver
+   deprecatedrpc=create_bdb
+   ```
+   
+3. Now shut down Bitcoin Core so that the config changes we made can be applied. Click on the ```X``` in the top right hand corner. Or enter the below command in any Terminal window:
+   ```bash copy
+   bitcoin-cli -datadir=/media/rez/T7\ Shield stop
+   ```
