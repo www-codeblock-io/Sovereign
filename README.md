@@ -28,7 +28,7 @@ Think of this as a general guide with some trouble shooting tips. I have include
 ---
 ## HARDWARE
 
-Bitcoin Core [minimum requirements](https://bitcoin.org/en/bitcoin-core/features/requirements):
+Bitcoin Core [minimum requirements](https://bitcoin.org/en/bitcoin-core/features/requirements)
 - Ram: 1GB
 - CPU: Some ARM chipsets >1.GHz
 - HDD: 650GB (however large the Bitcoin blockchain currently is.)
