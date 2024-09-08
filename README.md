@@ -4,14 +4,13 @@ last updated: 8th September 2024.
 # Project description
 This project is for anyone looking to setup there own Bitcoin node using a Laptop running Linux with the required software to use hardware wallets and interact with the Bitcoin network in a secure and sovereign manner.
 
-I recommend to always consult a software projects official installation instructions in the first instance. This will generally have the most robust queries and bugs already logged by users and answered by the project maintainers. With this in mind I have included a link to each official project page under every new software heading.
+I recommend in the first instance to always consult a software projects official installation instructions. This will generally have the most queries and bugs already logged by users and answered by the project maintainers. External guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page under every new heading.
 
-Think of this as a general guide with some trouble shooting tips. I have included all the Terminal commands that I personally run to achieve a working system.
-
+Think of this as a general guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve a working system.
 
 
 ---
-## SOFTWARE
+## SOFTWARE INSTALLED
 - Ubuntu 22.04 LTS
 - Bitcoin-Core
 - Tor
@@ -29,7 +28,7 @@ Think of this as a general guide with some trouble shooting tips. I have include
 ---
 ## HARDWARE
 
-Bitcoin Core minimum system requirements:
+Bitcoin Core minimum system [requirements](https://bitcoin.org/en/bitcoin-core/features/requirements):
 - Ram: 1GB
 - CPU: Some ARM chipsets >1.GHz
 - HDD: 650GB (however large the Bitcoin blockchain currently is.)
