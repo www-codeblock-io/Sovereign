@@ -66,7 +66,7 @@ Press the laptops power-on button then immediatly press the Function key that en
    - ```SHA256SUMS```
    - ```SHA256SUMS.gpg``` 
 
-Save all three files to your Downloads folder.
+   Save all three files to your Downloads folder.
 
 
 ### Verify download signitures
