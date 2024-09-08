@@ -16,6 +16,14 @@ Stop Bitcoind
 ```bash copy
 bitcoin-cli -datadir=/media/rez/T7\ Shield stop
 ```
+Stop Bitcoind as daemon
+```bash copy
+bitcoind -datadir=/media/rez/T7\ Shield -server -daemon
+```
+Check Bitcoind daemon
+```bash copy
+bitcoin-cli -datadir=/media/rez/T7\ Shield getblockchaininfo | head
+```
 ```bash copy
 sudo shutdown -r now
 ```
