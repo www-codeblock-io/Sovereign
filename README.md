@@ -571,15 +571,14 @@ Activate Systemctl and start at system Boot.
    ```bash copy
    sudo apt-get install python3-setuptools python3-pip && python3 -m pip install --user Electrum-4.5.5.tar.gz
    ```
-6. Clean up Downloads folder, remove downloaded files
+6. Clean up
    ```bash copy
    cd ~/Downloads && sudo rm -r Electrum-4.5.5.tar.gz Electrum-4.5.5.tar.gz.asc ThomasV.asc
    ```
-7. Do a system Restart
+7. System Restart
    ```bash copy
    sudo shutdown -r now
    ```   
-
 
 ---
 ## Configure Electrum 
