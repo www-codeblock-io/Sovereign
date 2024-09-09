@@ -8,23 +8,6 @@ I recommend in the first instance to always consult a software projects official
 
 Think of this as a general guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve the above goal.
 
-
----
-## SOFTWARE
-- Ubuntu 22.04 LTS
-- Bitcoin-Core
-- Tor
-- ProtonVPN
-- Electra
-- Electrum wallet
-- Specter wallet
-- Sparrow wallet
-
-(optional)
-- Brave Browser
-- Mullvad VPN
-- Telegram
-
 ---
 ## HARDWARE
 
@@ -45,6 +28,22 @@ I purchased this second hand [HP portable laptop](https://www.amazon.com/gp/aw/d
 
 I then added this external [2T SSD drive](https://a.co/d/itXEh1A) from Amazon.com for $140.
 
+---
+## SOFTWARE
+- Ubuntu 22.04 LTS
+- Bitcoin-Core
+- Tor
+- ProtonVPN
+- Electra
+- Electrum wallet
+- Specter wallet
+- Sparrow wallet
+
+(optional)
+- Brave Browser
+- Mullvad VPN
+- Telegram
+  
 ___
 ## VERIFY & INSTALL SOFTWARE
 
