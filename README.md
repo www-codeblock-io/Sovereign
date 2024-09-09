@@ -811,7 +811,27 @@ wget -q -O - https://github.com/Blockstream/Jade.rules.sh
 
 ---
 # Install Specter wallet
-???
+[Official Website](https://specter.solutions/index.html)
+1. Download Specter Desktop, SHA256SUMS and SHA256SUMS.asc to Downloads folder
+   ```bash copy
+   cd ~/Downloads && wget https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
+2. Download the pgp public key for 'Specter Signer' and Ben Kaufman
+   ```bash copy
+   wget http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x785a2269ee3a9736ac1a4f4c864b7cf9a811fef7 https://benkaufman.info/ben-kaufman.asc
+   ```
+3. Import the keys to your keychain
+   ```bash copy
+   gpg --import pgp_keys.asc
+   ```
+ 4. Verify the signiture
+    ```bash copy
+    gpg --verify SHA256SUMS.asc
+    ```
+5. Verify the software file
+   ```bash copy
+   sha256sum -c SHA256SUMS --ignore-missing
+   ```  
+   
 
 ---
 # Install Sparrow wallet
