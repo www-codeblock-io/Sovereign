@@ -727,10 +727,9 @@ Downgrade pip to allow the install of all the dependencies required to add HWW s
 python3 -m pip uninstall pip && python3 -m pip install pip==22
 ```
 
-### Connecting Ledger Live
-https://jamesachambers.com/fix-linux-ledger-live-usb-connection/
+### Install Ledger Live (optional)
+If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
 
-Follow the link for instructions to allow Ledger Live to access Ledger HWW.
 1. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
 2. Set the file to executable and then extract the contents. This will create a ```squashfs-root``` directory.
    ```bash copy
@@ -745,15 +744,47 @@ Follow the link for instructions to allow Ledger Live to access Ledger HWW.
    cd ~/Downloads/squashfs-root && bash AppRun
    ```
 
-### Install the required Electrum dependencies for HWW support:
-python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
-https://electrum.readthedocs.io/en/latest/hardware-linux.html
-
-### Update Linux UDEV
-https://github.com/spesmilo/electrum/tree/master/contrib/udev
+### Build Electrum Hardware Wallet support
+[Reference Link](https://electrum.readthedocs.io/en/latest/hardware-linux.html)
+1. Install dependencies
+   ```bash copy
+   python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
+   ```
+2. Update Linux UDEV rules
+[Reference Link](https://github.com/spesmilo/electrum/tree/master/contrib/udev)
 
 Go to the above link to collect the correct https address for the HWW rules. make the address read https://raw.<github etc.*.rule.sh
 
-like this for adding Ledger support:
+Ledger
+```bash copy
 wget -q -O - https://raw.github.com/LedgerHQ/udev-rules/blob/master/20-hw1.rules.sh | sudo bash
+```
+ColdCard
+```bash copy
+wget -q -O - https://raw.github.com/Coldcard/ckcc-protocol/blob/master/51-coinkite.rules.sh | sudo bash
+```
+Digital Bitbox
+```bash copy
+wget -q -O - https://raw.github.com/digitalbitbox/bitbox-wallet-app/blob/master/frontends/qt/resources/deb-afterinstall.rules.sh | sudo bash
+```
+BitBox02
+```bash copy
+wget -q -O - https://raw.github.com/digitalbitbox/bitbox-wallet-app/blob/master/frontends/qt/resources/deb-afterinstall.rules.sh | sudo bash
+```
+Trezor
+```bash copy
+wget -q -O - https://raw.github.com/trezor/trezor-common/blob/master/udev/51-trezor.rules.sh
+```
+Keepkey
+```bash copy
+wget -q -O - https://raw.github.com/keepkey/udev-rules/blob/master/51-usb-keepkey.rules.sh
+```
+Archos
+```bash copy
+wget -q -O - https://raw.github.com/archos-safe-t/safe-t-common/blob/master/udev/51-safe-t.rules.sh
+```
+Blockstream Jade
+```bash copy
+wget -q -O - https://github.com/Blockstream/Jade.rules.sh
+```
 
