@@ -820,7 +820,7 @@ python3 -m pip uninstall pip && python3 -m pip install pip==22
    ```bash copy
    python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
    ```
-   Our Linux system will also require udev rules from each Hardware device manufacturer. These were all included during the installation of Specter (as Specter privided a handy folder containing all the most popular hardware device Udev rules).
+   Our Linux system will also require udev rules from each Hardware device manufacturer. These were all included during the installation of Specter (as Specter privided a handy folder containing all the most popular hardware device Udev rules for Linux).
    
 ## Install Ledger Live (optional)
 If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
