@@ -11,7 +11,7 @@ bitcoind -datadir=/media/rez/T7\ Shield -server -daemon
 Start Electra
 ```bash copy
 cd /usr/local/bin/electrs && ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
-```cd ~/electrs && ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
+```
 Start Electrum
 ```bash copy
 electrum --oneserver --server 127.0.0.1:50002:s
