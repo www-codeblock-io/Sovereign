@@ -10,7 +10,7 @@ Think of this as a general guide with some trouble shooting tips. I have include
 
 
 ---
-## SOFTWARE INSTALLED
+## SOFTWARE
 - Ubuntu 22.04 LTS
 - Bitcoin-Core
 - Tor
