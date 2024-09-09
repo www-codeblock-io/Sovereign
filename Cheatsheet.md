@@ -27,10 +27,11 @@ bitcoin-cli -datadir=/media/rez/T7\ Shield getblockchaininfo | head
 
 ---
 ## Configs
-Open Bitcoin config
+Open Bitcoin.conf
 ```bash copy
 cd /media/rez/T7\ Shield && nano bitcoin.conf
-
+```
+Open Electrs config.toml
 ```bash copy
 cd ~/.electrs && nano config.toml 
 ```
