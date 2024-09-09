@@ -810,23 +810,36 @@ Your user will need to be added to the `plugdev` group, which needs to be create
 
 ---
 # Hardware Wallet support
-To allow Electrum to use Hardware Wallets, downgrade pip to allow installation of required dependencies:
-```bash copy
-python3 -m pip uninstall pip && python3 -m pip install pip==22
-```
+Linux systems require udev rules from each Hardware device manufacturer to allow the USB functionality to work. These were all included during the installation of Specter (as Specter privided a handy folder containing all the most popular hardware device Udev rules for Linux).
+
 ## Electrum HWW support
 [Reference Link](https://electrum.readthedocs.io/en/latest/hardware-linux.html)
-1. Install dependencies
+1. For electrum we just need to downgrade pip to allow installation of required dependencies for Electrum HWW support. Run:
+  ```bash copy
+  python3 -m pip uninstall pip && python3 -m pip install pip==22
+  ```
+2. Install dependencies
    ```bash copy
    python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
    ```
-   Our Linux system will also require udev rules from each Hardware device manufacturer. These were all included during the installation of Specter (as Specter privided a handy folder containing all the most popular hardware device Udev rules for Linux).
+3. Reinstall pip3
+   ```bash copy
+   sudo apt install python3-pip
+   ```
+4. Check pip3 was installed
+   ```bash copy
+   pip3 --version
+   ```
+5. Upgrade pip3 to the latest version
+   ```bash copy
+   sudo pip3 install --upgrade pip
+   ```
    
 ## Install Ledger Live (optional)
 If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
 
 1. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
-2. Add UDEV rules for Ledger Hardware Wallet (USB device)
+2. Add UDEV rules (if not already done so) for Ledger Hardware device
    ```bash copy
    wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
    ```
