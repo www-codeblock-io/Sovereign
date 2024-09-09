@@ -584,7 +584,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    log_filters = "INFO"
 
    ```
-### Create Electrs server index
+### Build Electrs server index
 4. Check size of current Bitcoin Core block directory
    ```bash copy
    du -ch /media/<USER>/<NAME_OF_SSD_DRIVE>/blocks/blk*.dat | tail -n1
