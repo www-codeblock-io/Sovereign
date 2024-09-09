@@ -638,7 +638,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
 ## Configure Electrum
 1. The Electrum config file is located in a hidden Electrum directory, however this directory is only created once Electrum is run for the first time. To prevent any privacy leaks we can run Electrum with some flags to make sure it only connects to our Electrs server.
    ```bash copy
-   electrum --oneserver --server <Tor_address>.onion:50001:t --proxy socks5:127.0.0.1:9150
+   electrum --oneserver --server 127.0.0.1:50001:t --proxy socks5:127.0.0.1:9150
    ```
    Once Electrum loads, immediatly close it down again so we can edit the config file that was just created.
  
