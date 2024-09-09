@@ -855,7 +855,7 @@ wget -q -O - https://github.com/Blockstream/Jade.rules.sh
    cd ~/Downloads/Specter
    ```
 9. Apply these rules by copying them to `/etc/udev/rules.d/` and notifying `udevadm`.
-Your user will need to be added to the `plugdev` group, which needs to be created if it does not already exist.
+Your user will need to be added to the `plugdev` group, which needs to be created if it does not already exist. Run the following commands one at a time:
   ```bash copy
   sudo cp udev/*.rules /etc/udev/rules.d/
   ```
