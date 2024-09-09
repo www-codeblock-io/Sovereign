@@ -621,7 +621,8 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
   ```bash copy
   brave-browser 'http://localhost:9090/graph?g0.range_input=1h&g0.expr=index_height&g0.tab=0'
   ```
-
+  Click on ```Status``` tab then ```Runtime & Build Information``` tab to see if prometheus loaded and is pulling stats for further user querying.  
+  
 ---
 # Install Electrum
 [Official website](https://electrum.org/#download)
