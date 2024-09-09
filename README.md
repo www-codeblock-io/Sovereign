@@ -743,7 +743,7 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    cd ~/Downloads/squashfs-root && bash AppRun
    ```
 
-## Build Electrum Hardware Wallet support
+## Electrum Hardware Wallet support
 [Reference Link](https://electrum.readthedocs.io/en/latest/hardware-linux.html)
 1. Install dependencies
    ```bash copy
