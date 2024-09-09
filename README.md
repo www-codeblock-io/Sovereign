@@ -871,11 +871,10 @@ Your user will need to be added to the `plugdev` group, which needs to be create
   ```bash copy
   sudo usermod -aG plugdev `whoami`
   ```
-
    
-8. Clean up
+10. Clean up, delete old files/directories
    ```bash copy
-   cd ~ && rm r- ~/Downloads/Specter   
+   cd ~ && rm -r ~/Downloads/Specter   
 
 ---
 # Install Sparrow wallet
