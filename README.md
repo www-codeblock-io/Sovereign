@@ -584,7 +584,22 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    log_filters = "INFO"
 
    ```
-4.    
+### Create Electrs server index
+4. Check size of current Bitcoin Core block directory
+   ```bash copy
+   du -ch /media/<USER>/<NAME_OF_SSD_DRIVE>/blocks/blk*.dat | tail -n1
+   ```
+   This will print the size of the existing Bitcoin Core block directory. The final Electrs index DB will be about 10-20% the size of the Bitcoin Core block directory.
+
+5. Start Electrs. First sync can take 1-2 days depending on CPU/hardware.
+   ```bash copy
+   cd /usr/local/bin/electrs && ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/USERNAME/<NAME_OF_SSD_DRIVE
+   ```
+7. Check final size of Electrs server index DB
+   ```bash copy
+   du /usr/local/bin/electrs/db
+   ```
+   
 
 
 ---
@@ -620,8 +635,8 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    ```   
 
 ---
-## Configure Electrum 
-1. The Electrum config file is located in a hidden Electrum directory, however this directory is only created once Electrum is run for the first time. To prevent any privacy leaks we can run Electrum with some flags to make sure it only connects to our Bitcoin Core node.
+## Configure Electrum to connect only to personal Electrs server
+1. The Electrum config file is located in a hidden Electrum directory, however this directory is only created once Electrum is run for the first time. To prevent any privacy leaks we can run Electrum with some flags to make sure it only connects to our Electrs server.
    ```bash copy
    electrum --oneserver --server <Tor_address>.onion:50001:t --proxy socks5:127.0.0.1:9150
    ```
@@ -680,23 +695,23 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
 1. From the Electrum window press CTRL+N, this will bring up the ```New/Restore``` menu.
 2. Choose a name for your wallet, you can just name the wallet something like ```satoshi_address``` or ```mr100```. Click ```Next```.
 3. Select ```Import Bitcoin addresses or private keys```, click ```Next```.
-4. Add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I added the following three addresses out of curiosty and fun. Just add the actual address (long string of 34 characters). i.e if you want to watch mr100 bitcoin address just add ```1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP``` and click ```Next```.
+4. Add any bitcoin addresses that you would like to watch. A simple Google search can return some interesting famous bitcoin addresses. I find it more intuative to create a new watch wallet for each address. Out of curiosty and fun, I added the following three addresses to three individual wallets named ```satoshi_address, huobi_address and mr100_address```. Just add the actual address (long string of 34 characters). i.e if you want to watch mr100 bitcoin address just add ```1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP``` and click ```Next```.
 
    - 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa (satoshi_address, shows first Bitcoin transaction to Hal Finney) 
    - 35hK24tcLEWcgNA4JxpvbkNkoAcDGqQPsP (Huobi_address = Huobi exchange hot wallet)
    - 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP (mr100_address = Unknown, transacts daily in blocks of 100 BTC)
    
-6. No need to set a wallet password as your just watching someone elses address. Click ```Finish```.
+6. No need to set a wallet password as your just watching someone elses Bitcoin address. Click ```Finish```.
  
 ---
-# Running Bitcoin-Core, Electra and Electrum.
+## Running Bitcoin-Core, Electra and Electrum.
 1. Start Bitcoin-Core. Run:
    ```bash copy
-   bitcoind -datadir=/media/rez/T7\ Shield -server -daemon
+   bitcoind -datadir=/media/<USERNAME>\<NAME_OF_SSD_DRIVE> -server -daemon
    ```
 2. Start Electra
    ```bash copy
-   ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
+   ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/<USERNAME>\<NAME_OF_SSD_DRIVE>
    ```
 5. Start Electrum
    ```bash copy
@@ -704,19 +719,31 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
    ```
 If ```Network``` light in the bottom righthand corner is blue then you are connected to your own node running behind Tor. It is now safe to interact with your real wallets.
 
+
 ---
-## Connecting Ledger Live
+# Connecting Hardware Wallets to Electrum
+Downgrade pip to allow the install of all the dependencies required to add HWW support to Electrum:
+```bash copy
+python3 -m pip uninstall pip && python3 -m pip install pip==22
+```
+
+### Connecting Ledger Live
 https://jamesachambers.com/fix-linux-ledger-live-usb-connection/
 
 Follow the link for instructions to allow Ledger Live to access Ledger HWW.
-
----
-## Connecting Hardware Wallets to Electrum
-Downgrade pip to be able to install all the dependencies required to add HWW support to Electrum:
-
-python3 -m pip uninstall pip
-python3 -m pip install pip==22
-
+1. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
+2. Set the file to executable and then extract the contents. This will create a ```squashfs-root``` directory.
+   ```bash copy
+   chmod +x ledger-live-desktop-2.85.1-linux-x86_64.AppImage
+./ledger-live-desktop-2.85.1-linux-x86_64.AppImage --appimage-extract 
+3. Add UDEV rules for Ledger Hardware Wallet (USB device)
+   ```bash copy
+   wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+   ```
+4. Start Ledger Live. Open a new Terminal window (```CTRL+ALT+T```)
+   ```bash copy
+   cd ~/Downloads/squashfs-root && bash AppRun
+   ```
 
 ### Install the required Electrum dependencies for HWW support:
 python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
