@@ -788,5 +788,9 @@ wget -q -O - https://github.com/Blockstream/Jade.rules.sh
 ```
 
 ---
-# Whats next?
+# Install Specter wallet
+???
+
+---
+# Install Sparrow wallet
 ???
