@@ -43,6 +43,7 @@ I then added this external [2T SSD drive](https://a.co/d/itXEh1A) from Amazon.co
 - Brave Browser
 - Mullvad VPN
 - Telegram
+- Ledger Live
   
 ___
 ## VERIFY & INSTALL SOFTWARE
