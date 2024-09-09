@@ -30,11 +30,11 @@ bitcoin-cli -datadir=/media/rez/T7\ Shield getblockchaininfo | head
 Open Bitcoin config
 ```bash copy
 cd /media/rez/T7\ Shield && nano bitcoin.conf
-```
-Open EPS config
+
 ```bash copy
-cd ~/Desktop/eps && nano config.ini
+cd ~/.electrs && nano config.toml 
 ```
+
 Open Electrum config
 ```bash copy
 cd ~/.electrum && nano config
@@ -76,6 +76,10 @@ find ~/. -name bitcoin*
 Start EPS
 ```bash copy
 cd ~/Desktop/eps && electrum-personal-server config.ini
+```
+Open EPS config
+```bash copy
+cd ~/Desktop/eps && nano config.ini
 ```
 ```bash copy
 sudo shutdown -r now
