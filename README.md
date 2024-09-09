@@ -748,79 +748,6 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
    ```
 If ```Network``` light in the bottom righthand corner is blue then you are connected to your own node running behind Tor. It is now safe to interact with your real wallets.
 
-
----
-# Hardware Wallet support
-To allow Electrum to use Hardware Wallets, downgrade pip to allow installation of required dependencies:
-```bash copy
-python3 -m pip uninstall pip && python3 -m pip install pip==22
-```
-
-## Install Ledger Live (optional)
-If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
-
-1. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
-2. Add UDEV rules for Ledger Hardware Wallet (USB device)
-   ```bash copy
-   wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
-   ```
-3. Set Ledger Live AppImage file to executable
-   ```bash copy
-   chmod +x ledger-live-desktop-2.85.1-linux-x86_64.AppImage
-   ```
-4. Shorten the name and move to the Desktop
-   ```bash copy
-   mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage ~/Desktop/LedgerLive-2.85.1.AppImage
-   ```
-3. Start Ledger Live by double clicking the AppImage file on the Desktop or Open a new Terminal window (```CTRL+ALT+T```)
-   ```bash copy
-   cd ~/Desktop && ./LedgerLive-2.85.1.AppImage
-   ```
-
-## Electrum Hardware Wallet support
-[Reference Link](https://electrum.readthedocs.io/en/latest/hardware-linux.html)
-1. Install dependencies
-   ```bash copy
-   python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
-   ```
-2. Update Linux UDEV rules
-[Reference Link](https://github.com/spesmilo/electrum/tree/master/contrib/udev)
-
-Add the UDEV rule for the Hardware Wallet you wish to use with Electrum (or add them all like I did).
-
-Ledger
-```bash copy
-wget -q -O - https://raw.github.com/LedgerHQ/udev-rules/blob/master/20-hw1.rules.sh | sudo bash
-```
-ColdCard
-```bash copy
-wget -q -O - https://raw.github.com/Coldcard/ckcc-protocol/blob/master/51-coinkite.rules.sh | sudo bash
-```
-Digital Bitbox
-```bash copy
-wget -q -O - https://raw.github.com/digitalbitbox/bitbox-wallet-app/blob/master/frontends/qt/resources/deb-afterinstall.rules.sh | sudo bash
-```
-BitBox02
-```bash copy
-wget -q -O - https://raw.github.com/digitalbitbox/bitbox-wallet-app/blob/master/frontends/qt/resources/deb-afterinstall.rules.sh | sudo bash
-```
-Trezor
-```bash copy
-wget -q -O - https://raw.github.com/trezor/trezor-common/blob/master/udev/51-trezor.rules.sh
-```
-Keepkey
-```bash copy
-wget -q -O - https://raw.github.com/keepkey/udev-rules/blob/master/51-usb-keepkey.rules.sh
-```
-Archos
-```bash copy
-wget -q -O - https://raw.github.com/archos-safe-t/safe-t-common/blob/master/udev/51-safe-t.rules.sh
-```
-Blockstream Jade
-```bash copy
-wget -q -O - https://github.com/Blockstream/Jade.rules.sh
-```
-
 ---
 # Install Specter wallet
 [Official Website](https://specter.solutions/index.html)
@@ -879,3 +806,38 @@ Your user will need to be added to the `plugdev` group, which needs to be create
 ---
 # Install Sparrow wallet
 ???
+
+---
+# Hardware Wallet support
+To allow Electrum to use Hardware Wallets, downgrade pip to allow installation of required dependencies:
+```bash copy
+python3 -m pip uninstall pip && python3 -m pip install pip==22
+```
+## Electrum HWW support
+[Reference Link](https://electrum.readthedocs.io/en/latest/hardware-linux.html)
+1. Install dependencies
+   ```bash copy
+   python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
+   ```
+   Our Linux system will also require udev rules from each Hardware device manufacturer. These were all included during the installation of Specter (as Specter privided a handy folder containing all the most popular hardware device Udev rules).
+   
+## Install Ledger Live (optional)
+If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
+
+1. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
+2. Add UDEV rules for Ledger Hardware Wallet (USB device)
+   ```bash copy
+   wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+   ```
+3. Set Ledger Live AppImage file to executable
+   ```bash copy
+   chmod +x ledger-live-desktop-2.85.1-linux-x86_64.AppImage
+   ```
+4. Shorten the name and move to the Desktop
+   ```bash copy
+   mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage ~/Desktop/LedgerLive-2.85.1.AppImage
+   ```
+3. Start Ledger Live by double clicking the AppImage file on the Desktop or Open a new Terminal window (```CTRL+ALT+T```)
+   ```bash copy
+   cd ~/Desktop && ./LedgerLive-2.85.1.AppImage
+   ```
