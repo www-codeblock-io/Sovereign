@@ -850,10 +850,28 @@ wget -q -O - https://github.com/Blockstream/Jade.rules.sh
    ```
 
 ### Set UDEV rules
-8. Naigate to udev directory
+8. Naigate to Specter directory
    ```bash copy
-   sudo cp udev/*.rules /etc/udev/rules.d/
+   cd ~/Downloads/Specter
+   ```
+9. Apply these rules by copying them to `/etc/udev/rules.d/` and notifying `udevadm`.
+Your user will need to be added to the `plugdev` group, which needs to be created if it does not already exist.
+  ```bash copy
+  sudo cp udev/*.rules /etc/udev/rules.d/
   ```
+  ```bash copy
+  sudo udevadm trigger
+  ```
+  ```bash copy
+  sudo udevadm control --reload-rules
+  ```
+  ```bash copy
+  sudo groupadd plugdev
+  ```
+  ```bash copy
+  sudo usermod -aG plugdev `whoami`
+  ```
+
    
 8. Clean up
    ```bash copy
