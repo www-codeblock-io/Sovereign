@@ -51,7 +51,7 @@ ___
 For all Bitcoin software, it’s a particularly important security step to verify the release. This is done to ensure the installation file you download has not been compromised. Follow download instructions and use gpg in the terminal as instructed.
 
 ___
-## Install Ubuntu 22.04 LTS
+# Install Ubuntu 22.04 LTS
 I installed Ubuntu 22.04 LTS because at the time of install, the Tor project had not released support for Ubuntu 24.04 LTS.
 
 ### Deactivate Secure-Boot
@@ -146,7 +146,7 @@ Then close the settings menu.
    ```
 
 ___
-## Install Proton VPN
+# Install Proton VPN
 1. Download repo. Run:
    ```bash copy
    wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb
@@ -183,11 +183,11 @@ ___
 **_Connect to ProtonVPN whenever accessing a web browser on your machine._**
 
 ---
-## Install Mullvad VPN (optional) 
+# Install Mullvad VPN (optional) 
 [Mullvad](https://mullvad.net/en/download/vpn/linux "Mullvad.net") recommended by the official Tor website. It's a paid service but has no email requirement and can use BTC to pay for the service. The internet speed should also be faster than a free ProtonVPN account.
 
 ___
-## Install Brave Browser (optional)
+# Install Brave Browser (optional)
 1. Enter the following commands one at a time. Run:
    ```bash copy
    sudo apt install curl
@@ -206,7 +206,7 @@ ___
    ```
 
 ---
-## Install Telegram Desktop (optional)
+# Install Telegram Desktop (optional)
 A quick solution for encrypted files/messages.
 1. Install Telegram from apt repo. Run:
    ```bash copy
@@ -214,7 +214,7 @@ A quick solution for encrypted files/messages.
    ```
 
 ---
-## Install Bitcoin Core
+# Install Bitcoin Core
 Head over to [Bitcoin Core](https://bitcoincore.org/en/download/ "Bitcoincore.org") and:
 - Download ```Linux(tgz) 64 bit``` and save to Downloads folder.
 - Scroll down the page, under the heading ```Verify your download```, click on ```Linux verification instructions```, then follow the instructions to verify your download.
@@ -309,8 +309,7 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
    ```
 
 ---
-## Install Tor
-
+# Install Tor
 [Official website](https://support.torproject.org/apt/tor-deb-repo/)
 
 1. Verify your CPU architecture. Run:
@@ -465,7 +464,7 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
 
 
 ---
-## Install Electrs
+# Install Electrs
 [Official website](https://github.com/romanz/electrs/tree/master?tab=readme-ov-file)
 
 [Why Electrs?](https://blog.casa.io/electrum-server-performance-report/)
@@ -584,7 +583,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    log_filters = "INFO"
 
    ```
-### Build Electrs server index
+## Build Electrs server index
 4. Check size of current Bitcoin Core block directory
    ```bash copy
    du -ch /media/<USER>/<NAME_OF_SSD_DRIVE>/blocks/blk*.dat | tail -n1
@@ -603,7 +602,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
 
 
 ---
-## Install Electrum
+# Install Electrum
 [Official website](https://electrum.org/#download)
 1. Download ThomasV public key and import into keychain. Run:
    ```bash copy
@@ -721,13 +720,13 @@ If ```Network``` light in the bottom righthand corner is blue then you are conne
 
 
 ---
-# Connecting Hardware Wallets to Electrum
-Downgrade pip to allow the install of all the dependencies required to add HWW support to Electrum:
+# Hardware Wallet support
+To allow Electrum to use Hardware Wallets, downgrade pip to allow installation of required dependencies:
 ```bash copy
 python3 -m pip uninstall pip && python3 -m pip install pip==22
 ```
 
-### Install Ledger Live (optional)
+## Install Ledger Live (optional)
 If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
 
 1. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
@@ -744,7 +743,7 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    cd ~/Downloads/squashfs-root && bash AppRun
    ```
 
-### Build Electrum Hardware Wallet support
+## Build Electrum Hardware Wallet support
 [Reference Link](https://electrum.readthedocs.io/en/latest/hardware-linux.html)
 1. Install dependencies
    ```bash copy
