@@ -593,7 +593,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
 
 5. Start Electrs. First sync can take 1-2 days depending on CPU/hardware.
    ```bash copy
-   cd /usr/local/bin/electrs && ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/USERNAME/<NAME_OF_SSD_DRIVE
+   cd /usr/local/bin/electrs && ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/<USERNAME>/<NAME_OF_SSD_DRIVE
    ```
 7. Check final size of Electrs server index DB
    ```bash copy
