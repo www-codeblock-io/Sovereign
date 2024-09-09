@@ -753,7 +753,7 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
 2. Update Linux UDEV rules
 [Reference Link](https://github.com/spesmilo/electrum/tree/master/contrib/udev)
 
-Go to the above link to collect the correct https address for the HWW rules. make the address read https://raw.<github etc.*.rule.sh
+Add the UDEV rule for the Hardware Wallet you wish to use with Electrum (or add them all like I did).
 
 Ledger
 ```bash copy
@@ -788,3 +788,6 @@ Blockstream Jade
 wget -q -O - https://github.com/Blockstream/Jade.rules.sh
 ```
 
+---
+# Whats next?
+???
