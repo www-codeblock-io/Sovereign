@@ -115,6 +115,14 @@ Once Installation has finished.
    sudo apt update && sudo apt upgrade
    ```
 
+### Install Libfuse
+[Official website](https://github.com/AppImage/AppImageKit/wiki/FUSE)
+Installing libfuse2 for Ubuntu 22.04 LTS will allow us to run downloaded AppImages such as Specter and Ledger Live Linux desktop apps.
+1. Install libfuse2
+   ```bash copy
+   sudo add-apt-repository universe && sudo apt install libfuse2
+  ```
+
 ### Adjust the power settings
 Because you will want to run your node for 6+ hours a day (24hrs is better) you will need to adjust the power & lid closure settings to prevent the laptop entering into a low power mode, slowing or halting network traffic.
 
@@ -752,17 +760,21 @@ python3 -m pip uninstall pip && python3 -m pip install pip==22
 If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
 
 1. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
-2. Set the file to executable and then extract the contents. This will create a ```squashfs-root``` directory.
-   ```bash copy
-   chmod +x ledger-live-desktop-2.85.1-linux-x86_64.AppImage
-./ledger-live-desktop-2.85.1-linux-x86_64.AppImage --appimage-extract 
-3. Add UDEV rules for Ledger Hardware Wallet (USB device)
+2. Add UDEV rules for Ledger Hardware Wallet (USB device)
    ```bash copy
    wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
    ```
-4. Start Ledger Live. Open a new Terminal window (```CTRL+ALT+T```)
+3. Set the file to executable
    ```bash copy
-   cd ~/Downloads/squashfs-root && bash AppRun
+   chmod +x ledger-live-desktop-2.85.1-linux-x86_64.AppImage
+   ```
+4. Shorten the name
+   ```bash copy
+   mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage LedgerLive-2.85.1.AppImage
+   ```
+3. Start Ledger Live by double clicking the AppImage file on the Desktop or Open a new Terminal window (```CTRL+ALT+T```)
+   ```bash copy
+   cd ~/Desktop && ./LedgerLive-2.85.1.AppImage
    ```
 
 ## Electrum Hardware Wallet support
@@ -812,26 +824,40 @@ wget -q -O - https://github.com/Blockstream/Jade.rules.sh
 ---
 # Install Specter wallet
 [Official Website](https://specter.solutions/index.html)
-1. Download Specter Desktop, SHA256SUMS and SHA256SUMS.asc to Downloads folder
+1. Create a new directory in Downloads folder called ```Specter``` and move into it.
    ```bash copy
-   cd ~/Downloads && wget https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
-2. Download the pgp public key for 'Specter Signer' and Ben Kaufman
+   mkdir ~/Downloads/Specter && cd ~/Downloads/Specter
+  ```
+3. Download Specter, SHA256SUMS and SHA256SUMS.asc to Downloads folder
    ```bash copy
-   wget http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x785a2269ee3a9736ac1a4f4c864b7cf9a811fef7 https://benkaufman.info/ben-kaufman.asc
+   wget https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
+
+4. Now head over to [here](https://specter.solutions/downloads/) and click on ```Verify signiture```, below ```For Linux```. Follow the instructions to verfiy both the signiture and the file.
+
+   On step #2, Brave browser blocked the download, I had to manually resume/approve the download by clicking on the small yellow triangle in the top righthand corner of the browser window. I also had to rename the file to ```pgp_keys.asc``` as Brave-browser wanted to name the file by the long RSA number.
+
+5. Extract the download
+   ```bash copy
+   tar -xvf ~/Downloads/Specter/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz
    ```
-3. Import the keys to your keychain
+6. Set AppImage to executable and move to Desktop
    ```bash copy
-   gpg --import pgp_keys.asc
+   chmod +x Specter-2.0.5.AppImage && mv Specter-2.0.5.AppImage ~/Desktop
    ```
- 4. Verify the signiture
-    ```bash copy
-    gpg --verify SHA256SUMS.asc
-    ```
-5. Verify the software file
+7. Start Specter by double clicking the AppImage on the Desktop or Open a new Terminal window (```CTRL+ALT+T```)
    ```bash copy
-   sha256sum -c SHA256SUMS --ignore-missing
-   ```  
+   cd ~/Desktop && ./Specter-2.0.5.AppImage
+   ```
+
+### Set UDEV rules
+8. Naigate to udev directory
+   ```bash copy
+   sudo cp udev/*.rules /etc/udev/rules.d/
+  ```
    
+8. Clean up
+   ```bash copy
+   cd ~ && rm r- ~/Downloads/Specter   
 
 ---
 # Install Sparrow wallet
