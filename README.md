@@ -598,8 +598,20 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    ```bash copy
    du /usr/local/bin/electrs/db
    ```
-   
-
+## Monitoring Electrs
+1. $ sudo apt install prometheus
+2. $cd /etc/prometheus/ && sudo nano prometheus.yml
+3. Scroll to the bottom of the file and add the below, save and exit.
+  ```bash copy
+    - job_name: electrs
+      static_configs:
+        - targets: ['localhost:4224']
+  ```
+4. $ sudo systemctl restart prometheus
+5. Check collected metrics
+  ```bash copy
+  brave 'http://localhost:9090/graph?g0.range_input=1h&g0.expr=index_height&g0.tab=0'
+  ```
 
 ---
 # Install Electrum
