@@ -41,6 +41,17 @@ cd ~/.electrum && nano config
 ```
 
 ---
+# Prometheus
+Restart prometheus
+```bash copy
+sudo systemctl restart prometheus
+```
+Check collected metrics
+```bash copy
+brave-browser 'http://localhost:9090/graph?g0.range_input=1h&g0.expr=index_height&g0.tab=0'
+```
+
+---
 ## Other settings
 Install net-tools to check incoming/outgoing port traffic
 ```bash copy
