@@ -82,6 +82,16 @@ Open EPS config
 ```bash copy
 cd ~/Desktop/eps && nano config.ini
 ```
+Get Electrum RPC USER & PASSWORD
+```bash copy
+electrum getconfig rpcuser
+electrum getconfig rpcpassword
+```
+Change Electrum RPC USER & PASSWORD
+```bash copy
+electrum setconfig rpcuser your_username
+electrum setconfig rpcpassword your_password
+```
 ```bash copy
 sudo shutdown -r now
 ```
