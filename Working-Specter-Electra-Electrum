@@ -41,7 +41,8 @@ deprecatedrpc=create_bdb
 # This example contains only the most important settings.
 # See docs or electrs man page for advanced settings.
 
-# File where bitcoind stores the cookie, usually file .cookie in its datadir
+# File where bitcoind stores the cookie (if not using RPC USER:PASSWORD in bitcoin.conf
+# usually file .cookie in its datadir
 #cookie_file = "/media/rez/T7 Shield/.cookie"
 
 # Use the below auth="USER:PASSWORD if you have RPC user/password set/active
