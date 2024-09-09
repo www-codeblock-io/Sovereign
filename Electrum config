@@ -1,8 +1,0 @@
-# Electrum configuration file: config
-
-{
-    "auto_connect": false,
-    "check_updates": false,
-    "oneserver": true,
-    "server": "127.0.0.1:50002:s"
-}
