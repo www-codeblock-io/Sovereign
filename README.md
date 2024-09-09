@@ -823,8 +823,9 @@ Linux systems require udev rules from each Hardware device manufacturer to allow
    python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
    ```
 3. Upgrade pip back to latest version
-   python3 -m pip uninstall pip && python3 -m pip install pip==24.2
-  ```
+   ```bash copy
+   sudo pip3 install --upgrade pip
+   ```
    
 ## Install Ledger Live (optional)
 If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
