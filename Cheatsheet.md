@@ -24,9 +24,7 @@ Check Bitcoind daemon
 ```bash copy
 bitcoin-cli -datadir=/media/rez/T7\ Shield getblockchaininfo | head
 ```
-```bash copy
-sudo shutdown -r now
-```
+
 ---
 ## Configs
 Open Bitcoin config
@@ -67,4 +65,7 @@ find ~/. -name bitcoin*
 Start EPS
 ```bash copy
 cd ~/Desktop/eps && electrum-personal-server config.ini
+```
+```bash copy
+sudo shutdown -r now
 ```
