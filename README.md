@@ -764,13 +764,13 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    ```bash copy
    wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
    ```
-3. Set the file to executable
+3. Set Ledger Live AppImage file to executable
    ```bash copy
    chmod +x ledger-live-desktop-2.85.1-linux-x86_64.AppImage
    ```
-4. Shorten the name
+4. Shorten the name and move to the Desktop
    ```bash copy
-   mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage LedgerLive-2.85.1.AppImage
+   mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage ~/Desktop/LedgerLive-2.85.1.AppImage
    ```
 3. Start Ledger Live by double clicking the AppImage file on the Desktop or Open a new Terminal window (```CTRL+ALT+T```)
    ```bash copy
