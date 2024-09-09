@@ -703,7 +703,7 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
 6. No need to set a wallet password as your just watching someone elses Bitcoin address. Click ```Finish```.
  
 ---
-# Run Bitcoin-Core, Electra and Electrum.
+# Running, Bitcoin-Core, Electra & Electrum.
 1. Start Bitcoin-Core. Run:
    ```bash copy
    bitcoind -datadir=/media/<USERNAME>\<NAME_OF_SSD_DRIVE> -server -daemon
