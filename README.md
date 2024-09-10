@@ -1,5 +1,5 @@
 # Sovereign - Bitcoin Personal Node
-last updated: 8th September 2024.
+last updated: 10th September 2024.
 
 # Project goal
 A secure and sovereign Bitcoin node using software self-verified (non branded/containerised), enabling the use of hardware wallets while preserving the privacy of personal addresses and balances when interacting with the Bitcoin network.
