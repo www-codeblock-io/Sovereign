@@ -74,7 +74,6 @@ log_filters = "INFO"
 
 ---
 # Electrum config 
-# Not working!
 ```bash copy
 {
     "auto_connect": false,
