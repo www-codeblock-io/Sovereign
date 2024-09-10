@@ -52,7 +52,7 @@ daemon_rpc_addr = "127.0.0.1:8332"
 daemon_p2p_addr = "127.0.0.1:8333"
 
 # Directory where the index should be stored. It should have at least 70GB of free space.
-db_dir = "/usr/local/bin/electrs/db"
+db_dir = "/home/<YOUR_USER_NAME>/electrs/db"
 
 # bitcoin means mainnet. Don't set to anything else unless you're a developer.
 network = "bitcoin"
