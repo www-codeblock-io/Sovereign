@@ -271,13 +271,13 @@ If you have trouble locating your external SSD Drive, try the following, open a 
 
 ---
 ## Configure Bitcoin Core
-Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```.  
+1. Once Bitcoin core is fully synced you will be greeted with a welcome screen asking if you would like to ```Create a new wallet```. Proceed to create a standard wallet. 
 
-We won't be using Bitcoin Cores hot wallet (will be using Electrum instead) so ignore this prompt and and instead open Bitcoin Core config file.
+2. Then edit Bitcoin Core config file.
 
-1. From the Bitcoin Core GUI click on ```Settings```, ```Options```, then ```Open Configuration File```.
+3. From the Bitcoin Core GUI click on ```Settings```, ```Options```, then ```Open Configuration File```.
 
-2. Enter the below text, save and exit
+4. Enter the below text, save and exit
    ```bash copy
    # server=1, this tells Bitcoin to accept JSON-RPC commands 
    # (such as ones from EPS or Electrs etc.). txindex=1 allows any transaction 
@@ -291,12 +291,17 @@ We won't be using Bitcoin Cores hot wallet (will be using Electrum instead) so i
 
    # only connect to Tor hidden services, not even IPv4/IPv6 nodes
    onlynet=onion
-
+  
+   # Electrs can use the .cookie setting to connect to Bitcoin Core
+   # but Specter can not and requires the rpcuser/rpcpassword to be set.
+   rpcuser=USERNAME
+   rpcpassword=USERPASSWORD
+   
    # If running tor, walletbroadcast=0 prevents the node from 
    # rebroadcasting transactions without tor.
    walletbroadcast=0
    
-3. Now shut down Bitcoin Core so that the config changes we made can be applied. Click on the ```X``` in the top right hand corner. Or enter the below command in any Terminal window:
+5. Now shut down Bitcoin Core so that the config changes we made can be applied. Click on the ```X``` in the top right hand corner. Or enter the below command in any Terminal window:
    ```bash copy
    bitcoin-cli -datadir=/media/<User Name>/<External SSD Name> stop
    ```
@@ -569,8 +574,12 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    # See docs or electrs man page for advanced settings.
    
    # File where bitcoind stores the cookie, usually file .cookie in its datadir
-   cookie_file = "/media/USERNAME/<NAME OF EXTERNAL SSD>/.cookie"
-   
+   #cookie_file = "/media/USERNAME/<NAME OF EXTERNAL SSD>/.cookie"
+
+   # Use the below auth="USER:PASSWORD if you have RPC user/password set/active
+   # in bitcoin.conf file.
+   auth="USERNAME:USERPASSWORD"
+
    # The listening RPC address of bitcoind, port is usually 8332
    daemon_rpc_addr = "127.0.0.1:8332"
    
@@ -606,7 +615,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    ```bash copy
    du /usr/local/bin/electrs/db
    ```
-## Monitoring Electrs
+## Monitoring Electrs (optional)
 1. Install prometheus
    ```bash copy
    sudo apt install prometheus
@@ -740,13 +749,13 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
    ```
 2. Start Electra
    ```bash copy
-   ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/<USERNAME>\<NAME_OF_SSD_DRIVE>
+   cd /usr/local/bin/electrs && ./target/release/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/<USERNAME>\<NAME_OF_SSD_DRIVE>
    ```
 5. Start Electrum
    ```bash copy
    electrum
    ```
-If ```Network``` light in the bottom righthand corner is blue then you are connected to your own node running behind Tor. It is now safe to interact with your real wallets.
+If the ```Network``` light in the bottom righthand corner of Electrum GUI is blue then you are connected to your own node running behind Tor. It is now safe to interact with your real wallets.
 
 ---
 # Install Specter wallet
@@ -775,7 +784,20 @@ If ```Network``` light in the bottom righthand corner is blue then you are conne
    ```bash copy
    cd ~/Desktop && ./Specter-2.0.5.AppImage
    ```
+### Specter configuration
+8. You will be greeted with Specters welcome screen providing the options to configure the application. Use the below config settings:
+   - Name = Bitcoin Core
+   - Username = USERNAME (matching the rpcuser details in bitocoin.conf file)
+   - Password = PASSWORD (matching the rpcpassword details in bitcoin.conf file)
+   - Host = 127.0.0.1
+   - Port = 8332
+   Click ```Connect```
 
+Specter Desktop will automatically utilize the existing Tor configuration that we are using for Bitcoin Core. To confirm, you can check the Specter Desktop logs for any Tor-related messages or errors. If everything is configured correctly, you should see no issues or warnings regarding Tor.
+9. Check Specter logs for any errors/issues
+  ```bash copy
+  cd ~/.specter && nano specterApp.log
+     
 ### Set UDEV rules
 8. Naigate to Specter directory
    ```bash copy
