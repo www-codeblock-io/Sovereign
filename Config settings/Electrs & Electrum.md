@@ -14,7 +14,7 @@ listen=1
 proxy=127.0.0.1:9050
 bind=127.0.0.1
 
-datadir=/media/rez/T7 Shield
+datadir=/media/<YOUR_USER_NAME>/<NAME_OF_SSD_DRIVE>
 
 # only connect to Tor hidden services, not even IPv4/IPv6 nodes
 onlynet=onion
@@ -43,7 +43,7 @@ deprecatedrpc=create_bdb
 # See docs or electrs man page for advanced settings.
 
 # File where bitcoind stores the cookie, usually file .cookie in its datadir
-cookie_file = "/media/rez/T7 Shield/.cookie"
+cookie_file = "/media/<YOUR_USER_NAME>/<NAME_OF_SSD_DRIVE>.cookie"
 
 # The listening RPC address of bitcoind, port is usually 8332
 daemon_rpc_addr = "127.0.0.1:8332"
