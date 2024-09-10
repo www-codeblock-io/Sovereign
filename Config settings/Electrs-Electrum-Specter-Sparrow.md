@@ -18,7 +18,7 @@ listen=1
 proxy=127.0.0.1:9050
 bind=127.0.0.1
 
-datadir=/media/<YOUR_USER_NAME>/<NAME_OF_SSD_DRIVE>
+datadir=/media/<USER>/<SSD_DRIVE_NAME>
 
 # only connect to Tor hidden services, not even IPv4/IPv6 nodes
 onlynet=onion
