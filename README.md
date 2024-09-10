@@ -806,7 +806,47 @@ Your user will need to be added to the `plugdev` group, which needs to be create
 
 ---
 # Install Sparrow wallet
-???
+[Official Website](https://sparrowwallet.com/)
+1. Verify your CPU architecture. Run:
+   ```bash copy
+   dpkg --print-architecture
+   ```
+2. Head over to [hear](https://sparrowwallet.com/download/) and download the installation file that matches your architecture. Save to Downloads folder.
+3. Scroll the Sparrow/Downloads page and follow the instruction under the heading ```Verifying the release``` to verify your download. It doesnt make sense to install software then use that software to verify itself so we will verify manually using gpg. Scroll down the official Sparrow download page further for the manual vefification instructions using gpg.
+5. Download and import craigraw/pgp_keys.asc
+   ```bash copy
+   curl https://keybase.io/craigraw/pgp_keys.asc | gpg --import
+   ```
+6. Verify the signature of the manifest file
+   ```bash copy
+   cd ~/Downloads && gpg --verify sparrow-1.9.1-manifest.txt.asc
+   ```
+7. Verify the download file
+   ```bash copy
+   sha256sum --check sparrow-1.9.1-manifest.txt --ignore-missing
+   ```
+   If you recieve the ```OK``` result to your terminal then the solftware is authentic and safe to install. This also means that we can now use Sparrows veification feature to easily verify future software from the GUI interface if we wish.
+   
+### Install and configure  
+9. Navigate to Downloads folder and install the downloaded .deb file. This will save the app to your ```Show Applications``` folder, that can be accessed from your Desktop.
+   ```bash copy
+   cd ~/Downloads && sudo dpkg -i <NAME_OF_FILE>.deb  
+10. Start Sparrow by double clicking the app icon.
+11. Read the welcome messages and then choose ```Server: type```, ```Private Electrum``` (the blue toggle switch).
+12. Enter these config settings
+   - URL: 127.0.0.1 50001
+   - Use SSL: toggle switch ```Off```
+   - Certificate: N/A (leave the field empty)
+   - Use Proxy: toggle switch ```On``` (blue)
+   - Proxy URL: 127.0.0.1 9050
+11. Make sure Bitcoin Core and Electrs are running then click on the ```Test Connection``` button. You should be greeted with the following text:
+  ```
+  Connected to electrs/0.10.5 on protocol version 1.4
+  Batched RPC enabled.
+  Server Banner: Welcome to electrs 0.10.5 (Electrum Rust Server)!
+  ```
+Read Sparrows official [docs](https://sparrowwallet.com/docs/) and proceed to use the software wallet as usual. Sparrow is open source and has exellent wallet encryption which aims at keeping the wallet open for as limited time as possible, this is a good security feature, you can also save this encrypted wallet file to a seperate location (external flash drive) for further plausible deniability. Electrum also encrypts the wallet but with Bitcoin Core it is possible to retrieve senitive wallet information so just be mindful of that. 
+
 
 ---
 # Hardware Wallet support
