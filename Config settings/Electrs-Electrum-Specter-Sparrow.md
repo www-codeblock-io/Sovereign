@@ -18,16 +18,16 @@ listen=1
 proxy=127.0.0.1:9050
 bind=127.0.0.1
 
-datadir=/media/<USER>/<SSD_DRIVE_NAME>
+datadir=/media/<User>\<External_SSD_Name>
 
 # only connect to Tor hidden services, not even IPv4/IPv6 nodes
 onlynet=onion
 
 # Electrs can use the .cookie setting to connect to Bitcoin Core
 # but Specter can not and requires the rpcuser/rpcpassword to be set.
-# Replace <USERNAME> and <USERPASSWORD> with a user name and password of your choice.
-rpcuser=<USERNAME>
-rpcpassword=<USERPASSWORD>
+# Replace <User> and <Password> with a user name and password of your choice.
+rpcuser=<User>
+rpcpassword=<Password>
 
 # If running tor, walletbroadcast=0 prevents the node from 
 # rebroadcasting transactions without tor.
@@ -54,11 +54,11 @@ deprecatedrpc=create_bdb
 
 # File where bitcoind stores the cookie (if not using RPC USER:PASSWORD in bitcoin.conf
 # usually file .cookie in its datadir
-#cookie_file = "/media/<USER>/<SSD_DRIVE_NAME>/.cookie"
+#cookie_file = "/media/<User>\<External_SSD_Name>/.cookie"
 
-# Use the below auth="USER:PASSWORD if you have RPC user/password set/active
+# Use the below auth="USER:PASSWORD" if you have RPC userpassword set:active
 # in bitcoin.conf file replace with the same user and password you used.
-auth="<USERNAME>:<USERPASSWORD>"
+auth="<User>:<Password>"
 
 # The listening RPC address of bitcoind, port is usually 8332
 daemon_rpc_addr = "127.0.0.1:8332"
@@ -67,7 +67,7 @@ daemon_rpc_addr = "127.0.0.1:8332"
 daemon_p2p_addr = "127.0.0.1:8333"
 
 # Directory where the index should be stored. It should have at least 70GB of free space.
-db_dir = "/home/<USER>/electrs/db"
+db_dir = "/home/<User>/electrs/db"
 
 # bitcoin means mainnet. Don't set to anything else unless you're a developer.
 network = "bitcoin"
