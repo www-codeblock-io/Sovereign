@@ -1,4 +1,4 @@
-## If using Specter wallet then use the bolow config settings.
+## If using Specter wallet then use the below config settings.
 ### Specter wallet can only use RPC to connect. Whereas Electrs can use both connection types (RPC or .cookie). So when running just Electrs with Electrum it's easy to use the .cookie connection type and not have to include RPC username/password.
 
 ### To add Specter to our software stack we have to implement RPC username/password in both the bitcoin.conf and config.yml files.
