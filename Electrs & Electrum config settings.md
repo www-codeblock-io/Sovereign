@@ -1,3 +1,7 @@
+## Electrs & Electrum config settings
+
+#### Electrs can use both connection types (RPC or .cookie). So when running just Electrum (via electrs) it's easier (and more secure) to use the .cookie connection type and not have to worry about including RPC username/password settings.
+
 # Bitcoin.conf
 ```bash copy
 # server=1, this tells Bitcoin to accept JSON-RPC commands 
