@@ -2,7 +2,7 @@
 
 #### Specter wallet can only use RPC to connect. Whereas Electrs can use both connection types (RPC or .cookie). So when running just Electrum (via electrs) it's easier to use the .cookie connection type and not have to worry about including RPC username/password settings.
 
-#### To add Specter to our software stack we have to implement RPC username/password in both the bitcoin.conf and config.yml files. Use the below config settings to use Electrs/Electrum/Specter and Sparrow on the same machine/node.
+To add Specter to our software stack we have to implement RPC username/password in both the bitcoin.conf and config.yml files. Use the below config settings to use Electrs/Electrum/Specter and Sparrow on the same machine/node.
 
 
 
