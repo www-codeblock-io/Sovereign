@@ -819,7 +819,7 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
    ```bash copy
    electrs --log-filters INFO --network bitcoin --db-dir ~/electrs/db --daemon-dir /media/<User>\<External_SSD_Name>
    ```
-5. Start Electrum once Electra has fully indexed and is at te blockchain tip. You can check this by looking at the Terminal printout and waiting for the ```INFO``` statment to say ??? 
+5. Start Electrum once Electra has fully indexed and is at te blockchain tip. You can check this by looking at the Terminal printout and waiting for the ```INFO electrs::chain chain updated```. Electrum will not sync until Electrs has synced to the tip of the Blockchain. So wait for the ```INFO electrs::chain chain updated``` and you are good to launch Electrum.
    ```bash copy
    electrum
    ```
