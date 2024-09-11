@@ -831,7 +831,7 @@ If the ```Network``` light in the bottom righthand corner of Electrum GUI is blu
 1. Create a new directory in Downloads folder called ```Specter``` and move into it.
    ```bash copy
    mkdir ~/Downloads/Specter && cd ~/Downloads/Specter
-  ```
+   ```
 2. Download Specter, SHA256SUMS and SHA256SUMS.asc to Downloads folder
    ```bash copy
    wget https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
