@@ -1,9 +1,9 @@
 # Lenovo Thinkpad
 Model: X1 Carbon Gen 6
+RAM: 16GB
 CPU:
 HDD: SSD 250GB
-RAM: 16GB
-SSD: 2T Samsung T7 Shield
+External SSD: 2T Samsung T7 Shield
 
 - Ubuntu 22.04.04 LTS (Jammy Jellyfish)
 - Bitcoin-Core-27.1
