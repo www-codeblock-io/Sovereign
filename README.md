@@ -140,28 +140,28 @@ Once Installation has finished.
 
 Ubuntu 22.04 LTS dependencies to run Specter and Ledger-Live apps.
 1. Install libfuse2
-   ```bash copy
-   sudo add-apt-repository universe && sudo apt install libfuse2
-   ```
+```bash copy
+sudo add-apt-repository universe && sudo apt install libfuse2
+```
 
 ### Install AppImageLauncher
 Creats Desktop icons to launch AppImages such as Specter & Ledger-Live.
 1. Install dependencies  
-   ```bash copy
-  sudo apt install software-properties-common
-   ```
+```bash copy
+sudo apt install software-properties-common
+```
 2. Add to apt repo
-   ```bash copy
-  sudo add-apt-repository ppa:appimagelauncher-team/stable
-   ```
+```bash copy
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+```
 3. Update apt  
-   ```bash copy  
-  sudo apt update
-   ```
+```bash copy  
+sudo apt update
+```
 4. Install
-   ```bash copy  
+```bash copy  
 sudo apt install appimagelauncher
-   ```
+```
 
 If running AppImageinstaller for the first time you will be greeted ```Welcome to AppImageLauncher!```. Configure your App image prefernces. It will create a new directory on your system to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location (I kept the default) then click ```OK```. On the next window you have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executable icon of the app to your systems ```Show Applications``` folder, locted via the Desktop toolbar. You can now also right click the App and add it to your favourites which will pin the app to your Tool bar for easy access. 
 
