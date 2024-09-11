@@ -928,15 +928,15 @@ Sparrow is open source and has exellent wallet encryption which aims at keeping 
    - Proxy URL: 127.0.0.1 9050
 11. Make sure Bitcoin Core and Electrs are running then click on the    
 ```Test Connection``` button. You should be greeted with the following text:
-   ```
-   Connected to electrs/0.10.5 on protocol version 1.4
-   Batched RPC enabled.
-   Server Banner: Welcome to electrs 0.10.5 (Electrum Rust Server)!
-   ```
+    ```
+    Connected to electrs/0.10.5 on protocol version 1.4
+    Batched RPC enabled.
+    Server Banner: Welcome to electrs 0.10.5 (Electrum Rust Server)!
+    ```
 12. Clean up, delete old files/directories
-   ```bash copy
-   cd ~/Downloads && rm -r sparrow_1.9.1-1_amd64.deb sparrow-1.9.1-manifest.txt.asc	sparrow-1.9.1-manifest.txt
-   ```
+    ```bash copy
+    cd ~/Downloads && rm -r sparrow_1.9.1-1_amd64.deb sparrow-1.9.1-manifest.txt.asc	sparrow-1.9.1-manifest.txt
+    ```
 
 Read Sparrows official [docs](https://sparrowwallet.com/docs/) and proceed to use the software wallet as usual. 
 
@@ -947,9 +947,9 @@ Linux systems require udev rules from each Hardware device manufacturer to allow
 ## Electrum HWW support
 [Reference Link](https://electrum.readthedocs.io/en/latest/hardware-linux.html)
 1. For electrum we just need to downgrade pip to allow installation of required dependencies for Electrum HWW support. Run:
-  ```bash copy
-  python3 -m pip uninstall pip && python3 -m pip install pip==22
-  ```
+   ```bash copy
+   python3 -m pip uninstall pip && python3 -m pip install pip==22
+   ```
 2. Install dependencies
    ```bash copy
    python3 -m pip install hidapi btchip-python ecdsa ledger-bitcoin
@@ -963,10 +963,10 @@ Linux systems require udev rules from each Hardware device manufacturer to allow
 If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to install.
 [Reference Link](https://support.ledger.com/article/4404389606417-zd)
 2. Add udev rules for Ledger (if not already done so) to allow USB access to your Ledger device
-  ```
-  wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
-  ```
-3. install Ubuntu 22.04 dependency
+   ```
+   wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+   ```
+3. Install Ubuntu 22.04 dependency
    ```bash copy
    sudo add-apt-repository universe
    ```
@@ -984,74 +984,74 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
 # TIPS
 # Launch Bitcoin Core & Electrs via Desktop icon
 1. First we need to create an executable bash script, we'll call it ```node.sh```
-  ```bash copy
-  nano node.sh
-  ```
+   ```bash copy
+   nano node.sh
+   ```
 2. Edit the file with your application launch paths
-  ```bash copy
-  #!/bin/bash
-  
-  # launch bitcoin-qt as a background job
+   ```bash copy
+   #!/bin/bash
+   
+   # launch bitcoin-qt as a background job
   /usr/local/bin/bitcoin-qt & 
 
-  # Sleep for 20 seconds to allow Bitcoin-qt to load and open its RPC port for connections.
-  # Increase sleep time if electra throws connectioin error.
-  sleep 20
+   # Sleep for 20 seconds to allow Bitcoin-qt to load and open its RPC port for connections.
+   # Increase sleep time if electra throws connectioin error.
+   sleep 20
+  
+   # launch electrs
+   /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
 
-  # launch electrs
-  /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
-
-  exit 0
-  ```
+   exit 0
+   ```
 
 3. Make the file executable
-  ```bash copy
-  chmod +x node.sh
-  ```
+   ```bash copy
+   chmod +x node.sh
+   ```
 
 ### Created a launchable Desktop icon
 4. Move to ```home``` directory and download a Bitcoin logo icon
-  ```bash copy
-  cd ~ && wget https://www.iconarchive.com/show/cryptocurrency-flat-icons-by-cjdowner/Bitcoin-BTC-icon.html
-  ```
+   ```bash copy
+   cd ~ && wget https://www.iconarchive.com/show/cryptocurrency-flat-icons-by-cjdowner/Bitcoin-BTC-icon.html
+   ```
 5. Shorten the file name
-  ```bash copy
-  mv Bitcoin-BTC-icon.html btclogo.html
-  ```
+   ```bash copy
+   mv Bitcoin-BTC-icon.html btclogo.html
+   ```
 6. Create a new file named bash.desktop in the home directory (same location as your node.sh file). This file will contain the desktop entry information.
-  ```bash copy
-  cd ~ && nano bash.desktop
-  ```
+   ```bash copy
+   cd ~ && nano bash.desktop
+   ```
 7. Edit the file adding the following information, if you downloaded the btc icon you can update the path to that         
-  ```Icon=/home/rez/btclogo.html``` save and exit:
-  ```bash copy
-    [Desktop Entry]
-    Version=1.0
-    Type=Application
-    Terminal=true
-    Icon=gnome-panel-launcher
-    Name=Bitcoin
-    Exec=/home/<user>/node.sh
-    Comment=Run Bash Script
-  ```
+ ```Icon=/home/rez/btclogo.html``` save and exit:
+   ```bash copy
+   [Desktop Entry]
+   Version=1.0
+   Type=Application
+   Terminal=true
+   Icon=gnome-panel-launcher
+   Name=Bitcoin
+   Exec=/home/<user>/node.sh
+   Comment=Run Bash Script
+   ```
 
 8. Validate the bash.desktop file using the desktop-file-validate command
-  ```bash copy
-  desktop-file-validate bash.desktop
-  ```
-  If there are no errors, the file is valid.
+   ```bash copy
+   desktop-file-validate bash.desktop
+   ```
+   If there are no errors, the file is valid.
 
 9. Move the bash.desktop file to Desktop
-  ```bash copy
-  mv bash.desktop ~/Desktop
-  ```
+   ```bash copy
+   mv bash.desktop ~/Desktop
+   ```
 
-  Log out and log back in to your system to ensure the icon is updated.
+   Log out and log back in to your system to ensure the icon is updated.
 
 10. Right-click the desktop icon, select ```Allow Launching``` (or similar). The icon should now be visible and launchable.
 
 11. Double click the desktop (Bitcoin) icon to Launch Bitcoin-qt and electrs together, or use the Terminal command:
-  ```bash copy
-  ./node.sh
-  ```
+    ```bash copy
+    ./node.sh
+    ```
 
