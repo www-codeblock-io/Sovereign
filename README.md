@@ -1027,9 +1027,12 @@ desktop-file-validate bash.desktop
 If there are no errors, the file is valid.
 
 Move the bash.desktop file to a location to Desktop
-```mv bash.desktop ~/Desktop
+```bash copy
+mv bash.desktop ~/Desktop
+```
 
 Log out and log back in to your system to ensure the icon is updated.
 
-Verify the icon: Right-click on the desktop, select “Create Launcher” (or similar), and browse to the location of your bash.desktop file. The icon should now be visible and launchable.
+Right-click on the desktop icon, select ```Allow Launching``` (or similar). The icon should now be visible and launchable.
+Double click to Launch.
 
