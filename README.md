@@ -883,11 +883,11 @@ Specter Desktop will automatically utilize the existing Tor configuration that w
 9. Check Specter logs for any errors/issues
   ```bash copy
   cd ~/.specter && nano specterApp.log
-     
+  ```   
 10. Clean up, delete old files/directories
    ```bash copy
    cd ~/Downloads && rm -r Specter   
-  ```
+   ```
 
 ---
 # Install Sparrow wallet
@@ -917,6 +917,7 @@ Sparrow is open source and has exellent wallet encryption which aims at keeping 
 7. Navigate to Downloads folder and install the downloaded .deb file. This will save the app to your ```Show Applications``` folder, that can be accessed from your Desktop.
    ```bash copy
    cd ~/Downloads && sudo dpkg -i <NAME_OF_FILE>.deb  
+   ```
 8. Start Sparrow by double clicking the app icon.
 9. Read the welcome messages and then choose ```Server: type```, ```Private Electrum``` (the blue toggle switch).
 10. Enter these config settings
@@ -925,16 +926,17 @@ Sparrow is open source and has exellent wallet encryption which aims at keeping 
    - Certificate: (leave the field empty)
    - Use Proxy: toggle switch ```On``` (blue)
    - Proxy URL: 127.0.0.1 9050
-11. Make sure Bitcoin Core and Electrs are running then click on the ```Test Connection``` button. You should be greeted with the following text:
-  ```
-  Connected to electrs/0.10.5 on protocol version 1.4
-  Batched RPC enabled.
-  Server Banner: Welcome to electrs 0.10.5 (Electrum Rust Server)!
-  ```
+11. Make sure Bitcoin Core and Electrs are running then click on the    
+```Test Connection``` button. You should be greeted with the following text:
+   ```
+   Connected to electrs/0.10.5 on protocol version 1.4
+   Batched RPC enabled.
+   Server Banner: Welcome to electrs 0.10.5 (Electrum Rust Server)!
+   ```
 12. Clean up, delete old files/directories
    ```bash copy
    cd ~/Downloads && rm -r sparrow_1.9.1-1_amd64.deb sparrow-1.9.1-manifest.txt.asc	sparrow-1.9.1-manifest.txt
-  ```
+   ```
 
 Read Sparrows official [docs](https://sparrowwallet.com/docs/) and proceed to use the software wallet as usual. 
 
