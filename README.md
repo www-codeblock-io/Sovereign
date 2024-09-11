@@ -797,15 +797,15 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
  
 ---
 # Running, Bitcoin-Core, Electra & Electrum.
-1. Start Bitcoin-Core. Run:
+1. Start Bitcoin-Core by running ```bitcoin-qt``` to use the GUI or to run a daemon. Run:
    ```bash copy
    bitcoind -datadir=/media/<User>\<External_SSD_Name> -server -daemon
    ```
-2. Start Electra once Bitcoin Core has synced
+2. Start Electra once Bitcoin Core has fully loaded
    ```bash copy
    electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/<User>\<External_SSD_Name>
    ```
-5. Start Electrum
+5. Start Electrum once Electra has fully indexed and is at te blockchain tip. You can check this by looking at the Terminal printout and waiting for the ```INFO``` statment to say ??? 
    ```bash copy
    electrum
    ```
@@ -965,8 +965,9 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    ```
    
 ---
-# Launch Bitcoin Core & Electrs via Bash script
-1. Make a new bash script
+# TIPS
+# Launch Bitcoin Core & Electrs via Desktop icon
+1. First we need to create an executable bash script, we'll call it ```node.sh```
   ```bash copy
   nano node.sh
   ```
@@ -977,7 +978,7 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
   # launch bitcoin-qt as a background job
   /usr/local/bin/bitcoin-qt & 
 
-  # Sleep for 20 seconds to allow Bitcoin-qt to load.
+  # Sleep for 20 seconds to allow Bitcoin-qt to load and open its RPC port for connections.
   # Increase sleep time if electra throws connectioin error.
   sleep 20
 
@@ -995,7 +996,7 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
 ### Created a launchable Desktop icon
 4. Move to ```home``` directory and download a Bitcoin logo icon
   ```bash copy
-  wget https://www.iconarchive.com/show/cryptocurrency-flat-icons-by-cjdowner/Bitcoin-BTC-icon.html
+  cd ~ && wget https://www.iconarchive.com/show/cryptocurrency-flat-icons-by-cjdowner/Bitcoin-BTC-icon.html
   ```
 5. Shorten the file name
   ```bash copy
@@ -1033,7 +1034,7 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
 
 10. Right-click the desktop icon, select ```Allow Launching``` (or similar). The icon should now be visible and launchable.
 
-11. Double click icon to Launch or use the Terminal command:
+11. Double click the desktop (Bitcoin) icon to Launch Bitcoin-qt and electrs together, or use the Terminal command:
   ```bash copy
   ./node.sh
   ```
