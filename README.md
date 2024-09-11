@@ -10,7 +10,7 @@ I recommend in the first instance to always consult a software projects official
 
 Think of this as a general guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve the above goal.
 
-# Why run a Bitcoin Personal Node?
+# Why run a Bitcoin Node?
 
 Inspired by [Arman The Parman](https://armantheparman.com/why-should-you-run-your-own-bitcoin-node/)
 Run a node so that...
