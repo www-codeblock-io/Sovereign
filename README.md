@@ -145,7 +145,8 @@ Installing libfuse2 for Ubuntu 22.04 LTS provides functionality to run downloade
   ```
 
 ### Install AppImageLauncher
-Install this little helper designed to improve your AppImage experience on your computer.
+
+Install this little helper, it automatically creats an app icon for launching apps rather than having to use the command line to launch.
   ```bash copy
   sudo apt install software-properties-common
   sudo add-apt-repository ppa:appimagelauncher-team/stable
