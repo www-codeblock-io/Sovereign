@@ -995,3 +995,12 @@ Start Bitcoin Core & Electrs using bash script
 ```bash copy
 ./node.sh
 ```
+### Created a launchable Desktop icon
+Move to ```home``` directory and download Bitcoin logo
+```bash copy
+wget https://en.bitcoin.it/wiki/File:BC_Logo_.png
+```
+Change the file name
+```bash copy
+mv File:BC_Logo_.png btclogo.png
+```
