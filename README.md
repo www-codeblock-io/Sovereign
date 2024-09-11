@@ -145,8 +145,9 @@ Ubuntu 22.04 LTS dependencies to run Specter and Ledger-Live apps.
    ```
 
 ### Install AppImageLauncher
-1. Creats Desktop icons to launch AppImages such as Specter & Ledger-Live.
-  ```bash copy
+Creats Desktop icons to launch AppImages such as Specter & Ledger-Live.
+1. Install dependencies  
+```bash copy
   sudo apt install software-properties-common
   ```
 2. Add to apt repo
@@ -154,7 +155,7 @@ Ubuntu 22.04 LTS dependencies to run Specter and Ledger-Live apps.
   sudo add-apt-repository ppa:appimagelauncher-team/stable
 
 3. Update apt  
-```bash copy  
+  ```bash copy  
   sudo apt update
   ```
 4. Install
