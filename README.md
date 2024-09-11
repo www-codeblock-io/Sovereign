@@ -146,16 +146,19 @@ Installing libfuse2 for Ubuntu 22.04 LTS provides functionality to run downloade
 
 ### Install AppImageLauncher
 
-Install this little helper, it automatically creats an app icon for launching apps rather than having to use the command line to launch.
-
+1. Install this little helper that automatically creats Desktop icons to launch AppImages such as Specter & Ledger Live.
   ```bash copy
   sudo apt install software-properties-common
   ```
+2. Add to apt repo
   ```bash copy
   sudo add-apt-repository ppa:appimagelauncher-team/stable
-  ```bash copy  
+
+3. Update apt  
+```bash copy  
   sudo apt update
   ```
+4. Install
   ```bash copy  
 sudo apt install appimagelauncher
   ```
