@@ -549,8 +549,8 @@ Note: you need to have enough free RAM to build electrs. The build will fail oth
    ```
    During installation build the below warning was thrown, I installed as the warning suggested:
 
-   ```warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to apply 1 suggestion)
-    Finished release [optimized] target(s) in 5m 53s```
+   __warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to apply 1 suggestion)
+    Finished release [optimized] target(s) in 5m 53s__
 
    I ran the command suggested above
    ```bash copy
