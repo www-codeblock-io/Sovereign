@@ -147,12 +147,14 @@ Installing libfuse2 for Ubuntu 22.04 LTS provides functionality to run downloade
 ### Install AppImageLauncher
 
 Install this little helper, it automatically creats an app icon for launching apps rather than having to use the command line to launch.
+
   ```bash copy
   sudo apt install software-properties-common
   sudo add-apt-repository ppa:appimagelauncher-team/stable
   sudo apt update
   sudo apt install appimagelauncher
   ```
+
 If running AppImageinstaller for the first time you will be greeted ```Welcome to AppImageLauncher!```. Configure your App image prefernces. It will create a new directory on your system to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location (I kept the default) then click ```OK```. On the next window you have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executable icon of the app to your systems ```Show Applications``` folder, locted via the Desktop toolbar. You can now also right click the App and add it to your favourites which will pin the app to your Tool bar for easy access. 
 
 ### Adjust the power settings
