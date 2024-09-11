@@ -963,3 +963,34 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    ```bash copy
    cd ~ && ./LedgerLive-2.85.1.AppImage
    ```
+   
+---
+# Make an executable bash script to start Bitcoin Core & Electrs
+Make a new bash script
+```bash copy
+nano node.sh
+```
+Edit the file with your application launch paths
+```bash copy
+  #!/bin/bash
+
+  # launch bitcoin-qt as a background job
+  /usr/local/bin/bitcoin-qt & 
+
+  # Sleep for 20 seconds to allow Bitcoin-qt to load, increase sleep time, if electra throws an error
+  sleep 20
+
+  # launch electrs
+  /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
+
+  exit 0
+```
+
+Make the file executable
+```bash copy
+chmod +x node.sh
+```
+Start Bitcoin Core & Electrs using bash script
+```bash copy
+./node.sh
+```
