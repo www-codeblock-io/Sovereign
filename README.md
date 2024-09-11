@@ -149,7 +149,7 @@ Install this little helper designed to improve your AppImage experience on your 
   sudo apt update
   sudo apt install appimagelauncher
   ```
-If running AppImageinstaller for the first time you will be greeted ```Welcome to AppImageLauncher!```. Configure your App image prefernces. It will create a new directory on your system to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location (I kept the default) then click ```OK```. On the next window you have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executabl icon of the app to your systems ```Show Applications``` folder, locted via the Desktop toolbar. You can now also right click the App and add it to your favourites which will pin the app to your Tool bar for easy access. 
+If running AppImageinstaller for the first time you will be greeted ```Welcome to AppImageLauncher!```. Configure your App image prefernces. It will create a new directory on your system to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location (I kept the default) then click ```OK```. On the next window you have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executable icon of the app to your systems ```Show Applications``` folder, locted via the Desktop toolbar. You can now also right click the App and add it to your favourites which will pin the app to your Tool bar for easy access. 
 
 ### Adjust the power settings
 Because you will want to run your node for 6+ hours a day (24hrs is better) you will need to adjust the power & lid closure settings to prevent the laptop entering into a low power mode, slowing or halting network traffic.
@@ -814,46 +814,24 @@ If the ```Network``` light in the bottom righthand corner of Electrum GUI is blu
    ```bash copy
    mkdir ~/Downloads/Specter && cd ~/Downloads/Specter
   ```
-3. Download Specter, SHA256SUMS and SHA256SUMS.asc to Downloads folder
+2. Download Specter, SHA256SUMS and SHA256SUMS.asc to Downloads folder
    ```bash copy
    wget https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
    ```
-4. Now head over to [here](https://specter.solutions/downloads/) and click on ```Verify signiture```, below ```For Linux```. Follow the instructions to verfiy both the signiture and the file.
+3. Now head over to [here](https://specter.solutions/downloads/) and click on ```Verify signiture```, below ```For Linux```. Follow the instructions to verfiy both the signiture and the file.
 
    On step #2, Brave browser blocked the download, I had to manually resume/approve the download by clicking on the small yellow triangle in the top righthand corner of the browser window. I also had to rename the file to ```pgp_keys.asc``` as Brave-browser wanted to name the file by the long RSA number.
 
-5. Extract the download
+4. Extract the download
    ```bash copy
    tar -xvf ~/Downloads/Specter/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz
    ```
-6. Set AppImage to executable and move to Desktop
-   ```bash copy
-   chmod +x Specter-2.0.5.AppImage && mv Specter-2.0.5.AppImage ~/Desktop
-   ```
-7. Start Specter by double clicking the AppImage on the Desktop or Open a new Terminal window (```CTRL+ALT+T```)
-   ```bash copy
-   cd ~/Desktop && ./Specter-2.0.5.AppImage
-   ```
-### Specter configuration
-8. You will be greeted with Specters welcome screen providing the options to configure the application. Use the below config settings:
-   - Name = Bitcoin Core
-   - Username = <UserName> (matching the rpcuser details in bitocoin.conf file)
-   - Password = <Password> (matching the rpcpassword details in bitcoin.conf file)
-   - Host = 127.0.0.1
-   - Port = 8332
-   Click ```Connect```
-
-Specter Desktop will automatically utilize the existing Tor configuration that we are using for Bitcoin Core. To confirm, you can check the Specter Desktop logs for any Tor-related messages or errors. If everything is configured correctly, you should see no issues or warnings regarding Tor.
-9. Check Specter logs for any errors/issues
-  ```bash copy
-  cd ~/.specter && nano specterApp.log
-     
-### Set UDEV rules
-8. Naigate to Specter directory
+5. Naigate to Specter directory
    ```bash copy
    cd ~/Downloads/Specter
    ```
-9. Apply these rules by copying them to `/etc/udev/rules.d/` and notifying `udevadm`.
+### Set UDEV rules
+6. Apply the following udev rules by copying them to `/etc/udev/rules.d/` and notifying `udevadm`.
 Your user will need to be added to the `plugdev` group, which needs to be created if it does not already exist. Run the following commands one at a time:
   ```bash copy
   sudo cp udev/*.rules /etc/udev/rules.d/
@@ -870,42 +848,60 @@ Your user will need to be added to the `plugdev` group, which needs to be create
   ```bash copy
   sudo usermod -aG plugdev `whoami`
   ```
-   
+7. Launch Specter for the first time
+   ```bash copy
+   cd ~/Downloads/Specter && ./Specter-2.0.5.AppImage
+   ```
+### Specter configuration
+8. You will be greeted with Specters welcome screen providing the options to configure the application. Use the below config settings:
+   - Name = Bitcoin Core
+   - Username = <UserName> (matching the rpcuser details in bitocoin.conf file)
+   - Password = <Password> (matching the rpcpassword details in bitcoin.conf file)
+   - Host = 127.0.0.1
+   - Port = 8332
+   Click ```Connect```
+
+Specter Desktop will automatically utilize the existing Tor configuration that we are using for Bitcoin Core. To confirm, you can check the Specter Desktop logs for any Tor-related messages or errors. If everything is configured correctly, you should see no issues or warnings regarding Tor.
+9. Check Specter logs for any errors/issues
+  ```bash copy
+  cd ~/.specter && nano specterApp.log
+     
 10. Clean up, delete old files/directories
    ```bash copy
-   cd ~ && rm -r ~/Downloads/Specter   
+   cd ~/Downloads && rm -r Specter   
   ```
 
 ---
 # Install Sparrow wallet
 [Official Website](https://sparrowwallet.com/)
+Sparrow is open source and has exellent wallet encryption which aims at keeping the wallet open for as limited time as possible, this is a good security feature, you can also save this encrypted wallet file to a seperate location (external flash drive) for further plausible deniability. Electrum also encrypts the wallet but with Bitcoin Core it is possible to retrieve sensitive wallet information so just be mindful of that. 
 1. Verify your CPU architecture. Run:
    ```bash copy
    dpkg --print-architecture
    ```
 2. Head over to [hear](https://sparrowwallet.com/download/) and download the installation file that matches your architecture. Save to Downloads folder.
 3. Scroll the Sparrow/Downloads page and follow the instruction under the heading ```Verifying the release``` to verify your download. It doesnt make sense to install software then use that software to verify itself so we will verify manually using gpg. Scroll down the official Sparrow download page further for the manual vefification instructions using gpg.
-5. Download and import craigraw/pgp_keys.asc
+4. Download and import craigraw/pgp_keys.asc
    ```bash copy
    curl https://keybase.io/craigraw/pgp_keys.asc | gpg --import
    ```
-6. Verify the signature of the manifest file
+5. Verify the signature of the manifest file
    ```bash copy
    cd ~/Downloads && gpg --verify sparrow-1.9.1-manifest.txt.asc
    ```
-7. Verify the download file
+6. Verify the download file
    ```bash copy
    sha256sum --check sparrow-1.9.1-manifest.txt --ignore-missing
    ```
    If you recieve the ```OK``` result to your terminal then the solftware is authentic and safe to install. This also means that we can now use Sparrows veification feature to easily verify future software from the GUI interface if we wish.
    
 ### Install and configure  
-9. Navigate to Downloads folder and install the downloaded .deb file. This will save the app to your ```Show Applications``` folder, that can be accessed from your Desktop.
+7. Navigate to Downloads folder and install the downloaded .deb file. This will save the app to your ```Show Applications``` folder, that can be accessed from your Desktop.
    ```bash copy
    cd ~/Downloads && sudo dpkg -i <NAME_OF_FILE>.deb  
-10. Start Sparrow by double clicking the app icon.
-11. Read the welcome messages and then choose ```Server: type```, ```Private Electrum``` (the blue toggle switch).
-12. Enter these config settings
+8. Start Sparrow by double clicking the app icon.
+9. Read the welcome messages and then choose ```Server: type```, ```Private Electrum``` (the blue toggle switch).
+10. Enter these config settings
    - URL: 127.0.0.1 50001
    - Use SSL: toggle switch ```Off```
    - Certificate: (leave the field empty)
@@ -917,8 +913,12 @@ Your user will need to be added to the `plugdev` group, which needs to be create
   Batched RPC enabled.
   Server Banner: Welcome to electrs 0.10.5 (Electrum Rust Server)!
   ```
-Read Sparrows official [docs](https://sparrowwallet.com/docs/) and proceed to use the software wallet as usual. Sparrow is open source and has exellent wallet encryption which aims at keeping the wallet open for as limited time as possible, this is a good security feature, you can also save this encrypted wallet file to a seperate location (external flash drive) for further plausible deniability. Electrum also encrypts the wallet but with Bitcoin Core it is possible to retrieve senitive wallet information so just be mindful of that. 
+12. Clean up, delete old files/directories
+   ```bash copy
+   cd ~/Downloads && rm -r sparrow_1.9.1-1_amd64.deb sparrow-1.9.1-manifest.txt.asc	sparrow-1.9.1-manifest.txt
+  ```
 
+Read Sparrows official [docs](https://sparrowwallet.com/docs/) and proceed to use the software wallet as usual. 
 
 ---
 # Hardware Wallet support
