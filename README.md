@@ -1009,26 +1009,33 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
    ```bash copy
    chmod +x node.sh
    ```
-4. Move to ```home``` directory and download a Bitcoin logo icon
+4. Check if you have a .icon directory
    ```bash copy
-   cd ~ && wget https://www.iconarchive.com/show/cryptocurrency-flat-icons-by-cjdowner/Bitcoin-BTC-icon.html
+   cd ~/.icon
    ```
-5. Shorten the file name
+   If you get the error ```No such file or directory```. Then create the directory.
    ```bash copy
-   mv Bitcoin-BTC-icon.html btclogo.html
+      mkdir ~/.icons
+   ```  
+4. Move to ```Downloads``` directory and download a Bitcoin logo icon
+   ```bash copy
+   cd ~/Downloads && wget https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg
+   ```
+5. Shorten the file name and move the file to the icon directory
+   ```bash copy
+   mv bitcoin-symbol.svg ~/.icon/btclogo.svg
    ```
 6. Create a new file named bash.desktop in the home directory (same location as your node.sh file). This file will contain the desktop entry information.
    ```bash copy
    cd ~ && nano bash.desktop
    ```
-7. Edit the file adding the following information, if you downloaded the btc icon you can update the path to that         
- ```Icon=/home/rez/btclogo.html``` save and exit:
+7. Edit the file adding the following information, save and exit:
    ```bash copy
    [Desktop Entry]
    Version=1.0
    Type=Application
    Terminal=true
-   Icon=gnome-panel-launcher
+   Icon=btclogo
    Name=Bitcoin
    Exec=/home/<user>/node.sh
    Comment=Run Bash Script
