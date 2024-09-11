@@ -57,7 +57,7 @@ I installed Ubuntu 22.04 LTS because at the time of install, the Tor project had
 ### Deactivate Secure-Boot
 If repurposing an old Windows laptop, Deactivate Secure-Boot.
 
-Secure boot signing authorities have made mistakes in the past ([section 3, page 2 under 'Disadvantages'](https://www.nsa.gov/portals/75/documents/what-we-do/cybersecurity/professional-resources/BootSecurityModesAndRec_20190522.pdf)). I will verify all the software myself and not trust a third-party to do this for me.
+Secure boot signing authorities have made mistakes in the past ([section 3, page 2 under 'Disadvantages'](https://www.nsa.gov/portals/75/documents/what-we-do/cybersecurity/professional-resources/BootSecurityModesAndRec_20190522.pdf)). Let's verify all the software ourselves and not trust a third-party to do this for us.
 
 1. Press the laptops power-on button then immediatly press the Function key that enters the Bios menu. For the HP Laptop I'm using it was the F2 key. [Bios key by manufacturer. ](https://gadgetmates.com/bios-key-by-manufacturer)
 2. Once the system Bios has loaded, proceed to turn-off ```Secure Boot``` (usually located under the ```security``` tab), save and exit. Then turn-off the laptop.
