@@ -13,7 +13,7 @@ Think of this as a general guide with some trouble shooting tips. I have include
 # Why run a Bitcoin Node?
 
 Inspired by [Arman The Parman](https://armantheparman.com/why-should-you-run-your-own-bitcoin-node/)
-Run a node so that...
+with a few personal additions...
 
 1. You can maximise privacy. Your wallet needs to connect to a node. If it doesn't need to rely on someone else's copy of the timechain data, you won't divulge your IP (your location!) nor you addresses (and their balances). It's potentially dangerous from attackers, but particular surveillance who WILL co-operate with your local ruler when it's confiscation time during the inevitable collapse of fiat.
 
