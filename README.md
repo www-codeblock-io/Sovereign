@@ -141,6 +141,16 @@ Installing libfuse2 for Ubuntu 22.04 LTS will allow us to run downloaded AppImag
    sudo add-apt-repository universe && sudo apt install libfuse2
   ```
 
+### Install AppImageLauncher
+Install this little helper designed to improve your AppImage experience on your computer.
+  ```bash copy
+  sudo apt install software-properties-common
+  sudo add-apt-repository ppa:appimagelauncher-team/stable
+  sudo apt update
+  sudo apt install appimagelauncher
+  ```
+If running AppImageinstaller for the first time you will be greeted ```Welcome to AppImageLauncher!```. Configure your App image prefernces. It will create a new directory on your system to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location (I kept the default) then click ```OK```. On the next window you have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executabl icon of the app to your systems ```Show Applications``` folder, locted via the Desktop toolbar. You can now also right click the App and add it to your favourites which will pin the app to your Tool bar for easy access. 
+
 ### Adjust the power settings
 Because you will want to run your node for 6+ hours a day (24hrs is better) you will need to adjust the power & lid closure settings to prevent the laptop entering into a low power mode, slowing or halting network traffic.
 
@@ -930,22 +940,22 @@ Linux systems require udev rules from each Hardware device manufacturer to allow
    ```
    
 ## Install Ledger Live (optional)
-If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to set required Udev rules so you can connect your Ledger device.
-
-1. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
-2. Add UDEV rules (if not already done so) for Ledger Hardware device
+If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to install.
+[Reference Link](https://support.ledger.com/article/4404389606417-zd)
+2. Add udev rules for Ledger (if not already done so) to allow USB access to your Ledger device
+  ```
+  wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+  ```
+3. install Ubuntu 22.04 dependency
    ```bash copy
-   wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+   sudo add-apt-repository universe
    ```
-3. Set Ledger Live AppImage file to executable
+4. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
+5. Shorten the name and move to the ```home``` directory
    ```bash copy
-   chmod +x ledger-live-desktop-2.85.1-linux-x86_64.AppImage
+   mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage ~/LedgerLive-2.85.1.AppImage
    ```
-4. Shorten the name and move to the Desktop
+3. Run Ledger-Live for the first time (after the first run the app will be added to your ```Show Applications``` folder via the desktop Toolbar.
    ```bash copy
-   mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage ~/Desktop/LedgerLive-2.85.1.AppImage
-   ```
-3. Start Ledger Live by double clicking the AppImage file on the Desktop or Open a new Terminal window (```CTRL+ALT+T```)
-   ```bash copy
-   cd ~/Desktop && ./LedgerLive-2.85.1.AppImage
+   cd ~ && ./LedgerLive-2.85.1.AppImage
    ```
