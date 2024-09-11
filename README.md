@@ -1060,4 +1060,40 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
     ```bash copy
     ./node.sh
     ```
+### Build Electrum desktop icon
+Create a desktop icon so we can luanch Electrum from the desktop GUI
+1. Create a new .desktop file
+  ``` bash copy
+  touch ~/Desktop/electrum.desktop
+  ```
 
+2. Edit the new .desktop file
+  ```bash copy
+  nano ~/Desktop/electrum.desktop
+  ```
+3. Add the following into the file, save and close.
+   ```bash copy
+   [Desktop Entry]
+   Name=Electrum
+   Comment=Lightweight Bitcoin Wallet.
+   GenericName=Bitcoin Wallet.
+   Exec=/usr/local/bin/electrum
+   Icon=electrum
+   Type=Application
+   ```
+4. Download Electrum icon to the .icons directory
+   ```bash copy
+   cd ~/.icons && sudo wget https://icons.iconarchive.com/icons/alecive/flatwoken/256/Apps-Electrum-icon.png
+   ```
+5. Shorten the icon name
+   ```bash copy
+   sudo mv Apps-Electrum-icon.png electrum.png
+   ```
+6. Udate the shortcut’s permissions:
+   ```bash copy
+   chmod +x ~/Desktop/electrum.desktop
+   ```
+7. Also add a shortcut to your app-menu
+   ```bash copy
+   sudo cp ~/Desktop/electrum.desktop /usr/share/applications/
+   ```
