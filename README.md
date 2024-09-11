@@ -789,7 +789,7 @@ If the ```Network``` light in the bottom righthand corner of Electrum GUI is blu
 3. Download Specter, SHA256SUMS and SHA256SUMS.asc to Downloads folder
    ```bash copy
    wget https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
-
+   ```
 4. Now head over to [here](https://specter.solutions/downloads/) and click on ```Verify signiture```, below ```For Linux```. Follow the instructions to verfiy both the signiture and the file.
 
    On step #2, Brave browser blocked the download, I had to manually resume/approve the download by clicking on the small yellow triangle in the top righthand corner of the browser window. I also had to rename the file to ```pgp_keys.asc``` as Brave-browser wanted to name the file by the long RSA number.
