@@ -1020,17 +1020,17 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
    ```bash copy
       mkdir ~/.icons
    ```  
-4. Move to ```Downloads``` directory and download a Bitcoin logo icon
+4. Move to ```~/.icons``` directory and download a Bitcoin logo icon
    ```bash copy
-   cd ~/Downloads && wget https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg
+   cd ~/.icons && wget https://bitcoin.design/assets/images/guide/getting-started/visual-language/bitcoin-symbol.svg
    ```
 5. Shorten the file name and move the file to the icon directory
    ```bash copy
-   mv bitcoin-symbol.svg ~/.icon/btclogo.svg
+   mv bitcoin-symbol.svg btclogo.svg
    ```
 6. Create a new file named bash.desktop in the home directory (same location as your node.sh file). This file will contain the desktop entry information.
    ```bash copy
-   cd ~ && nano bash.desktop
+   cd ~ && nano bitcoin.desktop
    ```
 7. Edit the file adding the following information, save and exit:
    ```bash copy
@@ -1046,13 +1046,13 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
 
 8. Validate the bash.desktop file using the desktop-file-validate command
    ```bash copy
-   desktop-file-validate bash.desktop
+   desktop-file-validate bitcoin.desktop
    ```
    If there are no errors, the file is valid.
 
 9. Move the bash.desktop file to Desktop
    ```bash copy
-   mv bash.desktop ~/Desktop
+   mv bitcoin.desktop ~/Desktop
    ```
 
    Log out and log back in to your system to ensure the icon is updated.
@@ -1084,23 +1084,11 @@ Create a desktop icon so we can luanch Electrum from the desktop GUI
    Icon=electrum
    Type=Application
    ```
-4. Download Electrum icon to the .icons directory
-   ```bash copy
-   cd ~/.icons && sudo wget https://icons.iconarchive.com/icons/alecive/flatwoken/256/Apps-Electrum-icon.png
-   ```
-5. Shorten the icon name
-   ```bash copy
-   sudo mv Apps-Electrum-icon.png electrum.png
-   ```
-6. Udate the shortcut’s permissions:
+4. Udate the shortcut’s permissions:
    ```bash copy
    chmod +x ~/Desktop/electrum.desktop
    ```
-7. Also add a shortcut to your app-menu
+5. Also add a shortcut to your app-menu
    ```bash copy
    sudo cp ~/Desktop/electrum.desktop /usr/share/applications/
-   ```
-8. Finally move Electrum executable to /usr/local/bin
-   ```bash copy
-   mv ~/.local/bin/electrum /usr/local/bin
    ```
