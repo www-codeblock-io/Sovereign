@@ -988,26 +988,26 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    nano node.sh
    ```
 2. Edit the file with your application launch paths
-  ```bash copy
-  #!/bin/bash
-  
-  # launch bitcoin-qt as a background job
-  /usr/local/bin/bitcoin-qt & 
-  
-  # Sleep for 20 seconds to allow Bitcoin-qt to load and open its RPC port for connections.
-  # Increase sleep time if electra throws connectioin error.
-  sleep 20
-  
-  # launch electrs
-  /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
+   ```bash copy
+   #!/bin/bash
+   
+   # launch bitcoin-qt as a background job
+   /usr/local/bin/bitcoin-qt & 
+   
+   # Sleep for 20 seconds to allow Bitcoin-qt to load and open its RPC port for connections.
+   # Increase sleep time if electra throws connectioin error.
+   sleep 20
+   
+   # launch electrs
+   /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
 
-  exit 0
-  ```
+   exit 0
+   ```
 
 3. Make the file executable
-  ```bash copy
-  chmod +x node.sh
-  ```
+   ```bash copy
+   chmod +x node.sh
+   ```
 
 ### Created a launchable Desktop icon
 4. Move to ```home``` directory and download a Bitcoin logo icon
@@ -1051,7 +1051,7 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
 10. Right-click the desktop icon, select ```Allow Launching``` (or similar). The icon should now be visible and launchable.
 
 11. Double click the desktop (Bitcoin) icon to Launch Bitcoin-qt and electrs together, or use the Terminal command:
-   ```bash copy
-   ./node.sh
-   ```
+    ```bash copy
+    ./node.sh
+    ```
 
