@@ -1002,7 +1002,7 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
    sleep 5
    
    # launch electrs
-   /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ~/electrs/db --daemon-dir /media/rez/T7\ Shield &
+   /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ~/electrs/db --daemon-dir /media/rez/T7\ Shield
    
    exit 0
 
