@@ -138,14 +138,14 @@ Once Installation has finished.
 ### Install Libfuse
 [Official website](https://github.com/AppImage/AppImageKit/wiki/FUSE)
 
-Installing libfuse2 for Ubuntu 22.04 LTS provides functionality to run downloaded AppImages such as Specter and Ledger Live desktop apps.
+Ubuntu 22.04 LTS dependencies to run Specter and Ledger-Live apps.
 1. Install libfuse2
    ```bash copy
    sudo add-apt-repository universe && sudo apt install libfuse2
    ```
 
 ### Install AppImageLauncher
-1. Install this little helper that automatically creats Desktop icons to launch AppImages such as Specter & Ledger Live.
+1. Creats Desktop icons to launch AppImages such as Specter & Ledger-Live.
   ```bash copy
   sudo apt install software-properties-common
   ```
