@@ -966,14 +966,14 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    
 ---
 # Launch Bitcoin Core & Electrs via Bash script
-Make a new bash script
-```bash copy
-nano node.sh
-```
-Edit the file with your application launch paths
-```bash copy
+1. Make a new bash script
+  ```bash copy
+  nano node.sh
+  ```
+2. Edit the file with your application launch paths
+  ```bash copy
   #!/bin/bash
-
+  
   # launch bitcoin-qt as a background job
   /usr/local/bin/bitcoin-qt & 
 
@@ -985,54 +985,56 @@ Edit the file with your application launch paths
   /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
 
   exit 0
-```
-
-Make the file executable
-```bash copy
-chmod +x node.sh
-```
-Start Bitcoin Core & Electrs using bash script from Terminal
-```bash copy
-./node.sh
-```
-### Created a launchable Desktop icon
-Move to ```home``` directory and download a Bitcoin logo icon
-```bash copy
-wget https://www.iconarchive.com/show/cryptocurrency-flat-icons-by-cjdowner/Bitcoin-BTC-icon.html
-```
-Shorten the file name
-```bash copy
-mv Bitcoin-BTC-icon.html btclogo.html
-```
-Create a new file named bash.desktop in the home directory (same location as your node.sh file). This file will contain the desktop entry information.
-```bash copy
-cd ~ && nano bash.desktop
-```
-Edit the file adding the following information, save and exit:
-```bash copy
-  [Desktop Entry]
-  Version=1.0
-  Type=Application
-  Terminal=true
-  Icon=/path/to/icon.png
-  Name=Bitcoin
-  Exec=/home/<user>/node.sh
-  Comment=Run Bash Script
   ```
 
-Validate the bash.desktop file using the desktop-file-validate command
-```bash copy
-desktop-file-validate bash.desktop
-```
-If there are no errors, the file is valid.
+3. Make the file executable
+  ```bash copy
+  chmod +x node.sh
+  ```
 
-Move the bash.desktop file to a location to Desktop
-```bash copy
-mv bash.desktop ~/Desktop
-```
+### Created a launchable Desktop icon
+4. Move to ```home``` directory and download a Bitcoin logo icon
+  ```bash copy
+  wget https://www.iconarchive.com/show/cryptocurrency-flat-icons-by-cjdowner/Bitcoin-BTC-icon.html
+  ```
+5. Shorten the file name
+  ```bash copy
+  mv Bitcoin-BTC-icon.html btclogo.html
+  ```
+6. Create a new file named bash.desktop in the home directory (same location as your node.sh file). This file will contain the desktop entry information.
+  ```bash copy
+  cd ~ && nano bash.desktop
+  ```
+7. Edit the file adding the following information, if you downloaded the btc icon you can update the path to that         
+  ```Icon=/home/rez/btclogo.html``` save and exit:
+  ```bash copy
+    [Desktop Entry]
+    Version=1.0
+    Type=Application
+    Terminal=true
+    Icon=gnome-panel-launcher
+    Name=Bitcoin
+    Exec=/home/<user>/node.sh
+    Comment=Run Bash Script
+  ```
 
-Log out and log back in to your system to ensure the icon is updated.
+8. Validate the bash.desktop file using the desktop-file-validate command
+  ```bash copy
+  desktop-file-validate bash.desktop
+  ```
+  If there are no errors, the file is valid.
 
-Right-click on the desktop icon, select ```Allow Launching``` (or similar). The icon should now be visible and launchable.
-Double click to Launch.
+9. Move the bash.desktop file to Desktop
+  ```bash copy
+  mv bash.desktop ~/Desktop
+  ```
+
+  Log out and log back in to your system to ensure the icon is updated.
+
+10. Right-click the desktop icon, select ```Allow Launching``` (or similar). The icon should now be visible and launchable.
+
+11. Double click icon to Launch or use the Terminal command:
+  ```bash copy
+  ./node.sh
+  ```
 
