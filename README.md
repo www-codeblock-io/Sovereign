@@ -183,9 +183,9 @@ Then close the settings menu.
 
 ___
 # Install Proton VPN
-1. Download repo. Run:
+1. Move to Downloads folder and download repo. Run:
    ```bash copy
-   wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb
+   cd ~/Downloads && wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.4_all.deb
    ```
 
 2. Install repo
@@ -212,6 +212,10 @@ ___
    By default, GNOME doesn’t support tray icons. Enable this functionality
    ```bash copy
    sudo apt install libayatana-appindicator3-1 gir1.2-ayatanaappindicator3-0.1 gnome-shell-extension-appindicator
+   ```
+8. Clean up and remove old files
+   ```bash copy
+   cd ~/Downloads && rm -r protonvpn-stable-release_1.0.4_all.deb
    ```
 9. Headover to [ProtonVPN](https://account.protonvpn.com/signup "ProtonVPN.com") and Sign-up to a free account.
 
