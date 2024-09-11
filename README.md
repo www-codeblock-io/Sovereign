@@ -8,6 +8,24 @@ I recommend in the first instance to always consult a software projects official
 
 Think of this as a general guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve the above goal.
 
+# Why run a Bitcoin Personal Node?
+
+Inspired by [Arman The Parman](https://armantheparman.com/why-should-you-run-your-own-bitcoin-node/)
+Run a node so that...
+
+1. You can maximise privacy. Your wallet needs to connect to a node. If it doesn't need to rely on someone else's copy of the timechain data, you won't divulge your IP (your location!) nor you addresses (and their balances). It's potentially dangerous from attackers, but particular surveillance who WILL co-operate with your local ruler when it's confiscation time during the inevitable collapse of fiat.
+
+2. You can verify if you have been paid - like checking a gold payment is real by melting it down. A bitcoin payment must register on your copy of the timechain.
+
+3. Defend the rules of your money if there is a contentious fork - no one can force you to run Bitcoin Larry Fink's Vision, for example.
+
+4. Be one of many cockroaches that need to be destroyed to wipe out the UTXO set (who owns what). Note even that doesn't kill Bitcoin, Bitcoin is an idea. They'd have to kill all the Bitcoiners.
+
+5. Help someone else run a node, or provide the infrastructure so someone else can trust you and connect to your node. Remember, being a human node is not the power to run the software but the power to choose the right software to connect to - you can be that option for people, especially those you orange pill, instead of letting them connect to a random node.
+
+6. Be super cool, and it gives you a great appreciation of the power of Bitcoin. You’ll probably end up buying more, and accumulating more girlfriends.
+
+
 ---
 ## HARDWARE
 
