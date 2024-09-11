@@ -993,16 +993,19 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
    #!/bin/bash
    
    # launch bitcoin-qt as a background job
-   /usr/local/bin/bitcoin-qt & 
+   #/usr/local/bin/bitcoin-qt &
    
-   # Sleep for 20 seconds to allow Bitcoin-qt to load and open its RPC port for connections.
-   # Increase sleep time if electra throws connectioin error.
-   sleep 20
+   # launch bitcoind as a background job
+   /usr/local/bin/bitcoind -datadir=/media/rez/T7\ Shield -server -daemon &
+   
+   # Sleep to allow Bitcoin-qt to load, if electra throws an error that then increase the sleep time
+   sleep 5
    
    # launch electrs
-   /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/rez/T7\ Shield
-
+   /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ~/electrs/db --daemon-dir /media/rez/T7\ Shield &
+   
    exit 0
+
    ```
 
 3. Make the file executable
@@ -1077,7 +1080,7 @@ Create a desktop icon so we can luanch Electrum from the desktop GUI
    Name=Electrum
    Comment=Lightweight Bitcoin Wallet.
    GenericName=Bitcoin Wallet.
-   Exec=/usr/local/bin/electrum
+   Exec=/home/rez/.local/bin/electrum
    Icon=electrum
    Type=Application
    ```
@@ -1096,4 +1099,8 @@ Create a desktop icon so we can luanch Electrum from the desktop GUI
 7. Also add a shortcut to your app-menu
    ```bash copy
    sudo cp ~/Desktop/electrum.desktop /usr/share/applications/
+   ```
+8. Finally move Electrum executable to /usr/local/bin
+   ```bash copy
+   mv ~/.local/bin/electrum /usr/local/bin
    ```
