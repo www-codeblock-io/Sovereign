@@ -2,30 +2,30 @@
 last updated: 10th September 2024.
 
 # Project goal
-A secure and sovereign Bitcoin node using software self-verified (non branded/containerised), enabling the use of hardware wallets while preserving the privacy of personal addresses and balances when interacting with the Bitcoin network.
+An easy to build secure and sovereign Bitcoin node using free open source software self-verified (non branded/containerised), enabling the use of hardware wallets (airgapped / usb) while preserving privacy of personal addresses and balances when interacting with the bitcoin network.
 
-My hope is that anyone looking to upgrade there personal Laptop for a new one, instead of selling it or giving it to a younger sibling, they will consider turning there old laptop into there very own Sovereign Personal Bitcoin Node.
+Convert your old laptop into a Sovereign Personal Bitcoin Node.
 
-I recommend in the first instance to always consult a software projects official installation instructions. External guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page.
+Always consult a software projects official installation instructions. External guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page.
 
-Think of this as a general guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve the above goal.
+Think of this as a general installation guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve the above goal.
 
-# Why run a Bitcoin Node?
+# Why run a bitcoin node?
 
 Inspired by [Arman The Parman](https://armantheparman.com/why-should-you-run-your-own-bitcoin-node/)
 with a few personal additions...
 
-1. You can maximise privacy. Your wallet needs to connect to a node. If it doesn't need to rely on someone else's copy of the timechain data, you won't divulge your IP (your location!) nor you addresses (and their balances). It's potentially dangerous from attackers, but particular surveillance who WILL co-operate with your local ruler when it's confiscation time during the inevitable collapse of fiat.
+1. You can maximise privacy. Connecting your bitcoin wallet to your a node means not relying on someone else's copy of the timechain data, you won't divulge your IP (your location!) nor your bitcoin addresses (and their balances). It's harder for potential attackers to even know you exist and provides protection from surveillance firms who WILL co-operate with your local ruler when it's confiscation time during the inevitable collapse of fiat.
 
 2. You can verify if you have been paid - like checking a gold payment is real by melting it down. A bitcoin payment must register on your copy of the timechain.
 
 3. Defend the rules of your money if there is a contentious fork - no one can force you to run Bitcoin Larry Fink's Vision, for example.
 
-4. Be one of many cockroaches that need to be destroyed to wipe out the UTXO set (who owns what). Note even that doesn't kill Bitcoin, Bitcoin is an idea. They'd have to kill all the Bitcoiners.
+4. Be one of many cockroaches that need to be destroyed to wipe out the UTXO set (who owns what). Note: even that doesn't kill Bitcoin, Bitcoin is an idea. They'd have to kill all the Bitcoiners.
 
 5. Help someone else run a node, or provide the infrastructure so someone else can trust you and connect to your node. Remember, being a human node is not the power to run the software but the power to choose the right software to connect to - you can be that option for people, especially those you orange pill, instead of letting them connect to a random node.
 
-6. Be super cool, and it gives you a great appreciation of the power of Bitcoin. You’ll probably end up buying more, and accumulating more girlfriends.
+6. Enjoy peace of mind, and gain a greater appreciation for the power of Bitcoin. You’ll probably end up buying more, and accumulating more girlfriends.
 
 
 ---
