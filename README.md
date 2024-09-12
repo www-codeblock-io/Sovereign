@@ -2,11 +2,11 @@
 last updated: 10th September 2024.
 
 # Project goal
-An easy to build secure and sovereign Bitcoin node using free open source software self-verified (non branded/containerised), enabling the use of hardware wallets (airgapped / usb) while preserving privacy of personal addresses and balances when interacting with the bitcoin network.
+Create a movement for Bitcpiners to convert your old laptop into a Sovereign Personal Bitcoin Node.
 
-Convert your old laptop into a Sovereign Personal Bitcoin Node.
+Provide easy to follow instructions to build a secure and sovereign Bitcoin node using free open source software, self-verified (non branded/containerised), enabling the use of hardware wallets (airgapped / usb) preserving privacy of personal addresses and balances when interacting with the bitcoin network.
 
-Always consult a software projects official installation instructions. External guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page.
+External guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page. Always consult a software projects official website to verify installation instructions.
 
 Think of this as a general installation guide with some trouble shooting tips. I have included all the Terminal commands that I personally ran to achieve the above goal.
 
