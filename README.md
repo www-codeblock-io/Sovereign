@@ -67,7 +67,7 @@ I then added this external [2T SSD drive](https://a.co/d/itXEh1A) from Amazon.co
   
 ___
 ## VERIFY & INSTALL SOFTWARE
-For all Bitcoin software, it’s a particularly important security step to verify the release. This is done to ensure the installation file you download has not been compromised. Follow download instructions and use gpg in the terminal as instructed. - Quote from  [Sparrow](https://sparrowwallet.com/download/)
+For all Bitcoin software, it’s a particularly important security step to verify the release. This is done to ensure the installation file you download has not been compromised. Follow download instructions and use gpg in the terminal as instructed. - [Sparrow](https://sparrowwallet.com/download/)
 
 ___
 # Install Ubuntu 22.04 LTS
