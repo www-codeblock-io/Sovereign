@@ -1,6 +1,8 @@
 # Sovereign - Personal Bitcoin Node
 last updated: 10th September 2024.
 
+[![Watch Intro Video](https://github.com/www-codeblock-io/Sovereign/blob/main/repo_resources/video_intro.png)](https://github.com/www-codeblock-io/Sovereign/blob/main/repo_resources/intro.mp4)
+
 # Project goal
 Create a movement of Bitcoiners converting their old laptops into Sovereign Personal Bitcoin Nodes.
 
