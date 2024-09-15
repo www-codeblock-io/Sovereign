@@ -942,7 +942,7 @@ Sparrow is open source and has exellent wallet encryption which aims at keeping 
     cd ~/Downloads && rm -r sparrow_1.9.1-1_amd64.deb sparrow-1.9.1-manifest.txt.asc	sparrow-1.9.1-manifest.txt
     ```
 
-Read Sparrows official [docs](https://sparrowwallet.com/docs/) and proceed to use the software wallet as usual. 
+Read Sparrows official [docs](https://sparrowwallet.com/docs/) to make use of all the software wallets functionality. 
 
 ---
 # Hardware Wallet support
