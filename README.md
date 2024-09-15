@@ -279,18 +279,18 @@ Head over to [Bitcoin Core](https://bitcoincore.org/en/download/ "Bitcoincore.or
 ### Complete install
 [Reference Link](https://bitcoin.org/en/full-node#linux-instructions "Bitcoin.org")
 
-Unzip the bitcoin folder
-```bash copy
-tar xzf bitcoin-27.1-x86_64-linux-gnu.tar.gz
-```
-Install bitcoin core
-```bash copy
-sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
-```
-Clean up
-```bash copy
-cd ~/Downloads && sudo rm -r bitcoin-27.1-x86_64-linux-gnu.tar.gz guix.sigs SHA256SUMS.asc SHA256SUMS
-```
+1. Unzip the bitcoin folder
+   ```bash copy
+   tar xzf bitcoin-27.1-x86_64-linux-gnu.tar.gz
+   ```
+2. Install bitcoin core
+   ```bash copy
+   sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
+   ```
+3. Clean up
+   ```bash copy
+   cd ~/Downloads && sudo rm -r bitcoin-27.1-x86_64-linux-gnu.tar.gz guix.sigs SHA256SUMS.asc SHA256SUMS
+   ```
 
 ---
 ## Run Bitcoin Core (start initial blockchain download)
