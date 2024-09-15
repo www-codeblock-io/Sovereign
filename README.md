@@ -914,7 +914,7 @@ Read Specters official [docs](https://docs.specter.solutions/desktop/) to get th
 # Install Sparrow wallet
 [Official Website](https://sparrowwallet.com/)
 
-Sparrow is an open-source Bitcpin wallet with exellent encryption, it keeps the wallet open for as limited time as possible, this is a good security feature, you can also save this encrypted wallet file to a seperate location (external flash drive) for further plausible deniability. 
+Sparrow is an open-source Bitcoin wallet with exellent encryption, keeping the wallet open for as limited time as possible for added security. The encrypted wallet file can also be saved to a seperate location (external flash drive etc.) for further plausible deniability. 
 
 1. Verify your CPU architecture. Run:
    ```bash copy
