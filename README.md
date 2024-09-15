@@ -886,14 +886,15 @@ Your user will need to be added to the `plugdev` group, which needs to be create
 
 Specter will automatically utilize the existing Tor configuration used for Bitcoin Core. To validate this yourself, you can check the Specter Desktop logs for any Tor-related messages or errors. If everything is configured correctly, you should see no issues or warnings regarding Tor.
 
-9. Check Specter logs for any errors/issues
-   ```bash copy
-   cd ~/.specter && nano specterApp.log
-   ```   
-10. Clean up, delete old files/directories
+10. Check Specter logs for any errors/issues
+    ```bash copy
+    cd ~/.specter && nano specterApp.log
+    ```   
+11. Clean up, delete old files/directories
     ```bash copy
     cd ~/Downloads && rm -r Specter   
     ```
+Read Specters official [docs](https://docs.specter.solutions/desktop/) to get the most out of the software wallets functionality.
 
 ---
 # Install Sparrow wallet
