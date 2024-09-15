@@ -1007,7 +1007,7 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    
 ---
 # Configure desktop
-## Build Bitcoin Core desktop icon
+## Build Bitcoin node desktop icon
 Build a launchable Desktop icon called ```Bitcoin``` that when clicked will launch Bitcoin Core and Electrs, ready for you to then open the bitcoin wallet of your choice.
 1. First we need to create an executable bash script, we'll call it ```node.sh```
    ```bash copy
