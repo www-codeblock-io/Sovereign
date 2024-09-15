@@ -838,7 +838,9 @@ If the ```Network``` light in the bottom righthand corner of Electrum GUI is blu
 
 ---
 # Install Specter wallet
-"Secure your bitcoin. Verify your transactions. Protect your privacy." - [Specter.solutions](https://specter.solutions/index.html)
+[Official Website](https://specter.solutions/index.html)
+
+"Secure your bitcoin. Verify your transactions. Protect your privacy." - Specter.solutions
 
 1. Create a new directory in Downloads folder called ```Specter``` and move into it.
    ```bash copy
