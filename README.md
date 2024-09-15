@@ -716,6 +716,7 @@ Click on ```Status``` tab then ```Runtime & Build Information``` tab to see if p
 ---
 # Install Electrum
 [Official website](https://electrum.org/#download)
+Electrum was first released as open-source back in 2011, making it the most trusted Bitcoin wallet available.
 1. Download ThomasV public key and import into keychain. Run:
    ```bash copy
    cd ~/Downloads && wget https://raw.githubusercontent.com/spesmilo/electrum/master/pubkeys/ThomasV.asc && gpg --import ThomasV.asc
