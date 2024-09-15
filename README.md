@@ -745,7 +745,8 @@ Click on ```Status``` tab then ```Runtime & Build Information``` tab to see if p
 
 ---
 ## Configure Electrum
-1. The Electrum config file is located in a hidden Electrum directory, however this directory is only created once Electrum is run for the first time. To prevent any privacy leaks we can run Electrum with some flags to make sure it only connects to our Electrs server.
+The Electrum config file is located in a hidden Electrum directory, however this directory is only created once Electrum is run for the first time. To prevent any privacy leaks we can run Electrum with some flags to make sure it only connects to our Electrs server.
+1. Launch Electrum using the following flags
    ```bash copy
    electrum --oneserver --server 127.0.0.1:50001:t --proxy socks5:127.0.0.1:9150
    ```
