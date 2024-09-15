@@ -882,7 +882,7 @@ Your user will need to be added to the `plugdev` group, which needs to be create
    - Port = 8332
    Click ```Connect```
 
-Specter Desktop will automatically utilize the existing Tor configuration that we are using for Bitcoin Core. To confirm, you can check the Specter Desktop logs for any Tor-related messages or errors. If everything is configured correctly, you should see no issues or warnings regarding Tor.
+Specter will automatically utilize the existing Tor configuration used for Bitcoin Core. To validate this yourself, you can check the Specter Desktop logs for any Tor-related messages or errors. If everything is configured correctly, you should see no issues or warnings regarding Tor.
 
 9. Check Specter logs for any errors/issues
    ```bash copy
