@@ -577,25 +577,25 @@ I chose to compile electrs by statically linking to librocksdb, which has less d
    ```bash copy
    cd .. && rm -r rocksdb
    ```
-6. Prepare man page generation (optional)
+9. Prepare man page generation (optional)
    ```bash copy
    cargo install cfg_me
    ```
-7. Move to home directory and download electrs repo
-   ```bash copy
-   cd ~ && git clone https://github.com/romanz/electrs
-   ``` 
-8. Move into electrs directory
-   ```bash copy
-   cd electrs
-   ```
+10. Move to home directory and download electrs repo
+    ```bash copy
+    cd ~ && git clone https://github.com/romanz/electrs
+    ``` 
+11. Move into electrs directory
+    ```bash copy
+    cd electrs
+    ```
 ### Build
 Note: you need to have enough free RAM to build electrs. The build will fail otherwise. Close those 100 old tabs in the browser. 
 
-9. First build should take ~20 minutes
-   ```bash copy 
-   cargo build --locked --release
-   ```
+12. First build should take ~20 minutes
+    ```bash copy 
+    cargo build --locked --release
+    ```
    During installation build the below warning was thrown, I installed as the warning suggested:
 
    __warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to apply 1 suggestion)
