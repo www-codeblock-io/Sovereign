@@ -75,7 +75,7 @@ ___
 # Install Ubuntu 22.04 LTS
 I installed Ubuntu 22.04 LTS because at the time of install, the Tor project had not released support for Ubuntu 24.04 LTS.
 
-### Deactivate Secure-Boot
+## Deactivate Secure-Boot
 If repurposing an old Windows laptop, Deactivate Secure-Boot.
 
 Secure boot signing authorities have made mistakes in the past ([section 3, page 2 under 'Disadvantages'](https://www.nsa.gov/portals/75/documents/what-we-do/cybersecurity/professional-resources/BootSecurityModesAndRec_20190522.pdf)). Let's verify all the software ourselves and not trust a third-party to do this for us.
@@ -91,11 +91,11 @@ Secure boot signing authorities have made mistakes in the past ([section 3, page
    Save all three files to your Downloads folder.
 
 
-### Verify download signitures
+## Verify download signitures
 Note, the slightly different commands, depending if you are on Windows or Linux.
 [Reference Link](https://ubuntu.com/tutorials/how-to-verify-ubuntu#2-necessary-software "Ubuntu tutorial")
 
-#### Windows10
+### Windows10
 1. Verify signitures. Open a Terminal window (CTRL+ALT+T). Run:
    ```bash copy
    gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
@@ -106,7 +106,7 @@ Note, the slightly different commands, depending if you are on Windows or Linux.
    ```
 Now open the SHA256SUMS.txt file in your Downloads folder and compare the SHA256 checksum inside the file with the checksum that was printed to the Terminal. It will be a long hash, verify both hashes/numbers match, if so, your ISO download is authentic.
 
-#### Linux/MacOS
+### Linux/MacOS
 1. Verify signitures. Open a Terminal window (CTRL+ALT+T). Run:
    ```bash copy
    gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
@@ -119,13 +119,13 @@ Now open the SHA256SUMS.txt file in your Downloads folder and compare the SHA256
       ```ubuntu-22.04.4-desktop-amd64.iso: OK```
 
 
-### Complete install
+## Complete install
 Follow the [official](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick "https://ubuntu.com/tutorials/install-ubuntu-desktop#3-create-a-bootable-usb-stick") installation instructions to install Ubuntu.
 
 [Create partition table](https://ubuntuhandbook.org/index.php/2022/04/install-ubuntu-2204-step-by-step/amp/ "Ubuntuhandbook.org") (not always required).
 
 
-### Reusing bootable USB
+## Reusing bootable USB
 Flashing a USB drive with an ISO image will place a write protection on the USB drive, to prevent accidental deletion of your bootable USB drive data. If you make a mistake and need to reformat the USB drive then use something like [Aomei](https://www.aomeitech.com/download.html#pa "Aomitech.com") to remove the write protection so you can reformat the drive and start again (or to reclaim the USB drive to be used for something else).
 
 ---
@@ -136,7 +136,7 @@ Once Installation has finished.
    sudo apt update && sudo apt upgrade
    ```
 
-### Install Libfuse
+## Install Libfuse
 [Official website](https://github.com/AppImage/AppImageKit/wiki/FUSE)
 
 Ubuntu 22.04 LTS dependencies to run Specter and Ledger-Live apps.
@@ -145,7 +145,7 @@ Ubuntu 22.04 LTS dependencies to run Specter and Ledger-Live apps.
    sudo add-apt-repository universe && sudo apt install libfuse2
    ```
 
-### Install AppImageLauncher
+## Install AppImageLauncher
 Creats Desktop icons to launch AppImages such as Specter & Ledger-Live.
 1. Install dependencies  
    ```bash copy
@@ -168,10 +168,10 @@ When first run you will be greeted with ```Welcome to AppImageLauncher!```. Conf
 
 Whenever you run a new AppImage you will have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executable icon of the app to your ```App``` folder. You can now also right click the App and add it to your favourites tray on your desktop toolbar. 
 
-### Adjust the power settings
+## Adjust the power settings
 Because you will want to run your node for 6+ hours a day (24hrs is better) you will need to adjust the power & lid closure settings to prevent the laptop entering into a low power mode, slowing or halting network traffic.
 
-#### Navigate to the Ubuntu power settings menu:
+### Navigate to the Ubuntu power settings menu:
 Show Apps > Settings > Power Settings.
 
 Make the following adjustments:
@@ -181,7 +181,7 @@ Make the following adjustments:
 
 Then close the settings menu.
 
-### Laptop lid, do nothing when closed
+## Laptop lid, do nothing when closed
 1. Navigate to systemd directory. Run:
    ```bash copy
    cd /etc/systemd
@@ -276,7 +276,7 @@ Head over to [Bitcoin Core](https://bitcoincore.org/en/download/ "Bitcoincore.or
 - Download ```Linux(tgz) 64 bit``` and save to Downloads folder.
 - Scroll down the page, under the heading ```Verify your download```, click on ```Linux verification instructions```, then follow the instructions to verify your download.
 
-### Complete install
+## Complete install
 [Reference Link](https://bitcoin.org/en/full-node#linux-instructions "Bitcoin.org")
 
 1. Unzip the bitcoin folder
@@ -356,7 +356,7 @@ If you have trouble locating your external SSD Drive, try the following, open a 
    ```bash copy
    bitcoin-cli -datadir=/media/<User>\<External_SSD_Name> stop
    ```
-### Allow incoming connections (optional but recommended)
+## Allow incoming connections (optional but recommended)
 Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
 
 Retrieve your Laptops MAC address and IP address from the Terminal. 
@@ -430,7 +430,7 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
     sudo systemctl enable tor
     ```
 
-### Tor Systemctl commands
+## Tor Systemctl commands
 1. Manage Tor using systemd
    ```bash copy
    sudo systemctl restart tor
@@ -484,7 +484,7 @@ If you delete this file, the next time bitcoind loads it will generate a new key
    sudo shutdown -r now
    ```
 
-### Verify Bitcoin Core is running behind Tor, option: 1
+## Verify Bitcoin Core is running behind Tor, option: 1
 1. Start Bitcoin Core GUI 
    ```bash copy
    bitcoin-qt
@@ -493,7 +493,7 @@ If you delete this file, the next time bitcoind loads it will generate a new key
 3. Click on the ```Peers``` tab.
    You should now see a list of all the Bitcoin peers that your node is connected too. Under the ```Network``` column all the row values should say ```Onion```, meaning you are only connected to    peers over the onion ntwork. 
 
-### Verify Bitcoin Core is running behind Tor, option: 2
+## Verify Bitcoin Core is running behind Tor, option: 2
 1. Check Bitcoin Core ```NetworkInfo```. From the Bitcoin Core GUI click 'Window' tab, 'Consol', then type the below command after the ```>``` and press enter.
    ```bash copy
    getnetworkinfo
@@ -511,12 +511,12 @@ If you delete this file, the next time bitcoind loads it will generate a new key
          "reachable": true
    ```
 
-### Verify Bitcoin Core is running behind Tor, option: 3
+## Verify Bitcoin Core is running behind Tor, option: 3
 1. For the extra security concious, you can also check the debug.log file in the Bitcoin data-directory.
    At some point during startup in the bitcoin/debug.log file you will see:
    ```tor: Got service ID XXXXXXXXXXX, advertising service XXXXXXXXXXX.onion:8333```
 
-### Verify Bitcoin Core is running behind Tor, option: 4
+## Verify Bitcoin Core is running behind Tor, option: 4
 You will learn a lot if you ```cd``` into your bitcoin data-directory delete the 'debug.log' file (don't worry bitcoin core just creates a new one at startup), restart Tor, and then Bitcoin Core. Then shut down Bitcoin core again once the application has completly loaded. Bitcoin Core will have created a new debug.log file and printed some debug statements during shut down.
 
 1. Navigate to you main Bitcoin data-directory. Then activate tail with a grep on Tor.
@@ -541,7 +541,7 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
 
 [Why Electrs?](https://blog.casa.io/electrum-server-performance-report/)
 
-### Build dependencies
+## Build dependencies
 1. Install recent Rust
    ```bash copy
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -589,7 +589,7 @@ I chose to compile electrs by statically linking to librocksdb, which has less d
     ```bash copy
     cd electrs
     ```
-### Build
+## Build Electrs
 Note: you need to have enough free RAM to build electrs. The build will fail otherwise. Close those 100 old tabs in the browser. 
 
 12. First build should take ~20 minutes
@@ -606,7 +606,7 @@ Note: you need to have enough free RAM to build electrs. The build will fail oth
    cargo fix --lib -p electrs
    ```
 
-### Generating man pages
+## Generate Electrs man pages
 Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 man``` to save it into a file (```electrs.1```).
 
 
@@ -783,7 +783,7 @@ The Electrum config file is located in a hidden Electrum directory, however this
 
 The next time we start Electrum we can simply run the command ```electrum``` and let the config file handle the rest.
 
-### Create a Test wallet
+## Create a Test wallet
 We will create a new test (hot) wallet in Electrum to confirm and verify our config settings are correct.
 1. Start electrum. Run:
    ```bash copy
@@ -800,7 +800,7 @@ We will create a new test (hot) wallet in Electrum to confirm and verify our con
 9. Leave the password fields blank, we wont encrypt the wallet data as this is just a test wallet, click ```Next```.
 10. Electrum - enable update check. Click ```No```. We will always verify and update our software ourselves.
 
-### Add some watch-only addresses
+## Add some watch-only addresses
 We will use these to confirm Electrs & Bitcoin Core are connected correctly.
 1. From the Electrum window press CTRL+N, this will bring up the ```New/Restore``` menu.
 2. Choose a name for your wallet, you can just name the wallet something like ```satoshi_address``` or ```mr100```. Click ```Next```.
@@ -872,7 +872,7 @@ Your user will need to be added to the `plugdev` group, which needs to be create
    sudo usermod -aG plugdev `whoami`
    ```
 
-### Specter configuration
+## Specter configuration
 7. Launch Specter for the first time
    ```bash copy
    cd ~/Downloads/Specter && ./Specter-2.0.5.AppImage
@@ -1076,7 +1076,7 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
     ```bash copy
     ./node.sh
     ```
-### Build Electrum desktop icon
+## Build Electrum desktop icon
 Create a desktop icon so we can luanch Electrum from the desktop GUI
 1. Create a new .desktop file
   ``` bash copy
