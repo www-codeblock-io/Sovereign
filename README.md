@@ -899,7 +899,9 @@ Read Specters official [docs](https://docs.specter.solutions/desktop/) to get th
 ---
 # Install Sparrow wallet
 [Official Website](https://sparrowwallet.com/)
-Sparrow is open source and has exellent wallet encryption which aims at keeping the wallet open for as limited time as possible, this is a good security feature, you can also save this encrypted wallet file to a seperate location (external flash drive) for further plausible deniability. Electrum also encrypts the wallet but with Bitcoin Core it is possible to retrieve sensitive wallet information so just be mindful of that. 
+
+Sparrow is open sourced and has exellent wallet encryption, it keeps the wallet open for as limited time as possible, this is a good security feature, you can also save this encrypted wallet file to a seperate location (external flash drive) for further plausible deniability. 
+
 1. Verify your CPU architecture. Run:
    ```bash copy
    dpkg --print-architecture
