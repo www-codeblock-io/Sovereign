@@ -517,9 +517,9 @@ If you delete this file, the next time bitcoind loads it will generate a new key
    ```tor: Got service ID XXXXXXXXXXX, advertising service XXXXXXXXXXX.onion:8333```
 
 ## Verify Bitcoin Core uses Tor. Option: 4
-You will learn a lot if you ```cd``` into your bitcoin data-directory delete the 'debug.log' file (don't worry bitcoin core just creates a new one at startup), restart Tor, and then Bitcoin Core. Then shut down Bitcoin core again once the application has completly loaded. Bitcoin Core will have created a new debug.log file and printed some debug statements during shut down.
+You will learn a lot about what Bitcoin Core is doing during start-up and shut-down if you watch the debug.log file.
 
-1. Navigate to you main Bitcoin data-directory. Then activate tail with a grep on Tor.
+1. Navigate to you main Bitcoin data-directory. Then activate tail on the Bitcoin Core debug.log file with a grep on Tor.
    ```bash copy
    tail -f debug.log | grep tor
    ```
@@ -527,7 +527,7 @@ You will learn a lot if you ```cd``` into your bitcoin data-directory delete the
     ```bash copy
     bitcoin-qt
     ```
-3. Once you see the pop up notification that Bitcoin Core is available (loaded). Then stop Bitcoin Core again.
+3. Once you see the pop up notification that Bitcoin Core is available (loaded). Then stop Bitcoin Core again. By clicking the ```X``` on the GUI or running:
     ```bash copy
     bitcoin-cli -datadir=/media/<User>\<External_SSD_Name> stop
     ```
