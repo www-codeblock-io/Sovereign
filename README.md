@@ -784,7 +784,7 @@ The Electrum config file is located in a hidden Electrum directory, however this
 The next time we start Electrum we can simply run the command ```electrum``` and let the config file handle the rest.
 
 ### Create a Test wallet
-We will set up a test (hot) wallet in Electrum so we can make sure all of our config settings are correct before loading a real wallet that contains funds.
+We will set up a test (hot) wallet in Electrum to check our config settings are correct before loading any real wallet that contains funds.
 1. Start electrum. Run:
    ```bash copy
    electrum
