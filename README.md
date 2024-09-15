@@ -10,7 +10,7 @@ Easy to follow instructions to build a secure and sovereign Linux based Bitcoin 
 
 Because external guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page for further self verification.
 
-Think of this as a general installation guide with some trouble shooting tips.
+Think of this as a general installation guide with additional trouble shooting tips.
 
 # Why run a bitcoin node?
 
