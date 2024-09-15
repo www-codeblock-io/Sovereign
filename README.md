@@ -384,8 +384,8 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
 # Install Tor
 [Official website](https://support.torproject.org/apt/tor-deb-repo/)
 
-_"Browse Privately. Explore Freely.
-Defend yourself against tracking and surveillance. Circumvent censorship."_
+"Browse Privately. Explore Freely.
+Defend yourself against tracking and surveillance. Circumvent censorship."
 
 1. Verify your CPU architecture. Run:
    ```bash copy
