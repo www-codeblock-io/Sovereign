@@ -881,7 +881,8 @@ Your user will need to be added to the `plugdev` group, which needs to be create
    - Password = <Password> (matching the rpcpassword details in bitcoin.conf file)
    - Host = 127.0.0.1
    - Port = 8332
-   Click ```Connect```
+   
+9. Click ```Connect```
 
 Specter will automatically utilize the existing Tor configuration used for Bitcoin Core. To validate this yourself, you can check the Specter Desktop logs for any Tor-related messages or errors. If everything is configured correctly, you should see no issues or warnings regarding Tor.
 
