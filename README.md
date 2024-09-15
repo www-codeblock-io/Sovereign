@@ -821,7 +821,7 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
 6. No need to set a wallet password as your just watching someone elses Bitcoin address. Click ```Finish```.
  
 ---
-# Running, Bitcoin-Core, Electrs & Electrum.
+# Launch Bitcoin-Core, Electrs & Electrum
 1. Start Bitcoin-Core by running ```bitcoin-qt``` to use the GUI or to run a daemon. Run:
    ```bash copy
    bitcoind -datadir=/media/<User>\<External_SSD_Name> -server -daemon
@@ -1006,8 +1006,8 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
    ```
    
 ---
-# TIPS
-# Launch Bitcoin Core & Electrs via Desktop icon
+# Configure desktop
+## Build Bitcoin Core & Electrs Desktop icons
 Build a launchable Desktop icon called ```Bitcoin``` that when clicked will launch Bitcoin Core and Electrs, ready for you to then open the wallet of your choice.
 1. First we need to create an executable bash script, we'll call it ```node.sh```
    ```bash copy
