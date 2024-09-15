@@ -371,7 +371,7 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
    ```bash copy
    hostname -I
    ```
-### Some other helpful commands
+## Some other helpful commands
 3. Install net-tools to check incoming/outgoing port traffic
    ```bash copy
    sudo apt install net-tools
@@ -859,7 +859,7 @@ Specter is an open-source Bitcoin wallet, first released June 2020. It offers an
    tar -xvf ~/Downloads/Specter/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz
    ```
 
-### Set UDEV rules
+## Set UDEV rules
 5. Naigate to Specter directory
    ```bash copy
    cd ~/Downloads/Specter
@@ -936,7 +936,7 @@ Sparrow is an open-source Bitcoin wallet, first released September 2020, offerin
    ```
    If you recieve the ```OK``` result to your terminal then the solftware is authentic and safe to install. This also means that we can now use Sparrows veification feature to easily verify future software from the GUI interface if we wish.
    
-### Install and configure  
+## Install and configure  
 7. Navigate to Downloads folder and install the downloaded .deb file. This will save the app to your ```Show Applications``` folder, that can be accessed from your Desktop.
    ```bash copy
    cd ~/Downloads && sudo dpkg -i <NAME_OF_FILE>.deb  
