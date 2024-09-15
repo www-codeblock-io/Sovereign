@@ -385,7 +385,7 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
 [Official website](https://support.torproject.org/apt/tor-deb-repo/)
 
 "Browse Privately. Explore Freely.
-Defend yourself against tracking and surveillance. Circumvent censorship."
+Defend yourself against tracking and surveillance. Circumvent censorship." - Torproject.org
 
 1. Verify your CPU architecture. Run:
    ```bash copy
