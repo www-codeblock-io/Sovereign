@@ -4,13 +4,13 @@ last updated: 15th September 2024.
 [![Watch Intro Video](https://github.com/www-codeblock-io/Sovereign/blob/main/repo_resources/video_intro.png)](https://www.youtube.com/watch?v=lkLX7CVw-Og)
 
 # Project goal
-A cookbook to help Bitcoiners convert an old laptop into a Sovereign Personal Bitcoin Node.
+A cookbook to convert an old laptop into a Sovereign Personal Bitcoin Node.
 
 Provide easy to follow instructions to build a secure and sovereign Linux based Bitcoin node using free open source software, self-verified (non-branded/containerised), enabling the use of hardware wallets while preserving privacy of personal addresses & balances when interacting with the bitcoin network.
 
-External guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page for further verification.
+Because external guides can be out-of-date and not actively maintained. This guide has a subheading stating the last update and a link to each official software project page for further self verification.
 
-Think of this as a general installation guide with some trouble shooting tips. I have included all the Terminal commands to achieve the above goal.
+Think of this as a general installation guide with some trouble shooting tips.
 
 # Why run a bitcoin node?
 
