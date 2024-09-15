@@ -983,22 +983,24 @@ Linux systems require udev rules from each Hardware device manufacturer to allow
    ```
    
 ## Install Ledger Live (optional)
-If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to install.
 [Reference Link](https://support.ledger.com/article/4404389606417-zd)
-2. Add udev rules for Ledger (if not already done so) to allow USB access to your Ledger device
+
+If you are still using Ledger or needing access to to the Ledger Live suite then follow below instructions to install.
+
+1. Add udev rules for Ledger (if not already done so) to allow USB access to your Ledger device
    ```
    wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
    ```
-3. Install Ubuntu 22.04 dependency
+2. Install Ubuntu 22.04 dependency
    ```bash copy
    sudo add-apt-repository universe
    ```
-4. Head over to [Ledger Live](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
-5. Shorten the name and move to the ```home``` directory
+3. Head over to [Official website](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
+4. Shorten the name and move to the ```home``` directory
    ```bash copy
    mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage ~/LedgerLive-2.85.1.AppImage
    ```
-3. Run Ledger-Live for the first time (after the first run the app will be added to your ```Show Applications``` folder via the desktop Toolbar.
+5. Run Ledger-Live for the first time (after the first run the app will be added to your ```Show Applications``` folder via the desktop Toolbar.
    ```bash copy
    cd ~ && ./LedgerLive-2.85.1.AppImage
    ```
