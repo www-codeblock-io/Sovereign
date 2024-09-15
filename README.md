@@ -847,11 +847,12 @@ If the ```Network``` light in the bottom righthand corner of Electrum GUI is blu
    ```bash copy
    tar -xvf ~/Downloads/Specter/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz
    ```
+
+### Set UDEV rules
 5. Naigate to Specter directory
    ```bash copy
    cd ~/Downloads/Specter
    ```
-### Set UDEV rules
 6. Apply the following udev rules by copying them to `/etc/udev/rules.d/` and notifying `udevadm`.
 Your user will need to be added to the `plugdev` group, which needs to be created if it does not already exist. Run the following commands one at a time:
    ```bash copy
