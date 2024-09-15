@@ -411,22 +411,22 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
    ```bash copy
    sudo wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/deb.torproject.org-keyring.gpg >/dev/null
    ```
-9. Update apt
+8. Update apt
    ```bash copy
    sudo apt update
    ```
-10. Install Tor
+9. Install Tor
    ```bash copy
    sudo apt install tor deb.torproject.org-keyring
    ```
-11. Check Tor is installed
-   ```bash copy
-   tor --version
-   ```
-12. Configure Tor to start at system Boot (optional but recommended)
-   ```bash copy
-   sudo systemctl enable tor
-   ```
+10. Check Tor is installed
+    ```bash copy
+    tor --version
+    ```
+11. Configure Tor to start at system Boot (optional but recommended)
+    ```bash copy
+    sudo systemctl enable tor
+    ```
 
 ### Tor Systemctl commands
 1. Manage Tor using systemd
