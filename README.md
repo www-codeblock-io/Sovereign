@@ -784,7 +784,7 @@ The Electrum config file is located in a hidden Electrum directory, however this
 The next time we start Electrum we can simply run the command ```electrum``` and let the config file handle the rest.
 
 ### Create a Test wallet
-We will create a new test wallet in Electrum to confirm our config settings are correct before loading a wallet that contains funds.
+We will create a new test (hot) wallet in Electrum to confirm and verify our config settings are correct.
 1. Start electrum. Run:
    ```bash copy
    electrum
@@ -827,7 +827,7 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
    ```bash copy
    electrum
    ```
-If the ```Network``` light in the bottom righthand corner of Electrum GUI is blue then you are connected to your own node running behind Tor. It is now safe to interact with your real wallets.
+If the ```Network``` light in the bottom righthand corner of Electrum GUI is blue then you are connected to your own node (which we configured & verified is running behind Tor). It is now safe to interact with your real wallets.
 
 ---
 # Install Specter wallet
