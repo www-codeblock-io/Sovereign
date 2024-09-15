@@ -373,13 +373,13 @@ Retrieve your Laptops MAC address and IP address from the Terminal.
    ```
 ### Some other helpful commands
 3. Install net-tools to check incoming/outgoing port traffic
-  ```bash copy
-  sudo apt install net-tools
-  ```
+   ```bash copy
+   sudo apt install net-tools
+   ```
 4. Check what IP and port Bitcoin is listening to
-  ```bash copy
-  sudo netstat --ip -lpa|grep bitcoin
-  ```
+   ```bash copy
+   sudo netstat --ip -lpa|grep bitcoin
+   ```
 ---
 # Install Tor
 [Official website](https://support.torproject.org/apt/tor-deb-repo/)
