@@ -870,12 +870,15 @@ Your user will need to be added to the `plugdev` group, which needs to be create
    ```bash copy
    sudo usermod -aG plugdev `whoami`
    ```
+
+### Specter configuration
 7. Launch Specter for the first time
    ```bash copy
    cd ~/Downloads/Specter && ./Specter-2.0.5.AppImage
    ```
-### Specter configuration
-8. You will be greeted with Specters welcome screen providing the options to configure the application. Use the below config settings:
+You will be greeted with Specters welcome screen providing the options to configure the application. 
+
+8. Use the below config settings:
    - Name = Bitcoin Core
    - Username = <UserName> (matching the rpcuser details in bitocoin.conf file)
    - Password = <Password> (matching the rpcpassword details in bitcoin.conf file)
