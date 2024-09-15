@@ -56,7 +56,7 @@ I then added this external [2T SSD drive](https://a.co/d/itXEh1A) from Amazon.co
 - Bitcoin-Core
 - Tor
 - ProtonVPN
-- Electra
+- Electrs
 - Electrum wallet
 - Specter wallet
 - Sparrow wallet
