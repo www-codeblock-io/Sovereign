@@ -840,7 +840,7 @@ If the ```Network``` light in the bottom righthand corner of Electrum GUI is blu
 # Install Specter wallet
 [Official Website](https://specter.solutions/index.html)
 
-"Secure your bitcoin. Verify your transactions. Protect your privacy." - Specter.solutions
+Specter first open-source release was on June 2020. It offers an intuative desktop GUI ideal for the creation and management of MultiSig or SingleSig wallets with extensive HWW support.
 
 1. Create a new directory in Downloads folder called ```Specter``` and move into it.
    ```bash copy
@@ -914,7 +914,7 @@ Read Specters official [docs](https://docs.specter.solutions/desktop/) to get th
 # Install Sparrow wallet
 [Official Website](https://sparrowwallet.com/)
 
-Sparrow is open sourced and has exellent wallet encryption, it keeps the wallet open for as limited time as possible, this is a good security feature, you can also save this encrypted wallet file to a seperate location (external flash drive) for further plausible deniability. 
+Sparrow is an open-source Bitcpin wallet with exellent encryption, it keeps the wallet open for as limited time as possible, this is a good security feature, you can also save this encrypted wallet file to a seperate location (external flash drive) for further plausible deniability. 
 
 1. Verify your CPU architecture. Run:
    ```bash copy
