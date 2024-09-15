@@ -164,7 +164,9 @@ Creats Desktop icons to launch AppImages such as Specter & Ledger-Live.
    sudo apt install appimagelauncher
    ```
 
-If running AppImageinstaller for the first time you will be greeted ```Welcome to AppImageLauncher!```. Configure your App image prefernces. It will create a new directory on your system to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location (I kept the default) then click ```OK```. On the next window you have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executable icon of the app to your systems ```Show Applications``` folder, locted via the Desktop toolbar. You can now also right click the App and add it to your favourites which will pin the app to your Tool bar for easy access. 
+When first run you will be greeted with ```Welcome to AppImageLauncher!```. Configure your App image prefernces to create a new directory to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location if you wish (I chose the default) then click ```OK```. 
+
+Whenever you run a new AppImage you will have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executable icon of the app to your ```App``` folder. You can now also right click the App and add it to your favourites tray on your desktop toolbar. 
 
 ### Adjust the power settings
 Because you will want to run your node for 6+ hours a day (24hrs is better) you will need to adjust the power & lid closure settings to prevent the laptop entering into a low power mode, slowing or halting network traffic.
