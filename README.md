@@ -539,7 +539,9 @@ You will learn a lot about what Bitcoin Core is doing during start-up and shut-d
 # Install Electrs
 [Official website](https://github.com/romanz/electrs/tree/master?tab=readme-ov-file)
 
-[Why Electrs?](https://blog.casa.io/electrum-server-performance-report/): Electrs is a great low-resource, easy-to-install option for personal use - especially on resource-constrained hardware.
+[Why Electrs?](https://blog.casa.io/electrum-server-performance-report/) 
+
+_"Electrs is a great low-resource, easy-to-install option for personal use - especially on resource-constrained hardware." - Jameson Lopp_
 
 ## Build dependencies
 1. Install recent Rust
