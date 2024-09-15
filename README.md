@@ -1089,7 +1089,7 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
     ./node.sh
     ```
 ## Build Electrum desktop icon
-Create a desktop icon so we can luanch Electrum from the desktop GUI
+Build a launchable Desktop icon called ```Electrum``` that when clicked will launch the Electrum wallet.
 1. Create a new .desktop file
   ``` bash copy
   touch ~/Desktop/electrum.desktop
