@@ -596,17 +596,17 @@ Note: you need to have enough free RAM to build electrs. The build will fail oth
     ```bash copy 
     cargo build --locked --release
     ```
-   During installation build the below warning was thrown:
+    During installation build the below warning was thrown:
 
-   ```bash
-   warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to apply 1 suggestion)
+    ```bash
+    warning: electrs (lib) generated 1 warning (run cargo fix --lib -p electrs to apply 1 suggestion)
     Finished release [optimized] target(s) in 5m 53s
-   ```
+    ```
 
-   I ran the command, suggested in the above warning:
-   ```bash copy
-   cargo fix --lib -p electrs
-   ```
+    I ran the command, suggested in the above warning, which completed the build without further errors.
+    ```bash copy
+    cargo fix --lib -p electrs
+    ```
 
 ## Generate Electrs man pages
 Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 man``` to save it into a file (```electrs.1```).
