@@ -484,7 +484,7 @@ If you delete this file, the next time bitcoind loads it will generate a new key
    sudo shutdown -r now
    ```
 
-## Verify Bitcoin Core is running behind Tor, option: 1
+## Verify node connects using Tor. Option: 1
 1. Start Bitcoin Core GUI 
    ```bash copy
    bitcoin-qt
@@ -493,7 +493,7 @@ If you delete this file, the next time bitcoind loads it will generate a new key
 3. Click on the ```Peers``` tab.
    You should now see a list of all the Bitcoin peers that your node is connected too. Under the ```Network``` column all the row values should say ```Onion```, meaning you are only connected to    peers over the onion ntwork. 
 
-## Verify Bitcoin Core is running behind Tor, option: 2
+## Verify node connects using Tor. Option: 2
 1. Check Bitcoin Core ```NetworkInfo```. From the Bitcoin Core GUI click 'Window' tab, 'Consol', then type the below command after the ```>``` and press enter.
    ```bash copy
    getnetworkinfo
@@ -511,12 +511,12 @@ If you delete this file, the next time bitcoind loads it will generate a new key
          "reachable": true
    ```
 
-## Verify Bitcoin Core is running behind Tor, option: 3
+## Verify node connects using Tor. Option: 3
 1. For the extra security concious, you can also check the debug.log file in the Bitcoin data-directory.
    At some point during startup in the bitcoin/debug.log file you will see:
    ```tor: Got service ID XXXXXXXXXXX, advertising service XXXXXXXXXXX.onion:8333```
 
-## Verify Bitcoin Core is running behind Tor, option: 4
+## Verify node connects using Tor. Option: 4
 You will learn a lot if you ```cd``` into your bitcoin data-directory delete the 'debug.log' file (don't worry bitcoin core just creates a new one at startup), restart Tor, and then Bitcoin Core. Then shut down Bitcoin core again once the application has completly loaded. Bitcoin Core will have created a new debug.log file and printed some debug statements during shut down.
 
 1. Navigate to you main Bitcoin data-directory. Then activate tail with a grep on Tor.
