@@ -486,9 +486,9 @@ If you delete this file, the next time bitcoind loads it will generate a new key
 
 ### Verify Bitcoin Core is running behind Tor, option: 1
 1. Start Bitcoin Core GUI 
-```bash copy
-bitcoin-qt
-```
+   ```bash copy
+   bitcoin-qt
+   ```
 2. Once loaded enter the ```Network``` screen by pressing ```CTL+N```.
 3. Click on the ```Peers``` tab.
    You should now see a list of all the Bitcoin peers that your node is connected too. Under the ```Network``` column all the row values should say ```Onion```, meaning you are only connected to    peers over the onion ntwork. 
@@ -883,6 +883,7 @@ Your user will need to be added to the `plugdev` group, which needs to be create
    Click ```Connect```
 
 Specter Desktop will automatically utilize the existing Tor configuration that we are using for Bitcoin Core. To confirm, you can check the Specter Desktop logs for any Tor-related messages or errors. If everything is configured correctly, you should see no issues or warnings regarding Tor.
+
 9. Check Specter logs for any errors/issues
    ```bash copy
    cd ~/.specter && nano specterApp.log
