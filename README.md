@@ -128,6 +128,16 @@ Follow the [official](https://ubuntu.com/tutorials/install-ubuntu-desktop#3-crea
 ## Reusing bootable USB
 Flashing a USB drive with an ISO image will place a write protection on the USB drive, to prevent accidental deletion of your bootable USB drive data. If you make a mistake and need to reformat the USB drive then use something like [Aomei](https://www.aomeitech.com/download.html#pa "Aomitech.com") to remove the write protection so you can reformat the drive and start again (or to reclaim the USB drive to be used for something else).
 
+
+---
+# Tip - Linux keyboard shortcuts.
+- Open a new Terminal window: ```CTRL+ALT+T```
+
+- Copy text in the Terminal: ```CTRL+SHIFT+C```
+
+- Paste text in the Terminal: ```CTRL+SHIFT+P```
+
+
 ---
 ## Configure Ubuntu
 Once Installation has finished.
