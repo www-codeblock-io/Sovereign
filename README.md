@@ -834,7 +834,7 @@ Footnote: I wonder if Mr100 is the counterparty/buyer of the Bitcoin legend Gumm
 
 _"I'm taking steps to sell the remaining 72,572 bitcoins responsibly! 💼 No deals with organised crime, third parties, or middlemen - just direct transactions with integrity. Selling in lots of 100 for transparency only. Let's keep it real & legal in the crypto world!💰" - Gummo_
 
-[X post](https://x.com/pete_rizzo_/status/1837477503520149913?t=CVB1uNKjNts1G2JASxUpXA&s=19) - The Bitcoin Historian[@pete_rizzo_]
+[X post](https://x.com/pete_rizzo_/status/1837477503520149913?t=CVB1uNKjNts1G2JASxUpXA&s=19) - The Bitcoin Historian @pete_rizzo_
 
 ---
 # Launch Bitcoin-Core, Electrs & Electrum
