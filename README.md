@@ -829,7 +829,8 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
    - 1Ay8vMC7R1UbyCCZRVULMV7iQpHSAbguJP (mr100_address = Unknown, transacts daily in blocks of 100 BTC)
    
 6. No need to set a wallet password as your just watching someone elses Bitcoin address. Click ```Finish```.
- 
+
+footnote: I wonder if Mr100 is Gummo's (counterparty) buyer. "I'm taking steps to sell the remaining 72,572 bitcoins responsibly! 💼 No deals with organised crime, third parties, or middlemen - just direct transactions with integrity. Selling in lots of 100 for transparency only. Let's keep it real & legal in the crypto world!💰" - Gummo [The Bitcoin Historian [@pete_rizzo_]](https://x.com/pete_rizzo_/status/1837477503520149913?t=CVB1uNKjNts1G2JASxUpXA&s=19)
 ---
 # Launch Bitcoin-Core, Electrs & Electrum
 1. Start Bitcoin-Core by running ```bitcoin-qt``` to use the GUI or to run a daemon. Run:
