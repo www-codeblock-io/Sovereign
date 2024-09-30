@@ -830,7 +830,7 @@ We will use these to confirm Electrs & Bitcoin Core are connected correctly.
    
 6. No need to set a wallet password as your just watching someone elses Bitcoin address. Click ```Finish```.
 
-Footnote: I wonder if Mr100 is the counterparty/buyer of the Bitcoin legend Gummo 🤔
+Footnote: Although it's great to watch something smash buy bitcoin in blocks of 100 at the same time there is always an equal seller for instance the legendary Gummo telling the world in 2024 that he's selling 72,572 bitocoin in blocks of 100🤔
 
 [X post](https://x.com/pete_rizzo_/status/1837477503520149913?t=CVB1uNKjNts1G2JASxUpXA&s=19) - The Bitcoin Historian @pete_rizzo_
 
