@@ -174,6 +174,12 @@ Creats Desktop icons to launch AppImages such as Specter & Ledger-Live.
    sudo apt install appimagelauncher
    ```
 
+## Install Git
+1. Install Git
+   ```bash copy
+   sudo apt install git
+   ```
+
 When first run you will be greeted with ```Welcome to AppImageLauncher!```. Configure your App image prefernces to create a new directory to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location if you wish (I chose the default) then click ```OK```. 
 
 Whenever you run a new AppImage you will have two choices, ```Run Once``` or ```Integrate and run```. Click ```Integrate and run```. This will add an executable icon of the app to your ```App``` folder. You can now also right click the App and add it to your favourites tray on your desktop toolbar. 
