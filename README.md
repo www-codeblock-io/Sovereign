@@ -222,7 +222,7 @@ ___
 
 3. Check the repo package integrity by checking its checksum
    ```bash copy
-   echo "62a9d849835de8a5664cf95329458bf1966780b15cec420bf707b5f7278b9027  protonvpn-stable-   release_1.0.4_all.deb" | sha256sum --check -
+   echo "62a9d849835de8a5664cf95329458bf1966780b15cec420bf707b5f7278b9027  protonvpn-stable-release_1.0.4_all.deb" | sha256sum --check -
    ```
 
 4. Install ProtonVPN desktop app
