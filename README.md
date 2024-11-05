@@ -297,15 +297,15 @@ Head over to [Bitcoin Core](https://bitcoincore.org/en/download/ "Bitcoincore.or
 
 1. Unzip the bitcoin folder
    ```bash copy
-   tar xzf bitcoin-27.1-x86_64-linux-gnu.tar.gz
+   tar xzf bitcoin-28.0-x86_64-linux-gnu.tar.gz
    ```
 2. Install bitcoin core
    ```bash copy
-   sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-27.1/bin/*
+   sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-28.0/bin/*
    ```
 3. Clean up
    ```bash copy
-   cd ~/Downloads && sudo rm -r bitcoin-27.1-x86_64-linux-gnu.tar.gz guix.sigs SHA256SUMS.asc SHA256SUMS
+   cd ~/Downloads && sudo rm -r bitcoin-28.0-x86_64-linux-gnu.tar.gz guix.sigs SHA256SUMS.asc SHA256SUMS
    ```
 
 ---
