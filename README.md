@@ -146,6 +146,12 @@ Once Installation has finished.
    sudo apt update && sudo apt upgrade
    ```
 
+## Install Git
+1. Install Git
+   ```bash copy
+   sudo apt install git
+   ```
+
 ## Install Libfuse
 [Official website](https://github.com/AppImage/AppImageKit/wiki/FUSE)
 
@@ -172,12 +178,6 @@ Creats Desktop icons to launch AppImages such as Specter & Ledger-Live.
 4. Install
    ```bash copy  
    sudo apt install appimagelauncher
-   ```
-
-## Install Git
-1. Install Git
-   ```bash copy
-   sudo apt install git
    ```
 
 When first run you will be greeted with ```Welcome to AppImageLauncher!```. Configure your App image prefernces to create a new directory to store your (AppImage) Applications, the default location is: /home/<user>/Applications. Change the location if you wish (I chose the default) then click ```OK```. 
