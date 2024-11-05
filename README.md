@@ -316,22 +316,20 @@ Plug in your external 2T SSD drive.
    ```bash copy
    bitcoin-qt
    ``` 
-   You will be greated with the Bitcoin Core Welcome screen, it is here that we will let Bitcoin Core know where our external SSD drive is located.
+   You will be greated with the Bitcoin Core Welcome screen, it is here that we will let Bitcoin Core know where our external SSD drive is located if you are using one. If not just keep the default settings.
 
-2. Select ```Use a custom data directory```.
-3. Click the three dots to the right and navigate to your external SSD drive location. Mine was located at ```/media/rez/T7 Shield```.
-4. Uncheck ```Limit block chain storage```. We want to download the complete Bitcoin blockchain from the genisis block.
-5. Click ```OK```.
+2. Uncheck ```Limit block chain storage```. We want to download the complete Bitcoin blockchain from the genisis block.
+3. Click ```OK```.
 
-Bitcoin Core will now create the main ```data-directory``` inside your external SSD drive. It is here that all Bitcoin Core configuaration files will be stored along with the complete blockchain data. Get familiar with this ```data-directory``` (SSD Drive) location as we will be accessing it again later.
+Bitcoin Core will now create the main ```data-directory``` in a hidden folder .bitcoin inside your home directory. It is here that all Bitcoin Core configuaration files will be stored along with the complete blockchain data. Get familiar with this ```data-directory``` (home/USERNAME/.bitcoin) location as we will be accessing it again later.
 
-If you have trouble locating your external SSD Drive, try the following, open a new Terminal. Run:
+If you have trouble locating your external SSD Drive (if using one), try the following, open a new Terminal. Run:
    ```bash copy
    cd /media && dir
    ```
    You should see your user directory listed, ```cd``` into this dir which should contain your external drive.
 
-6. Leave the laptop power plugged in and wait for the Bitcoin blockchain to download, Bitcoin Core will show a % complete and a rough estimate of how much time remains until completion.
+4. Leave the laptop power plugged in and wait for the Bitcoin blockchain to download, Bitcoin Core will show a % complete and a rough estimate of how much time remains until completion.
 
 
 ---
