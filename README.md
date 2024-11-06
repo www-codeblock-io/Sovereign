@@ -707,11 +707,11 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    bitcoin-cli getblockchaininfo | head
    ```
    
-10. Start Electrs initial sync. First sync can take 1-2 days depending on CPU/hardware.
+9. Start Electrs initial sync. First sync can take 1-2 days depending on CPU/hardware.
    ```bash copy
    electrs --log-filters INFO
    ```
-11. Check final size of Electrs server index DB
+10. Check final size of Electrs server index DB
    ```bash copy
    du ~/electrs/db
    ```
