@@ -702,7 +702,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    bitcoind -server -daemon
    ```
 
-8. Check sync is complete
+8. Check sync is complete (the "blocks" & "headers" number needs to match, if not then there are still blocks being downloaded and synced).
    ```bash copy
    bitcoin-cli getblockchaininfo | head
    ```
