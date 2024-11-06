@@ -48,7 +48,7 @@ I purchased this second hand [HP portable laptop](https://www.amazon.com/gp/aw/d
 - CPU: Intel celeron 1.1 GHz
 - HDD: 64GB
 
-I then added this external [2T SSD drive](https://a.co/d/itXEh1A) from Amazon.com for $140. However I wanted a storage device that I could move around easily to test different Laptop brands and this is an expensive way to achieve the necessary storage space required. The cheapest way is to purchase a 2TB Nvme SSD card and upgrade your existing onboard SSD. Something similar to [this](https://www.amazon.com/LEVEN-JPS600-Gen3x4-Thermal-Packaging/dp/B0BMTSBB7Y/ref=sr_1_2?sr=8-2) for $93.
+I then upgraded the internal 256GB Nvme SSD to this 2TB SSD card [this](https://www.amazon.com/LEVEN-JPS600-Gen3x4-Thermal-Packaging/dp/B0BMTSBB7Y/ref=sr_1_2?sr=8-2) for $93.
 
 ---
 ## SOFTWARE
