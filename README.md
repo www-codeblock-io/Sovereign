@@ -697,11 +697,21 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    ```
    This will print the size of the existing Bitcoin Core block directory. The final Electrs index DB will be about 10-20% the size of the Bitcoin Core block directory.
 
-7. Start Electrs. First sync can take 1-2 days depending on CPU/hardware.
+7. Start Bitcoind and wait for bitcoind to complete initial sync.
    ```bash copy
-   electrs --log-filters INFO --network bitcoin --db-dir ./db --daemon-dir /media/<USER>/<SSD_DRIVE_NAME>
+   bitcoind -server -daemon
    ```
-8. Check final size of Electrs server index DB
+
+8. Check sync is complete
+   ```bash copy
+   bitcoin-cli getblockchaininfo | head
+   ```
+   
+10. Start Electrs initial sync. First sync can take 1-2 days depending on CPU/hardware.
+   ```bash copy
+   electrs --log-filters INFO
+   ```
+11. Check final size of Electrs server index DB
    ```bash copy
    du ~/electrs/db
    ```
