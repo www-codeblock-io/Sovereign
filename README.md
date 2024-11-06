@@ -1135,7 +1135,7 @@ Build a launchable Desktop icon called ```Electrum``` that when clicked will lau
    Name=Electrum
    Comment=Lightweight Bitcoin Wallet.
    GenericName=Bitcoin Wallet.
-   Exec=/home/rez/.local/bin/electrum
+   Exec=/home/<USERNAME>/.local/bin/electrum
    Icon=electrum
    Type=Application
    ```
@@ -1147,3 +1147,6 @@ Build a launchable Desktop icon called ```Electrum``` that when clicked will lau
    ```bash copy
    sudo cp ~/Desktop/electrum.desktop /usr/share/applications/
    ```
+6. Right-click the desktop icon, select ```Allow Launching``` (or similar). The icon should now be visible and launchable.
+
+7. Double click the desktop (Electrum) icon to Launch Electrum.  
