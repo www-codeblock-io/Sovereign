@@ -711,7 +711,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
    ```bash copy
    electrs --log-filters INFO
    ```
-10. Check final size of Electrs server index DB
+10. Check final size of Electrs server index DB (should be around 10% the size of the Bitcoin Core block directory we checked earlier).
    ```bash copy
    du ~/electrs/db
    ```
