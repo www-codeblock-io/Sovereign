@@ -1051,13 +1051,13 @@ Build a launchable Desktop icon called ```Bitcoin``` that when clicked will laun
    #/usr/local/bin/bitcoin-qt &
    
    # launch bitcoind as a background job
-   /usr/local/bin/bitcoind -datadir=/media/rez/T7\ Shield -server -daemon &
+   /usr/local/bin/bitcoind &
    
-   # Sleep to allow Bitcoin-qt to load, if electra throws an error that then increase the sleep time
+   # Sleep to allow Bitcoin Core to load, if electra throws an error that then increase the sleep time
    sleep 5
    
    # launch electrs
-   /usr/local/bin/electrs --log-filters INFO --network bitcoin --db-dir ~/electrs/db --daemon-dir /media/rez/T7\ Shield
+   /usr/local/bin/electrs --log-filters INFO
    
    exit 0
 
@@ -1135,7 +1135,7 @@ Build a launchable Desktop icon called ```Electrum``` that when clicked will lau
    Name=Electrum
    Comment=Lightweight Bitcoin Wallet.
    GenericName=Bitcoin Wallet.
-   Exec=/home/<USERNAME>/.local/bin/electrum
+   Exec=/home/<USER>/.local/bin/electrum
    Icon=electrum
    Type=Application
    ```
