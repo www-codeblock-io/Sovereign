@@ -1150,3 +1150,9 @@ Build a launchable Desktop icon called ```Electrum``` that when clicked will lau
 6. Right-click the desktop icon, select ```Allow Launching``` (or similar). The icon should now be visible and launchable.
 
 7. Double click the desktop (Electrum) icon to Launch Electrum.  
+
+## Remove HOME folder desktop icon
+1. Remove Home folder icon
+  ``` bash copy
+  gsettings set org.gnome.shell.extensions.ding show-home false
+  ```
