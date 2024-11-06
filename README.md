@@ -649,7 +649,7 @@ Run ```cfg_me man``` to see man page immediately or run ```cfg_me -o electrs.1 m
      
 4. Create a config file for Electrs
    ```bash copy
-   cd ~ && mkdir .electrs && nano /.electrs/config.toml   
+   cd ~ && sudo mkdir .electrs && sudo nano .electrs/config.toml   
    ```
 5. Copy below text into config.toml, save and exit
    ```bash copy
