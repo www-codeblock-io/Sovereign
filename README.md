@@ -352,7 +352,7 @@ If you have trouble locating your external SSD Drive (if using one), try the fol
    proxy=127.0.0.1:9050
    bind=127.0.0.1
 
-   datadir=/media/<User>\<External_SSD_Name>
+   datadir=
 
    # only connect to Tor hidden services, not even IPv4/IPv6 nodes
    onlynet=onion
@@ -368,7 +368,7 @@ If you have trouble locating your external SSD Drive (if using one), try the fol
    
 5. Now shut down Bitcoin Core so that the config changes we made can be applied. Click on the ```X``` in the top right hand corner. Or enter the below command in any Terminal window:
    ```bash copy
-   bitcoin-cli -datadir=/media/<User>\<External_SSD_Name> stop
+   bitcoin-cli stop
    ```
 ## Allow incoming connections (optional but recommended)
 Configure your WIFI router to allow Bitcoin core incoming connections on port:8332. Make a note of both your MAC and IP address then follow the instructions in this [Link](https://bitcoin.org/en/full-node#network-configuration)
@@ -565,7 +565,7 @@ You will learn a lot about what Bitcoin Core is doing during start-up and shut-d
    ```
 2. Install Cargo
    ```bash copy
-   apt install cargo
+   sudo apt install cargo
    ```
 3. Update package manager
    ```bash copy
