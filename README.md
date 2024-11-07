@@ -988,7 +988,7 @@ Sparrow is an open-source Bitcoin wallet, first released September 2020, offerin
     ```
 12. Clean up, delete old files/directories
     ```bash copy
-    cd ~/Downloads && rm -r sparrow_1.9.1-1_amd64.deb sparrow-1.9.1-manifest.txt.asc	sparrow-1.9.1-manifest.txt
+    cd ~/Downloads && rm -r sparrow_2.0.0-1_amd64.deb sparrow-2.0.0-manifest.txt.asc	sparrow-2.0.0-manifest.txt
     ```
 
 Read Sparrows official [docs](https://sparrowwallet.com/docs/) to get the most out of the software wallets functionality. 
