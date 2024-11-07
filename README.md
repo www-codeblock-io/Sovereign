@@ -958,11 +958,11 @@ Sparrow is an open-source Bitcoin wallet, first released September 2020, offerin
    ```
 5. Verify the signature of the manifest file
    ```bash copy
-   cd ~/Downloads && gpg --verify sparrow-1.9.1-manifest.txt.asc
+   cd ~/Downloads && gpg --verify sparrow-2.0.0-manifest.txt.asc
    ```
 6. Verify the download file
    ```bash copy
-   sha256sum --check sparrow-1.9.1-manifest.txt --ignore-missing
+   sha256sum --check sparrow-2.0.0-manifest.txt --ignore-missing
    ```
    If you recieve the ```OK``` result to your terminal then the solftware is authentic and safe to install. This also means that we can now use Sparrows veification feature to easily verify future software from the GUI interface if we wish.
    
