@@ -1028,11 +1028,11 @@ If you are still using Ledger or needing access to to the Ledger Live suite then
 3. Head over to [Official website](https://download.live.ledger.com/latest/linux) and download the Linux .Appimage file to your Downloads folder.
 4. Shorten the name and move to the ```home``` directory
    ```bash copy
-   mv ledger-live-desktop-2.85.1-linux-x86_64.AppImage ~/LedgerLive-2.85.1.AppImage
+   mv ledger-live-desktop-2.91.1-linux-x86_64.AppImage ~/LedgerLive-2.91.1.AppImage
    ```
 5. Run Ledger-Live for the first time (after the first run the app will be added to your ```Show Applications``` folder via the desktop Toolbar.
    ```bash copy
-   cd ~ && ./LedgerLive-2.85.1.AppImage
+   cd ~ && ./LedgerLive-2.91.1.AppImage
    ```
    
 ---
