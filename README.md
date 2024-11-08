@@ -1,5 +1,5 @@
 # Sovereign - Personal Bitcoin Node
-last updated: 15th September 2024.
+last updated: 9th November 2024.
 
 [![Watch Intro Video](https://github.com/www-codeblock-io/Sovereign/blob/main/repo_resources/video_intro.png)](https://www.youtube.com/watch?v=lkLX7CVw-Og)
 
