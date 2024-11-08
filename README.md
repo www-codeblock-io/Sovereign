@@ -48,7 +48,7 @@ I purchased this second hand [HP portable laptop](https://www.amazon.com/gp/aw/d
 - CPU: Intel celeron 1.1 GHz
 - HDD: 64GB
 
-At time of writing the Bitcoin blockchain is around 600GB of data so you will almost certainly need to upgrade the laptops internal SSD card. The laptop I am using has a 256GB Nvme SSD so I upgraded it this [2TB SSD card](https://www.amazon.com/LEVEN-JPS600-Gen3x4-Thermal-Packaging/dp/B0BMTSBB7Y/ref=sr_1_2?sr=8-2) for $93.
+At time of writing the Bitcoin blockchain is around 600GB of data so you will almost certainly need to upgrade the laptops internal SSD card. The laptop I am using has a 256GB Nvme SSD so I upgraded to this [2TB SSD card](https://www.amazon.com/LEVEN-JPS600-Gen3x4-Thermal-Packaging/dp/B0BMTSBB7Y/ref=sr_1_2?sr=8-2) for $93.
 
 ---
 ## SOFTWARE
