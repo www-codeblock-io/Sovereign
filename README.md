@@ -536,20 +536,19 @@ If you delete this file, the next time bitcoind loads it will generate a new key
 ## Verify Bitcoin Core uses Tor. Option: 4
 You will learn a lot about what Bitcoin Core is doing during start-up and shut-down if you watch the debug.log file.
 
-1. Navigate to you main Bitcoin data-directory. Then activate tail on the Bitcoin Core debug.log file with a grep on Tor.
+1. Navigate to you main Bitcoin data-directory. 
+   ```bash copy
+   cd ~/.bitcoin
+   ```
+2. Ooen a new Terminal window, will will call this 'Terminal 1'. Activate tail on the Bitcoin Core debug.log file with a grep on Tor.
    ```bash copy
    tail -f debug.log | grep tor
    ```
-2. Now in a seperate Terminal start bitcoin-qt.
+2. Now in a new Terminal window start bitcoind with debug set to Tor.
     ```bash copy
-    bitcoin-qt
+    bitcoind --daemon --debug=tor
     ```
-3. Once you see the pop up notification that Bitcoin Core is available (loaded). Then stop Bitcoin Core again. By clicking the ```X``` on the GUI or running:
-    ```bash copy
-    bitcoin-cli -datadir=/media/<User>\<External_SSD_Name> stop
-    ```
-
-   You will see a lot of the Tor actions printed to the Terminal that Bitcoin Core completed during start-up and shut-down, including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor network using your Tor encryption key.
+3. Watch the debug file output printed in Terminal 1. You will see ```Tor: ADD_ONION successful``` and a lot of other Tor actions printed to the Terminal that Bitcoin Core completed during start-up including starting a ```Tor control thread```, opening a ```Tor connection``` and finally connecting to the Tor network using your Tor encryption key.
 
 
 ---
