@@ -529,11 +529,6 @@ If you delete this file, the next time bitcoind loads it will generate a new key
    ```
 
 ## Verify Bitcoin Core uses Tor. Option: 3
-1. For the extra security concious, you can also check the debug.log file in the Bitcoin data-directory.
-   At some point during startup in the bitcoin/debug.log file you will see:
-   ```tor: Got service ID XXXXXXXXXXX, advertising service XXXXXXXXXXX.onion:8333```
-
-## Verify Bitcoin Core uses Tor. Option: 4
 You will learn a lot about what Bitcoin Core is doing during start-up and shut-down if you watch the debug.log file.
 
 1. Navigate to you main Bitcoin data-directory. 
